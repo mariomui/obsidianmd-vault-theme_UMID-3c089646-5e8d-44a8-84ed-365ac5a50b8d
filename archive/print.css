@@ -1,0 +1,223 @@
+:root {
+  --accent: #37cdbe;
+  --primary: #570df8;
+  --secondary: #f000b8;
+  --neutral: #3d4451;
+  --base-100: #ffffff;
+  --info: #3abff8;
+  --success: #36d399;
+  --warning: #fbbd23;
+  --error: #f87272;
+  --booksource: #8272d0;
+}
+/* Obsidian snippet to style output of pdf exports
+ */
+
+@media print {
+
+  /* set your preferred fonts here.
+   */
+
+  :root {
+    --body-font-family: "Newsreader Text", TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+    --header-font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    --code-font-family: MonoLisa, Menlo, SFMono-Regular, Consolas, "Roboto Mono", monospace;
+  }
+
+  body {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none;
+  }
+
+  /* If you find your font settings ae not being used for an element,
+   * Add it below. You can fund the element by inspecting the document
+   * in "Reading" mode in the console.
+   */
+  body, p, li, div.callout {
+    line-height: 1.4;
+    word-spacing: 1.1pt;
+    letter-spacing: 0.2pt;
+    font-family: var(--body-font-family);
+    font-size: 12pt
+  }
+
+  /* */
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--header-font-family);
+    font-weight: normal !important
+  }
+
+  h1 {
+    font-size: 19pt !important
+  }
+
+  h2 {
+    font-size: 17pt !important
+  }
+
+  h3 {
+    font-size: 15pt !important
+  }
+
+  h4, h5, h6 {
+    font-size: 12pt !important
+  }
+
+  code, code[class*="language-"],
+  pre, pre[class*="language-"] {
+    font-size: 10pt;
+    font-family: var(--code-font-family);
+    color: black !important;
+    background: none !important;
+  }
+
+  pre,
+  code span,
+  code {
+    color: black !important
+  }
+
+  code {
+    border: 1px solid darkgray !important;
+    padding: 0 0.2em !important;
+    line-height: initial !important;
+    border-radius: 4px !important
+  }
+
+  pre {
+    border: 1px solid darkgray !important;
+    margin: 1em 0px !important;
+    padding: 0.5em !important;
+    border-radius: 4px !important
+  }
+
+  pre > code {
+    font-size: 12px !important;
+    border: none !important;
+    border-radius: 0 !important;
+    border-radius: 4px !important
+  }
+
+  blockquote {
+    margin: 1.3em;
+    padding: 1em;
+    font-size: 10pt;
+    color: darkslategray !important
+  }
+
+  hr {
+    background-color: #ccc
+  }
+
+  img {
+    display:block;
+    margin: 1em 0
+  }
+
+  a img {
+    border: none
+  }
+
+  table {
+    margin: 1px;
+    text-align: left
+  }
+
+  th {
+    border-bottom: 1px aolis #333
+  }
+
+  td {
+    border-bottom: 1px solid #333
+  }
+
+  th,td, tr {
+    padding: 4px 10px 4px 0;
+    color: black !important;
+    background: none !important
+  }
+
+  tfoot {
+    font-style: italic
+  }
+
+  caption {
+    background: #fff;
+    margin-bottom: 2em;
+    text-align: left
+  }
+
+  thead {
+    display: table-header-group
+  }
+
+  tr {
+    page-break-inside: avoid
+  }
+
+  a {
+    text-decoration: none;
+    color: black !important
+  }
+
+
+  a[aria-label]::after {
+    display: inline !important;
+    content: " (" attr(aria-label) ")" !important;
+    color: slategray !important;
+    font-size: 70% !important;
+  }
+
+  a[class="tag"] {
+    font-weight: bold;
+    font-family: var(--font-monospace);
+    background: none
+  }
+
+  .callout {
+    background: none;
+    border-width: 1px;
+    border-color: rgba(var(--callout-color), 0.75)
+  }
+
+  /* -=-=-=-=-=-=-
+   * Specific to custom checkboxes in @kepano's minimal theme
+   */
+  li[data-task="/"]>input:checked::after,
+  input[type=checkbox]:checked::after {
+    background-color: black
+  }
+
+  input[type=checkbox]:checked {
+    background: none
+  }
+
+  ul>li.task-list-item[data-task="x"] {
+    color: black
+  }
+
+  li[data-task="!"]>input:checked::after,
+  li[data-task="*"]>input:checked::after,
+  li[data-task='"']>input:checked::after,
+  li[data-task="l"]>input:checked::after,
+  li[data-task="b"]>input:checked::after,
+  li[data-task="i"]>input:checked::after,
+  li[data-task="S"]>input:checked::after,
+  li[data-task="I"]>input:checked::after,
+  li[data-task="p"]>input:checked::after,
+  li[data-task="c"]>input:checked::after,
+  li[data-task="f"]>input:checked::after,
+  li[data-task="k"]>input:checked::after,
+  li[data-task="w"]>input:checked::after,
+  li[data-task="u"]>input:checked::after,
+  li[data-task="d"]>input:checked::after,
+  li[data-task="?"]>input:checked::after {
+    background: none !important;
+    -webkit-mask-image: none !important
+  }
+  /* -=-=-=-=-=-=- */
+
+}
