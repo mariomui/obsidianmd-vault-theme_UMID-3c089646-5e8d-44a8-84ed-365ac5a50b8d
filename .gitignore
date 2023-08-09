@@ -148,3 +148,4 @@ dist
 .vscode
 
 # sym link ignores
+snippets-symlinked
