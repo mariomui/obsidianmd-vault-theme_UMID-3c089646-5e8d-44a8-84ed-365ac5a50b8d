@@ -33,3 +33,11 @@ I develop this inside a git synced vault therefore,
 - TLINE: Link the submodule readme to the parent readme
   - [x] Should I consolidate the readme to one? or just copy the same readme across all submodules?
     - No. It is +more steps to update a submodule readme than a parent.
+
+for initial submodule set up, its best to look at docs.
+
+- https://git-scm.com/book/en/v2/Git-Tools-Submodules
+
+- Here's some handy dandy commands for now:
+  - git push --recurse-submodules=on-demand origin master
+  - git pull --recurse-submodules
