@@ -20,13 +20,16 @@ I develop this inside a git synced vault therefore,
 
 - **Git Submodule research** is needed to easily keep the git histories seperate (without resorting to file-mutating git ignores)
 
-  - :reference:
-    - https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/The-git-submodule-add-example
-      - https://youtu.be/RgIAXF53a8U
-  - ⚖️
-    - Git ignores require umbrella github to mutate a file. (accepted PR).
-    - Multiple submodules in the future might balloon the git ignore file.
-    - Parent git directory knows too much about the internal git system.
+- :reference:
+  - https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/The-git-submodule-add-example
+    - https://youtu.be/RgIAXF53a8U
+- ⚖️
+  - Git ignores require umbrella github to mutate a file. (accepted PR).
+  - Multiple submodules in the future might balloon the git ignore file.
+  - Parent git directory knows too much about the internal git system.
 
-  * https://jakemccrary.com/blog/2020/02/25/auto-syncing-a-git-repository/
-    - [ ] Should I consolidate the readme to one? or just copy the same readme across all submodules?
+* https://jakemccrary.com/blog/2020/02/25/auto-syncing-a-git-repository/
+
+- TLINE: Link the submodule readme to the parent readme
+  - [x] Should I consolidate the readme to one? or just copy the same readme across all submodules?
+    - No. It is +more steps to update a submodule readme than a parent.
