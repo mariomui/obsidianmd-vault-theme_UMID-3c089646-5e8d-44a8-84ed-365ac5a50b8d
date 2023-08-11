@@ -2,7 +2,7 @@
   "name": "my-webpack-project",
   "version": "1.0.0",
   "description": "My webpack project",
-  "main": "index.js",
+  "main": "./src/index.scss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=production --node-env=production",
@@ -17,8 +17,7 @@
     "@webpack-cli/generators": "^3.0.7",
     "autoprefixer": "^10.4.14",
     "css-loader": "^6.8.1",
-    "eslint": "^8.46.0",
-    "eslint-config-prettier": "^9.0.0",
+    "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^2.7.6",
     "postcss": "^8.4.27",
     "postcss-loader": "^7.3.3",
@@ -26,8 +25,6 @@
     "sass": "^1.65.1",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
-    "ts-loader": "^9.4.4",
-    "typescript": "^5.1.6",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   }
