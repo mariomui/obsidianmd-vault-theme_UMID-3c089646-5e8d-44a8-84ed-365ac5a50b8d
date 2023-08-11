@@ -6,8 +6,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isProduction = process.env.NODE_ENV == 'production';
 
 
-const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : 'style-loader';
-
+// const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : 'style-loader';
+const minicss = new MiniCssExtractPlugin({filename: "[name].css"})
 
 /**
  * @type { import('webpack').Configuration }
@@ -15,15 +15,19 @@ const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : 'style-loader
 const config = {
     entry: [__dirname + "/src/index.scss"],
     output: {
-        cssFilename: "dist/[name].css"
+        cssFilename: "dist/[name].css",
+        clean: true,
     },
+    plugins: [
+        minicss
+    ],
     module: {
         rules: [
             {
                 test: /\.s[ac]ss$/i,
                 // https://webpack.js.org/configuration/module/#ruleuse
                 // RTL
-                use: ['css-loader', 'postcss-loader', 
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 
                 {
                     loader: 'sass-loader',
                     options: {
