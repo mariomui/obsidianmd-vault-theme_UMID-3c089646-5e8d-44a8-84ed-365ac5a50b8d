@@ -23,7 +23,7 @@ const config = {
                 test: /\.s[ac]ss$/i,
                 // https://webpack.js.org/configuration/module/#ruleuse
                 // RTL
-                use: ['postcss-loader', 
+                use: ['css-loader', 'postcss-loader', 
                 {
                     loader: 'sass-loader',
                     options: {
