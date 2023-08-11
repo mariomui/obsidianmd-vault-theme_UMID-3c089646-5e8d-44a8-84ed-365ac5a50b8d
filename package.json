@@ -17,6 +17,8 @@
     "@webpack-cli/generators": "^3.0.7",
     "autoprefixer": "^10.4.14",
     "css-loader": "^6.8.1",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^9.0.0",
     "mini-css-extract-plugin": "^2.7.6",
     "postcss": "^8.4.27",
     "postcss-loader": "^7.3.3",
