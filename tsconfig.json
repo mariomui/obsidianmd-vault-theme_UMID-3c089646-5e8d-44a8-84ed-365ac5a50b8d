@@ -4,6 +4,7 @@
     "noImplicitAny": true,
     "module": "es6",
     "target": "es5",
+    "noEmit": true,
     "allowJs": true,
     "outDir": "dist/types"
   },
