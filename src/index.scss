@@ -1,3 +1,5 @@
+@import "./importtest";
+
 .workspace
   .workspace-split.mod-vertical.mod-root
   .workspace-tabs
@@ -6,4 +8,6 @@
   .workspace-leaf-content
   .view-header {
   border: 1px solid blue;
+  color: blue;
+  background-color: red;
 }
