@@ -1,11 +1,14 @@
+---
+UMID: UMID_3c089646-5e8d-44a8-84ed-365ac5a50b8d
+---
+
 # -
 
-- [ ] Convert a file over to scss.
-- [ ] Create a build system for scss
-- [ ] Create a subfolder called snippets that houses scss
+- [x] Convert a file over to scss.
+- [x] Create a build system for scss
+- [x] Create a subfolder called snippets that houses scss
 - [ ] Build the ouptut onto the root directory
 - [ ] Research themeing
-
 ## About
 
 This is an [[internal-guide]]. The goal is to simplify development for creating a style settings plugin system compatible with stacked tabs and pane relief.
