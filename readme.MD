@@ -15,6 +15,7 @@ VERSION: v0.0.2
   - ~~Finish the guide in my personal vault and then sync to this readme~~.
   - As much as I'd like a single source of truth, in reality, it takes too much of an effort to switch apps.
   - This documentation should be versioned, so that when a milestone comes about, the sync with my local vault takes place.
+- [ ] Creating minimum testing apparatus.
 
 ## About
 
@@ -81,3 +82,11 @@ When webpack dev middleware uses writetodisk , output clean is broken.
   - `{ used: 18.541549682617188 } Current performant version`
   - `{ used: 18.55419921875 } 4cb2ec48cd0302dd8796bca63ddc3bd2ee979c14`
   * 🤔 Not that big of a difference.
+
+## Testing
+
+- python3 -m http.server 9100
+- pnpm dev
+- expected:
+  - 'Address in use, retrying on port 9101'
+  - 'Port 9101 is now opening...'
