@@ -90,3 +90,7 @@ When webpack dev middleware uses writetodisk , output clean is broken.
 - expected:
   - 'Address in use, retrying on port 9101'
   - 'Port 9101 is now opening...'
+
+# ---Transient Theme Information
+
+- :reference: https://docs.obsidian.md/Themes/App+themes/Build+a+theme
