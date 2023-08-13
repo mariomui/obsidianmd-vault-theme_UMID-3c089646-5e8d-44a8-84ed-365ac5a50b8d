@@ -1,16 +1,23 @@
+require("dotenv").config();
+
+// toolboxes
 const path = require("path");
 const webpack = require("webpack");
 const middleware = require("webpack-dev-middleware");
-require("dotenv").config();
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const isProduction = process.env.NODE_ENV === "production";
-const isDev = process.env.NODE_ENV !== "production";
 const { access, constants } = require("fs/promises");
-const DEV_WRITE_PATH = process.env.OMD_SNIPPETS_PATH;
 const util = require("util")
 const HtmlBundlerPlugin = require("html-bundler-webpack-plugin");
 
+// derived toolboxes
+const logg = createLogg();
 
+// # knobs
+const DEV_WRITE_PATH = process.env.OMD_SNIPPETS_PATH;
+const isProduction = process.env.NODE_ENV === "production";
+const isDev = process.env.NODE_ENV !== "production";
+
+// ## complex knobs
 /**
  * @type { import('webpack').Configuration }
  */
@@ -22,8 +29,7 @@ const config = {
       {
         test: /\.(css|sass|scss)$/,
         // https://webpack.js.org/configuration/module/#ruleuse
-        // RTL
-        use: [
+        use: [ // RTL
           {
             loader: "css-loader",
           },
@@ -43,7 +49,7 @@ const config = {
   devServer: {
     devMiddleware: {
       writeToDisk: (filePath) => {
-        console.log({ filePath });
+
         return /.css$/.test(filePath);
       },
     },
@@ -58,7 +64,6 @@ const config = {
   },
 };
 
-const logg = createLogg();
 module.exports = async () => {
   if (isProduction) {
     config.plugins.push(configureHtmlBundlerPluginForProd());
@@ -71,23 +76,13 @@ module.exports = async () => {
     try {
       await access(DEV_WRITE_PATH, constants.F_OK);
     } catch (err) {
-      console.log({ err });
       return process.exit(1);
     }
-    // never use cleanwebpackplugin in dev mode.
-    // does devServer have priority?
-    const reference = {
-      output: {
-        x: 1
-      }
-    }
+
+
     setConfig(["output.path", DEV_WRITE_PATH], config)
-
-    // console.log(util.inspect(preppedConfig, { depth: 4, colors: true }))
-
     config.plugins.push(configureHtmlBundlerPluginForDev());
 
-    // config.devServer.static = DEV_WRITE_PATH;
     return config;
   }
 
@@ -105,7 +100,7 @@ function createLogg(config = {}) {
   }
   return function logg(obj) {
     const logLine = util.inspect(obj, _config);
-    console.log(logLine)
+
   }
 }
 function setConfig(tuple, config) {
