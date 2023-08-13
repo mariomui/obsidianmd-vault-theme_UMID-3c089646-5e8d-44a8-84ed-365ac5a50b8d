@@ -8,7 +8,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { access, constants } = require("fs/promises");
 const util = require("util")
 const HtmlBundlerPlugin = require("html-bundler-webpack-plugin");
-
+const http = require('node:http');
 // derived toolboxes
 const logg = createLogg();
 
@@ -16,7 +16,7 @@ const logg = createLogg();
 const DEV_WRITE_PATH = process.env.OMD_SNIPPETS_PATH;
 const isProduction = process.env.NODE_ENV === "production";
 const isDev = process.env.NODE_ENV !== "production";
-
+const port = 9100;
 // ## complex knobs
 /**
  * @type { import('webpack').Configuration }
@@ -54,7 +54,7 @@ const config = {
       },
     },
     static: path.join(__dirname, "dist"),
-    port: 9100,
+    port,
     watchFiles: {
       paths: ["src/**/*.scss"],
       options: {
@@ -65,21 +65,30 @@ const config = {
 };
 
 module.exports = async () => {
+
+  const { data: _port, err } = await genPort(port)
+  const used = process.memoryUsage().heapUsed / 1024 / 1024;
+  logg({ used })
+  if (err) {
+    logg(err);
+    process.exit(1);
+  }
   if (isProduction) {
-    config.plugins.push(configureHtmlBundlerPluginForProd());
     config.mode = "production";
+    setConfig(["output.path", DEV_WRITE_PATH], config)
+    config.plugins.push(configureHtmlBundlerPluginForProd());
     config.plugins.push(new MiniCssExtractPlugin());
     return config;
   }
 
   if (isDev) {
+
     try {
       await access(DEV_WRITE_PATH, constants.F_OK);
     } catch (err) {
       return process.exit(1);
     }
-
-
+    setConfig(["devServer.port", _port], config)
     setConfig(["output.path", DEV_WRITE_PATH], config)
     config.plugins.push(configureHtmlBundlerPluginForDev());
 
@@ -90,8 +99,9 @@ module.exports = async () => {
 };
 
 
-// helpers
+// # helpers
 
+// ## util
 function createLogg(config = {}) {
   const _config = {
     depth: 3,
@@ -100,9 +110,11 @@ function createLogg(config = {}) {
   }
   return function logg(obj) {
     const logLine = util.inspect(obj, _config);
-
+    console.error(logLine)
   }
 }
+
+// ## webpack
 function setConfig(tuple, config) {
   const [location, value] = tuple
   const locations = location.split(".");
@@ -123,6 +135,7 @@ function setConfig(tuple, config) {
   previousContext[lastLocation] = value;
   return previousContext;
 }
+
 function configureHtmlBundlerPluginForDev() {
   return new HtmlBundlerPlugin({
     outputPath: path.resolve(__dirname, "graveyard"),
@@ -150,3 +163,44 @@ function configureHtmlBundlerPluginForProd() {
     },
   });
 }
+
+// ## Misc
+
+async function genPort(port, recursionLimit = 5) {
+  const HTTPserver = http.createServer(function (request, response) {
+    response.writeHead(200);
+    response.end("Webpack Devserver running: " + port);
+  });
+
+  return await genCheckPortAvailability(HTTPserver, port);
+}
+async function genCheckPortAvailability(HTTPserver, port, recursionLimit = 5) {
+  return new Promise((resolve) => {
+
+    HTTPserver
+      .listen(port, function () {
+        logg(`Port ${port} is now opening...`)
+        resolve({ data: port, err: null })
+        HTTPserver.close()
+      })
+      .on('error', function (err) {
+        if (err.code === 'EADDRINUSE') {
+          logg('Address in use, retrying on port ' + ++port);
+          setTimeout(function () {
+            if (--recursionLimit > 0) {
+              HTTPserver.listen(port);
+            } else {
+              HTTPserver.close();
+              resolve({ data: port, err: new Error("port not found") })
+            }
+          })
+        }
+      })
+  });
+}
+
+
+
+
+
+

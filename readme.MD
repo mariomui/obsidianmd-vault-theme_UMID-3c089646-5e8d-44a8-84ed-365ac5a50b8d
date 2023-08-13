@@ -65,8 +65,19 @@ The quickest way is to hardcode an env or .in file that points to my local folde
 - 🤔 TLINE: Primary workslab is within files located within the symlinked folder path because of their instant feedback (UI) to css mutation
   - ❯ ln -s [INSERT_PATH_TO_SNIPPETS] snippets-symlinked
 
-# --- Transient Bugs
+# ---Transient Bugs
 
 When webpack dev middleware uses writetodisk , output clean is broken.
 
 - https://github.com/webpack/webpack-dev-middleware/pull/1472
+
+# ---Transient Performance
+
+## Performance Numbers Of Testing Ports To See if they are available.
+
+`const used = process.memoryUsage().heapUsed / 1024 / 1024;`
+
+- measuring the memory usage of genPort:
+  - `{ used: 18.541549682617188 } Current performant version`
+  - `{ used: 18.55419921875 } 4cb2ec48cd0302dd8796bca63ddc3bd2ee979c14`
+  * 🤔 Not that big of a difference.
