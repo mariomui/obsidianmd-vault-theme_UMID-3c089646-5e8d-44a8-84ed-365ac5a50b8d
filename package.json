@@ -17,7 +17,9 @@
   "devDependencies": {
     "@webpack-cli/generators": "^3.0.7",
     "autoprefixer": "^10.4.14",
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.8.1",
+    "dotenv": "^16.3.1",
     "html-bundler-webpack-plugin": "^2.6.1",
     "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^2.7.6",

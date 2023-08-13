@@ -1,0 +1,13 @@
+.markdown-rendered {
+  tbody {
+    tr:nth-child(odd) {
+      color: var(--material-color-deep-purple-200);
+      code {
+        color: var(--material-color-deep-purple-200);
+      }
+      strong {
+        color: var(--material-color-deep-purple-200);
+      }
+    }
+  }
+}
