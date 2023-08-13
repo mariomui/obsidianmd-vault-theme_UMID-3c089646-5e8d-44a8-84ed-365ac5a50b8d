@@ -3,6 +3,9 @@ UMID: UMID-3c089646-5e8d-44a8-84ed-365ac5a50b8d
 VERSION: v0.0.2
 ---
 
+- [TO-MAIN-NOTES](obsidian://open?vault=sbrain&file=analysis-of-webpack-deficiencies,via-scss-to-css-tooling)
+  - 🤔 okay, i can't type in vscode. ui experienc e is too shoddy.
+
 # -
 
 - [x] Convert a file over to scss.
@@ -24,6 +27,15 @@ This is an [[internal-guide]]. The goal is to simplify development for creating 
 ![](/docs/assets/screenshot.png)
 
 # =
+
+## For Developers Who Want to Use SCSS
+
+The goal is to write a bunch of scss files and compile all the files down to one css file.
+
+- Set up a .env file in the root of the directory
+  - in this file, write
+    - `OMD_SNIPPETS_PATH=INSERT-YOUR-ABSOLUTE-PATH-TO-SNIPPETS`
+  -
 
 # ---Transient Sandbox
 
