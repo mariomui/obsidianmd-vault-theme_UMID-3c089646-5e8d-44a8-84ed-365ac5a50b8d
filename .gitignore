@@ -149,3 +149,7 @@ dist
 
 # sym link ignores
 snippets-symlinked
+
+# environment ignore
+.in
+*.env
