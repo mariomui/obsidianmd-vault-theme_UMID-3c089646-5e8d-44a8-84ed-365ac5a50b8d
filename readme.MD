@@ -1,5 +1,6 @@
 ---
 UMID: UMID_3c089646-5e8d-44a8-84ed-365ac5a50b8d
+VERSION: v0.0.1
 ---
 
 # -
@@ -7,10 +8,13 @@ UMID: UMID_3c089646-5e8d-44a8-84ed-365ac5a50b8d
 - [x] Convert a file over to scss.
 - [x] Create a build system for scss
 - [x] Create a subfolder called snippets that houses scss
-- [ ] Build the ouptut onto the root directory
+- [x] Build the ouptut onto the root directory
 - [ ] Research theme-ing
 - [x] Copy this guide over to my vault and date the learnings.
-- [ ] Finish the guide in my personal vault and then sync to this readme.
+- [ ] Create document versioning.
+  - ~~Finish the guide in my personal vault and then sync to this readme~~.
+  - As much as I'd like a single source of truth, in reality, it takes too much of an effort to switch apps.
+  - This documentation should be versioned, so that when a milestone comes about, the sync with my local vault takes place.
 
 ## About
 
