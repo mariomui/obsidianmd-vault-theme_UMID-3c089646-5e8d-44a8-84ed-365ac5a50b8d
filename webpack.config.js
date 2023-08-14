@@ -5,7 +5,8 @@ const path = require("path");
 const webpack = require("webpack");
 const middleware = require("webpack-dev-middleware");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const { access, constants } = require("fs/promises");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const { access, constants, readdir } = require("fs/promises");
 const util = require("util")
 const HtmlBundlerPlugin = require("html-bundler-webpack-plugin");
 const http = require('node:http');
@@ -14,10 +15,14 @@ const logg = createLogg();
 
 // # knobs
 const DEV_WRITE_PATH = process.env.OMD_SNIPPETS_PATH;
+const PROD_WRITE_PATH = path.resolve(__dirname, "dist");
+
 const isProduction = process.env.NODE_ENV === "production";
 const isDev = process.env.NODE_ENV !== "production";
 const port = 9100;
+
 // ## complex knobs
+
 /**
  * @type { import('webpack').Configuration }
  */
@@ -29,6 +34,7 @@ const config = {
       {
         test: /\.(css|sass|scss)$/,
         // https://webpack.js.org/configuration/module/#ruleuse
+        exclude: /node_modules/,
         use: [ // RTL
           {
             loader: "css-loader",
@@ -39,12 +45,13 @@ const config = {
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+        exclude: /node_modules/,
         type: "asset",
       },
     ],
   },
   resolve: {
-    extensions: [".js", ".scss"],
+    extensions: [".scss"],
   },
   devServer: {
     devMiddleware: {
@@ -66,22 +73,26 @@ const config = {
 
 module.exports = async () => {
 
-  const { data: _port, err } = await genPort(port)
-  const used = process.memoryUsage().heapUsed / 1024 / 1024;
-  logg({ used })
-  if (err) {
-    logg(err);
-    process.exit(1);
-  }
+
+
+  logg({ isProduction, isDev })
   if (isProduction) {
     config.mode = "production";
-    setConfig(["output.path", DEV_WRITE_PATH], config)
+    setConfig(["output.path", PROD_WRITE_PATH], config)
+    config.plugins.push(new CleanWebpackPlugin({ dry: true }));
     config.plugins.push(configureHtmlBundlerPluginForProd());
-    config.plugins.push(new MiniCssExtractPlugin());
     return config;
   }
 
   if (isDev) {
+    const { data: _port, err } = await genPort(port)
+    const used = process.memoryUsage().heapUsed / 1024 / 1024;
+    logg({ used })
+
+    if (err) {
+      logg(err);
+      process.exit(1);
+    }
 
     try {
       await access(DEV_WRITE_PATH, constants.F_OK);
@@ -90,6 +101,7 @@ module.exports = async () => {
     }
     setConfig(["devServer.port", _port], config)
     setConfig(["output.path", DEV_WRITE_PATH], config)
+    config.plugins.push(new CleanWebpackPlugin({ dry: true }));
     config.plugins.push(configureHtmlBundlerPluginForDev());
 
     return config;
@@ -138,13 +150,14 @@ function setConfig(tuple, config) {
 
 function configureHtmlBundlerPluginForDev() {
   return new HtmlBundlerPlugin({
-    outputPath: path.resolve(__dirname, "graveyard"),
+    // outputPath: path.resolve(__dirname, "graveyard"),
     entry: {
       index: {
         import: "src/index.html",
       },
     },
     css: {
+      inline: false,
       filename: "[name].css",
     },
   });
