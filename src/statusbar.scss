@@ -1,15 +1,13 @@
 // source: https://github.com/zcysxy/Obsidian-Terminal-Theme/blob/main/theme.css
 
+
 /* STATUS BAR */
-:root {
+.status-bar {
   --status-bar-height: 21px;
   --the-color: var(--material-color-orange-700);
   --the-background-color: var(--tertiary-blue-800);
-}
-/* STATUS BAR */
-.status-bar {
-  // --status-bar-position: relative;
   --status-bar-radius: 0;
+  
   justify-content: flex-end;
   gap: 0px;
   padding: 0;
@@ -24,9 +22,20 @@
     margin-top: -0.2px;
     border-top: 1px solid var(--the-color);
     background-color: var(--the-background-color);
+    opacity: initial !important;
 
     &.mod-clickable:hover {
       color: var(--material-color-orange-500);
+    }
+
+    &:after {
+      content: "";
+      border-top: calc(1 * var(--status-bar-height)) solid var(--status-bar-background);
+      // border-bottom: calc(0.5 * var(--status-bar-height)) solid var(--status-bar-text-color);
+      // border-left: calc(0.5 * var(--status-bar-height)) solid transparent;
+      border-right: calc(1* var(--status-bar-height)) solid transparent;
+      margin-left: 5px;
+      background-color: var(--status-bar-text-color);
     }
   }
   > div.status-bar-item:nth-last-child(odd) {
@@ -35,24 +44,13 @@
     color: var(--status-bar-text-color);
     background-color: var(--status-bar-background);
     border-radius: 0;
-    opacity: initial !important;
   }
   > div.status-bar-item:nth-last-child(even) {
     --status-bar-text-color: var(--the-color);
     --status-bar-background: var(--the-background-color);
-    opacity: initial !important;
   }
 
-  > .status-bar-item:after {
-    content: "";
-    border-top: calc(1 * var(--status-bar-height)) solid var(--status-bar-background);
-    // border-bottom: calc(0.5 * var(--status-bar-height)) solid var(--status-bar-text-color);
-    // border-left: calc(0.5 * var(--status-bar-height)) solid transparent;
-    border-right: calc(1* var(--status-bar-height)) solid transparent;
-    margin-left: 5px;
-    background-color: var(--status-bar-text-color);
-  
-  }
+
 
   > .status-bar-item:not(:last-child):before {
     content: "";
