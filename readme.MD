@@ -1,108 +1,43 @@
----
-UMID: UMID-3c089646-5e8d-44a8-84ed-365ac5a50b8d
-VERSION: v0.0.2
----
-
-- [TO-MAIN-NOTES](obsidian://open?vault=sbrain&file=analysis-of-webpack-deficiencies,via-scss-to-css-tooling)
-  - 🤔 okay, i can't type in vscode. ui experienc e is too shoddy.
-
-# -
-
-- [x] Convert a file over to scss.
-- [x] Create a build system for scss
-- [x] Create a subfolder called snippets that houses scss
-- [x] Build the ouptut onto the root directory
-- [ ] Research theme-ing
-- [x] Copy this guide over to my vault and date the learnings.
-- [ ] Create document versioning.
-  - ~~Finish the guide in my personal vault and then sync to this readme~~.
-  - As much as I'd like a single source of truth, in reality, it takes too much of an effort to switch apps.
-  - This documentation should be versioned, so that when a milestone comes about, the sync with my local vault takes place.
-- [ ] Creating minimum testing apparatus.
+# How to use
 
 ## About
 
-This is an [[internal-guide]]. The goal is to simplify development for creating a style settings plugin system compatible with stacked tabs and pane relief.
+This note is an external guide to how to apply this repo to create a dev environment for ui work on obsidian md.
 
-![](/docs/assets/screenshot.png)
+The overarching goal is to go into the current vault in obsidian, place a git repo inside its internals where the css is kept but have the dev environment and all its node_modules be in a seperate environment.
 
-# =
+You can then sync your entire vault withou worrying about minute dev files get in theway.
+### Requirements
 
-## For Developers Who Want to Use SCSS
+* pnpm
+* Node 18+
+* Your own snippets repo 
+  * Go to your obsidian snippets location (herewither known as and referred to as OBSNIP) and make/upload a repo.
+## Implementation
 
-The goal is to write a bunch of scss files and compile all the files down to one css file.
+* Have this repo
+* update the submodule located inside of obs-snippets 
+  * #todo/to-confirm/on-readme/regarding-accuracy
+    * `git submodule add OBSNIP-CLOUD-ADDRESS snippets`
+      * this adds a subrepo under your main dev repo (hereto known as DEVUMBRELLA)
+    * utilize `git submodule update --init --recursive`
+* symlink to obsidian snippets folder
+  * `ln -s FULLPATH-TO-OBSIDIAN-SNIPPETS-FOLDER obs-snippets`
+    * ⚠️ Make sure to name the symbolically linked folder to obs-snippets.
+* Create an env
+  * OMD_SNIPPETS_PATH="FULLPATH-TO-OBSIDIAN-SNIPPETS-FOLDER"
+  * This path lets webpack know where to export the css files to.
+* `pnpm dev` to run the watch server.
+* Make sure that obsidian knows to enable onering.scss in the snippets.
+  * all the scss you will write will flow there.
 
-- Set up a .env file in the root of the directory
-  - in this file, write
-    - `OMD_SNIPPETS_PATH=INSERT-YOUR-ABSOLUTE-PATH-TO-SNIPPETS`
-  -
+So now you can write scss and have the output be pumped directly into your obsidian snippets folder.
 
-# ---Transient Sandbox
+## Caveats
 
-I develop this inside a git synced vault therefore,
-
-## Syncing
-
-- **Git Submodule research** is needed to easily keep the git histories seperate (without resorting to file-mutating git ignores)
-
-- 📝
-  - https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/The-git-submodule-add-example
-    - https://youtu.be/RgIAXF53a8U
-- ⚖️
-  - Git ignores require umbrella github to mutate a file. (accepted PR).
-  - Multiple submodules in the future might balloon the git ignore file.
-  - Parent git directory knows too much about the internal git system.
-
-* https://jakemccrary.com/blog/2020/02/25/auto-syncing-a-git-repository/
-
-- TLINE: Link the submodule readme to the parent readme
-  - [x] Should I consolidate the readme to one? or just copy the same readme across all submodules?
-    - No. It is +more steps to update a submodule readme than a parent.
-
-for initial submodule set up, its best to look at docs.
-
-- https://git-scm.com/book/en/v2/Git-Tools-Submodules
-
-- Here's some handy dandy commands for now:
-  - git push --recurse-submodules=on-demand origin master
-  - git pull --recurse-submodules
-
-* As a user I want any changes in git to reflect in my local files, and vice versa. While I\'ve found sync scripts that push and pull depending on file system changes there is no way to pull from git whenever there is a upstream change in data.
-
-  - ie. github.com: [fnToUpdateMyLocal] <-- there is no hook hosted on github.com to hang my function hat on.
-
-* As a developer I want to run scss changes, have it output to my obsidian snippets folder.
-
-The quickest way is to hardcode an env or .in file that points to my local folder. A watch plugin via a bundler will output to that snippets directory, triggering the fswatch script that will automatically update git.
-
-- 🤔 TLINE: Primary workslab is within files located within the symlinked folder path because of their instant feedback (UI) to css mutation
-  - ❯ ln -s [INSERT_PATH_TO_SNIPPETS] snippets-symlinked
-
-# ---Transient Bugs
-
-- When webpack dev middleware uses writetodisk , output clean is broken.
-  - https://github.com/webpack/webpack-dev-middleware/pull/1472
-- Workspaces for vscode doesn't automatically sync all open repositories in the Source Control Tab. Best to avoid using vscode local workspaces.
-
-# ---Transient Performance
-
-## Performance Numbers Of Testing Ports To See if they are available.
-
-`const used = process.memoryUsage().heapUsed / 1024 / 1024;`
-
-- measuring the memory usage of genPort:
-  - `{ used: 18.541549682617188 } Current performant version`
-  - `{ used: 18.55419921875 } 4cb2ec48cd0302dd8796bca63ddc3bd2ee979c14`
-  * 🤔 Not that big of a difference.
-
-## Testing
-
-- python3 -m http.server 9100
-- pnpm dev
-- expected:
-  - 'Address in use, retrying on port 9101'
-  - 'Port 9101 is now opening...'
-
-# ---Transient Theme Information
-
-- :reference: https://docs.obsidian.md/Themes/App+themes/Build+a+theme
+* onering.scss will be the defacto entry file for all your ui code. Just write everything and import everything into this file.
+  * You could also have your css files seperate if you want by adding an entry point into the index.html
+* Webpack was meant to pack js and assets not assets to assets so i'm using a html bundler to do this dirty work. This allows a single source of entry  but it also means you have an html artifact inside the graveyard folder.
+  * The other option was to codesplit, resulting in a js artifact(s).
+  * Best option is to actually just not use webpack :) but more specific automation tools such as  gulp/grunt.
+* Webpack path prefixing isn't needed cuz obsidian doesn't allow access to local files through its style sheet.
