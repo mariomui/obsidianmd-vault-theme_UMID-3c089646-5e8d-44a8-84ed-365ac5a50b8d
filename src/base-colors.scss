@@ -1,0 +1,32 @@
+:root {
+  --accent: #37cdbe;
+  --primary: #570df8;
+  --secondary: var(--material-color-purple-a100);
+  --neutral: #3d4451;
+  --base-100: #ffffff;
+  --info: #3abff8;
+  --success: #36d399;
+  --warning: #fbbd23;
+  --error: #f87272;
+  --book-source: #8272d0;
+
+  // BLUE TOPAX COLORS
+  --theme-color-translucent-1: #2f93e426;
+
+  --progress-color: var(--accent);
+  --progress-bg-color: var(--primary);
+
+  /* # RANDOM GLOBALS */
+  
+  /* ## Translucency Helpers */
+  --blurbrightness: .28;
+  --blur: 7px;
+  --shade: rgba(0,0,0,.8);
+
+  /* ## I HATE NAMING */
+  --topbar-blend: hard-light;
+}
+/* --mm-image: url('https://images.pling.com/img/00/00/61/99/23/1599583/7c142d99d624ed71b0548e60cb3dd709e57babfdd2d120e4ee027412c1333533e422.jpg'); */
+/* https://i.imgur.com/StZak.jpg); */
+/* https://i.redd.it/y00h9ri5sg581.png */
+/* url(https://i.redd.it/g6amsf4c7up91.jpg) */
