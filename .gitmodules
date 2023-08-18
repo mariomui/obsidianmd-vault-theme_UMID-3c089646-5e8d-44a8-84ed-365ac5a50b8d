@@ -1,6 +1,3 @@
-[submodule "snippet"]
-	path = snippets
-	url = git@github.com:mariomui/obsidian-snippets.git
 [submodule "obs-snippets"]
 	path = obs-snippets
 	url = git@github.com:mariomui/obsidian-snippets
