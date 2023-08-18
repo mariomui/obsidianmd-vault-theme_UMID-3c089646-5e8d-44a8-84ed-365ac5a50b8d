@@ -80,9 +80,9 @@ The quickest way is to hardcode an env or .in file that points to my local folde
 
 # ---Transient Bugs
 
-When webpack dev middleware uses writetodisk , output clean is broken.
-
-- https://github.com/webpack/webpack-dev-middleware/pull/1472
+- When webpack dev middleware uses writetodisk , output clean is broken.
+  - https://github.com/webpack/webpack-dev-middleware/pull/1472
+- Workspaces for vscode doesn't automatically sync all open repositories in the Source Control Tab. Best to avoid using vscode local workspaces.
 
 # ---Transient Performance
 
