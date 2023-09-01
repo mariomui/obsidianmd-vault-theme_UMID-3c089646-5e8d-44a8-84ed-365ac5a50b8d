@@ -32,7 +32,16 @@
   border-radius: 15px 15px 0 0;
   margin-bottom: 0;
 }
+%bg {
+  background-image: var(--mm-image);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 150% 100%;
+}
+
 .markdown-source-view.mod-cm6.is-readable-line-width {
+  @extend %bg;
+
   .inline-title {
     @extend %backdrop;
   }
@@ -42,6 +51,8 @@
   }
 }
 .markdown-reading-view {
+  @extend %bg;
+
   .mod-header:has(~ .obsidian-banner-wrapper) {
     > .inline-title {
 
@@ -51,3 +62,4 @@
     }
   }
 }
+
