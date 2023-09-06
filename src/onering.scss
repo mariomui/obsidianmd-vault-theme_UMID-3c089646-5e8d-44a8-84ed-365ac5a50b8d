@@ -49,6 +49,15 @@
     @extend %backdrop;
     text-shadow: initial;
   }
+  // embeds
+  .inline-embed .markdown-embed-content {
+    border: 1px solid var(--material-color-deep-purple-200);
+    padding: 0 .2em;
+    border-radius: 0 1em 1em 0;
+  }
+  .markdown-embed .markdown-embed-link[aria-label="Open link"]{
+    margin-right: 1em;
+  }
 }
 .markdown-reading-view {
   @extend %bg;
