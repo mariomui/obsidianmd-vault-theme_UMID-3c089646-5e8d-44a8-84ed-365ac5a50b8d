@@ -12,7 +12,7 @@ specifiers:
   postcss: ^8.4.27
   postcss-loader: ^7.3.3
   prettier: ^3.0.1
-  sass: ^1.65.1
+  sass: ^1.66.1
   sass-loader: ^13.3.2
   style-loader: ^3.3.3
   webpack: ^5.88.2
@@ -32,8 +32,8 @@ devDependencies:
   postcss: 8.4.27
   postcss-loader: 7.3.3_wtdfwmg7ycxaq333qvq47tatda
   prettier: 3.0.1
-  sass: 1.65.1
-  sass-loader: 13.3.2_sass@1.65.1+webpack@5.88.2
+  sass: 1.66.1
+  sass-loader: 13.3.2_sass@1.66.1+webpack@5.88.2
   style-loader: 3.3.3_webpack@5.88.2
   webpack: 5.88.2_webpack-cli@5.1.4
   webpack-cli: 5.1.4_gzuggmdvwsdzha53n6jq24x6cq
@@ -1393,7 +1393,7 @@ packages:
       normalize-path: 3.0.0
       readdirp: 3.6.0
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /chownr/2.0.0:
@@ -2233,8 +2233,8 @@ packages:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
 
-  /fsevents/2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+  /fsevents/2.3.3:
+    resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
@@ -2679,8 +2679,8 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
-  /immutable/4.3.2:
-    resolution: {integrity: sha512-oGXzbEDem9OOpDWZu88jGiYCvIsLHMvGw+8OXlpsvTFvIQplQbjg1B1cvKg8f7Hoch6+NGjpPsH1Fr+Mc2D1aA==}
+  /immutable/4.3.4:
+    resolution: {integrity: sha512-fsXeu4J4i6WNWSikpI88v/PcVflZz+6kMhUfIwc5SY+poQRPnaf5V7qds6SUyUN3cVxEzuCab7QIoLOQ+DQ1wA==}
     dev: true
 
   /import-fresh/3.3.0:
@@ -4510,7 +4510,7 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
 
-  /sass-loader/13.3.2_sass@1.65.1+webpack@5.88.2:
+  /sass-loader/13.3.2_sass@1.66.1+webpack@5.88.2:
     resolution: {integrity: sha512-CQbKl57kdEv+KDLquhC+gE3pXt74LEAzm+tzywcA0/aHZuub8wTErbjAoNI57rPUWRYRNC5WUnNl8eGJNbDdwg==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
@@ -4530,17 +4530,17 @@ packages:
         optional: true
     dependencies:
       neo-async: 2.6.2
-      sass: 1.65.1
+      sass: 1.66.1
       webpack: 5.88.2_webpack-cli@5.1.4
     dev: true
 
-  /sass/1.65.1:
-    resolution: {integrity: sha512-9DINwtHmA41SEd36eVPQ9BJKpn7eKDQmUHmpI0y5Zv2Rcorrh0zS+cFrt050hdNbmmCNKTW3hV5mWfuegNRsEA==}
+  /sass/1.66.1:
+    resolution: {integrity: sha512-50c+zTsZOJVgFfTgwwEzkjA3/QACgdNsKueWPyAR0mRINIvLAStVQBbPg14iuqEQ74NPDbXzJARJ/O4SI1zftA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
       chokidar: 3.5.3
-      immutable: 4.3.2
+      immutable: 4.3.4
       source-map-js: 1.0.2
     dev: true
 

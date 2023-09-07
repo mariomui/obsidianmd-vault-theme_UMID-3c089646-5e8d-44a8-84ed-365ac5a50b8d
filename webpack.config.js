@@ -29,6 +29,9 @@ const port = 9100;
 const config = {
   plugins: [],
   mode: "development",
+  stats: {
+    loggingDebug: ["sass-loader"],
+  },
   module: {
     rules: [
       {

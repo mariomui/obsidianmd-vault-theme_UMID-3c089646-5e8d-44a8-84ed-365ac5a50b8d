@@ -1,0 +1,27 @@
+@use 'sass:color' as color;
+@use "./material-ui-colors" as MAT_COLORS;
+
+
+.HyperMD-header :is(.cm-header-2, .cm-header-3, .cm-header-4, .cm-header-5, .cm-header-6):last-child:after {
+  $bar-outline-color: MAT_COLORS.$material-color-blue-800;
+  $bar-color: MAT_COLORS.$material-color-blue-900;
+
+  content: "";
+  display: block;
+  height: .9em;
+  border: 1px solid #{$bar-outline-color};
+  // border-radius: 0 0 100% 100%;
+  // clip-path: polygon(0 26%, 50% 40%, 100% 25%);
+  clip-path: polygon(0 26%, 50% 57%, 100% 25%);
+  margin-top: 0.2em;
+  margin-bottom: 0.5em;
+  background-image: repeating-linear-gradient(
+    -75deg,
+    #{$bar-color} 0%,
+    color.adjust($bar-color, $hue: -30deg) 4%,
+    color.adjust($bar-color, $hue: -40deg) 8%,
+
+    #{$bar-outline-color} 20%
+  );
+  padding: 0.1em;
+}
