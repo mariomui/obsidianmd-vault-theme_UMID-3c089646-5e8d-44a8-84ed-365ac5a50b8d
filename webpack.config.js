@@ -4,7 +4,7 @@ require("dotenv").config();
 const path = require("path");
 const webpack = require("webpack");
 const middleware = require("webpack-dev-middleware");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+// const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { access, constants, readdir } = require("fs/promises");
 const util = require("util");
@@ -101,7 +101,7 @@ module.exports = async () => {
     }
     setConfig(["devServer.port", _port], config);
     setConfig(["output.path", DEV_WRITE_PATH], config);
-    config.plugins.push(new CleanWebpackPlugin({ dry: true }));
+    // config.plugins.push(new CleanWebpackPlugin({ dry: true }));
     config.plugins.push(configureHtmlBundlerPluginForDev());
 
     return config;

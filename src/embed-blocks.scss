@@ -1,0 +1,19 @@
+@use "./shared/index.scss" as shared;
+
+.markdown-source-view {
+
+  .cm-preview-code-block.cm-embed-block.markdown-rendered {
+    .internal-query {
+      border: 2px solid shared.$embedBorderColor;
+      max-height: 30vmin;
+    }
+  }
+
+
+  .embedded-backlinks {
+    .backlink-pane {
+      max-height: 30vmin;
+    }
+  }
+
+}
