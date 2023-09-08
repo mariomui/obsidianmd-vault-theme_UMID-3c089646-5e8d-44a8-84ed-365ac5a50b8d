@@ -1,10 +1,9 @@
 @use 'sass:color' as color;
 @use "./material-ui-colors" as MAT_COLORS;
 
-
-.HyperMD-header :is(.cm-header-2, .cm-header-3, .cm-header-4, .cm-header-5, .cm-header-6):last-child:after {
-  $bar-outline-color: MAT_COLORS.$material-color-blue-800;
-  $bar-color: MAT_COLORS.$material-color-blue-900;
+$bar-outline-color: MAT_COLORS.$material-color-blue-800;
+$bar-color: MAT_COLORS.$material-color-blue-900;
+@mixin shareHeaderStyle($bar-outline-color) {
 
   content: "";
   display: block;
@@ -12,16 +11,73 @@
   border: 1px solid #{$bar-outline-color};
   // border-radius: 0 0 100% 100%;
   // clip-path: polygon(0 26%, 50% 40%, 100% 25%);
-  clip-path: polygon(0 26%, 50% 57%, 100% 25%);
+  // clip-path: polygon(0 26%, 50% 57%, 100% 25%);
   margin-top: 0.2em;
   margin-bottom: 0.5em;
-  background-image: repeating-linear-gradient(
-    -75deg,
-    #{$bar-color} 0%,
-    color.adjust($bar-color, $hue: -30deg) 4%,
-    color.adjust($bar-color, $hue: -40deg) 8%,
-
-    #{$bar-outline-color} 20%
-  );
   padding: 0.1em;
+}
+@mixin clipPath($base: 50%, $addend: 5%) {
+  $calced: calc($base + $addend);
+  clip-path: polygon(0 26%, 50% #{$calced}, 100% 25%);
+}
+
+@mixin manuBackgroundImageLG(
+  $bar-color: $bar-color, 
+  $bar-outline-color: $bar-outline-color, 
+  $baseHue: -30deg, 
+  $hueAdd : 0deg) {
+    $calculatedHue: calc($baseHue + $hueAdd);
+    background-image: repeating-linear-gradient(
+      -75deg,
+      #{$bar-color} 0%,
+      color.adjust($bar-color, $hue: $calculatedHue) 4%,
+      color.adjust($bar-color, $hue: calc($calculatedHue - 10deg)) 8%,
+      #{$bar-outline-color} 10%
+    );
+}
+.HyperMD-header {
+  $base-width-percentage: 100%;
+  $multiple: 15%;
+  :is(.cm-header-2, .cm-header-3, .cm-header-4, .cm-header-5, .cm-header-6):last-child:after {
+
+    @include shareHeaderStyle(($bar-outline-color));
+
+    @include manuBackgroundImageLG($baseHue: -30deg, $hueAdd: 100deg)
+
+  }
+  .cm-header-2:last-child:after  {
+    $bar-color: MAT_COLORS.$material-color-red-100;
+    $bar-outline-color: MAT_COLORS.$material-color-red-200;
+
+    @include manuBackgroundImageLG(
+      $bar-color: $bar-color,
+      $bar-outline-color: $bar-outline-color,
+    );
+    @include clipPath()
+  }
+
+  .cm-header-3:last-child:after  {
+    $bar-color: MAT_COLORS.$material-color-deep-orange-700;
+    $bar-outline-color: MAT_COLORS.$material-color-deep-orange-900;
+
+    width: calc($base-width-percentage - 1*$multiple);
+    margin: 0 auto;
+    @include manuBackgroundImageLG(
+      $bar-color: $bar-color,
+      $bar-outline-color: $bar-outline-color,
+    );
+    @include clipPath($addend: 40%)
+  }
+  .cm-header-4:last-child:after  {
+    $bar-color: MAT_COLORS.$material-color-green-700;
+    $bar-outline-color: MAT_COLORS.$material-color-green-900;
+
+    width: calc($base-width-percentage - 2*$multiple);
+    margin: 0 auto;
+    @include manuBackgroundImageLG(
+      $bar-color: $bar-color,
+      $bar-outline-color: $bar-outline-color,
+    );
+    @include clipPath($addend: 80%)
+  }
 }
