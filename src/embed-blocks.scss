@@ -6,6 +6,7 @@
     .internal-query {
       border: 2px solid shared.$embedBorderColor;
       max-height: 30vmin;
+      overflow-y: scroll;
     }
   }
 
