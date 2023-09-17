@@ -9,6 +9,9 @@
 @import "./tab-bar";
 @import "./headers";
 @import "./embed-blocks";
+@import "./right-split-views.scss/index.scss";
+
+@import "./table.scss";
 
 // What does this do again?
 .markdown-rendered {
@@ -57,10 +60,10 @@
     padding: 0 .2em;
     border-radius: 0 1em 1em 0;
   }
-  .markdown-embed .markdown-embed-link[aria-label="Open link"]{
-    padding-top: 1em;
-    margin-right: 1em;
-  }
+  // .markdown-embed .markdown-embed-link[aria-label="Open link"]{
+  //   padding-top: 1em;
+  //   margin-right: 1em;
+  // }
 }
 .markdown-reading-view {
   @extend %bg;
@@ -73,5 +76,8 @@
       margin-left: 5%;
     }
   }
+}
+.yt-transcript__transcript-block {
+  user-select: text;
 }
 

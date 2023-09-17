@@ -1,0 +1,21 @@
+
+@use "./shared/index.scss" as shared;
+
+.markdown-preview-view, .markdown-source-view {
+  .cm-contentContainer.cm-contentContainer {
+    .cm-embed-block.cm-table-widget {
+      div.markdown-rendered:has(table) {
+        padding: .4em .4em;
+        border: 1px solid $material-color-purple-700;
+      }
+    }
+    >.cm-content {
+
+      table {
+        outline: 4px solid $material-color-purple-700;
+        background: transparent;
+      }
+    }
+
+  }
+} 

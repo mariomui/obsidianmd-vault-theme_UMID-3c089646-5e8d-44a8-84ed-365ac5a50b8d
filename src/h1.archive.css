@@ -1,0 +1,52 @@
+ /* # H1 styling Source */
+
+ /* ## H1 reading view */
+ .markdown-reading-view .markdown-preview-sizer.markdown-preview-section h1[data-heading] {
+  background: var(--material-color-deep-orange-900);
+  border: 2px solid var(--material-color-brown-900);
+  color: var(--material-color-brown-50);
+  padding: 0.2em 1em;
+  border-radius: 0.5em 1.8em 0.3em 0.5em;
+ }
+ /* ## H1 source view */
+ .markdown-source-view .cm-contentContainer .HyperMD-header.HyperMD-header-1.cm-line {
+  background: var(--material-color-deep-orange-800);
+  border: 2px solid var(--material-color-brown-900);
+  color: var(--material-color-brown-50);
+  padding: 0.2em 1em;
+  border-radius: 0.5em 1.8em 0.3em 0.5em;
+}
+
+/* ## H1 when there is a tag inside it.  */
+.markdown-source-view .cm-contentContainer .HyperMD-header.HyperMD-header-1.cm-line:has(> span.cm-hashtag) {
+  background: var(--material-color-indigo-900);
+  outline: 2px solid --material-color-deep-orange-300;
+}
+.markdown-source-view .cm-contentContainer .HyperMD-header.HyperMD-header-1.cm-line:has(> span.cm-hashtag) > span {
+  background-color: unset;;
+  color: var(--material-color-deep-orange-300);
+  /* font: small-caption; */
+}
+/* on hover blinks */
+.markdown-source-view .cm-contentContainer .HyperMD-header.HyperMD-header-1.cm-line:has(> span.cm-hashtag):hover > span {
+  background-color: unset;;
+  color: var(--material-color-deep-orange-200);
+  /* font: small-caption */
+}
+
+.markdown-reading-view .markdown-preview-sizer.markdown-preview-section h1[data-heading] > a.tag,
+.cm-contentContainer .HyperMD-header.HyperMD-header-1.cm-line > span ~ span {
+  border: unset;
+  padding: 0.05em 0.05em;
+  /* color: var(--tertiary-blue-900); */
+}
+
+/* typo below */
+.cm-contentContainer .HyperMD-header HyperMD-header-1.cm-line + .HyperMD-header.HyperMD-header-1.cm-line {
+  background: var(--material-color-deep-orange-800);
+  outline: 2px solid var(--material-color-brown-900);
+  /* color: var(--material-color-brown-50); */
+  color: var(--material-color-brown-50);
+  /* padding: 0.2em 1em; */
+  border-radius: 0.5em 1.8em 0.3em 0.5em;
+}

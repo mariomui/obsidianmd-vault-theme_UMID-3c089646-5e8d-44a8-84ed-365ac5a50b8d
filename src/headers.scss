@@ -1,6 +1,10 @@
 @use 'sass:color' as color;
 @use "./material-ui-colors" as MAT_COLORS;
 
+@mixin orange-to-right-color($deg: to bottom, $col1: MAT_COLORS.$material-color-deep-orange, $col2: MAT_COLORS.$material-color-red-900) {
+  background-image: linear-gradient($deg, $col1, $col2);
+}
+
 $bar-outline-color: MAT_COLORS.$material-color-blue-800;
 $bar-color: MAT_COLORS.$material-color-blue-900;
 @mixin shareHeaderStyle($bar-outline-color) {
@@ -35,6 +39,88 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
       #{$bar-outline-color} 10%
     );
 }
+
+ /* # H1 styling Source */
+
+ /* ## H1 reading view */
+.markdown-reading-view {
+  .markdown-preview-sizer.markdown-preview-section {
+    h1[data-heading] {
+      @include orange-to-right-color();
+      border: 2px solid var(--material-color-brown-900);
+      color: var(--material-color-brown-50);
+      padding: 0.2em 1em;
+      border-radius: 0.5em 1.8em 0.3em 0.5em;
+    }
+    h1[data-heading] > a.tag,
+    .cm-contentContainer {
+      .HyperMD-header.HyperMD-header-1.cm-line {
+        > span ~ span {
+          border: unset;
+          padding: 0.05em 0.05em;
+        } 
+      }
+    }
+  }
+}  
+.markdown-source-view {
+  .cm-contentContainer {
+    .HyperMD-header.HyperMD-header-1 {
+      &.cm-line {
+        @include orange-to-right-color();
+        border: 2px solid var(--material-color-brown-900);
+        color: var(--material-color-brown-50);
+        padding: 0.2em 1em;
+        border-radius: 0.5em 1.8em 0.3em 0.5em;
+      }
+
+      /* ## H1 when there is a tag inside it.  */
+      &.cm-line:has(> span.cm-hashtag) {
+        @include orange-to-right-color();
+        outline: 2px solid --material-color-deep-orange-300;
+      }
+      &.cm-line:has(> span.cm-hashtag) > span {
+        background-color: unset;;
+        color: var(--material-color-deep-orange-300);
+      }
+
+      /* on hover blinks */
+      &.cm-line:has(> span.cm-hashtag):hover > span {
+        background-color: unset;;
+        color: var(--material-color-deep-orange-200);
+        /* font: small-caption */
+      }
+
+    }
+  }
+} 
+
+// both views
+.markdown-reading-view,.markdown-source-view {
+  .HyperMD-header {
+    .HyperMD-header-1.cm-line + .HyperMD-header.HyperMD-header-1.cm-line {
+      background: var(--material-color-deep-orange-800);
+      outline: 2px solid var(--material-color-brown-900);
+      /* color: var(--material-color-brown-50); */
+      color: var(--material-color-brown-50);
+      /* padding: 0.2em 1em; */
+      border-radius: 0.5em 1.8em 0.3em 0.5em;
+      border: 10px solid
+    }
+  }
+
+  // Customize the colons for indentingg deprecated.
+  // .markdown-rendered {
+  //   :is(h2,h3,h4,h5)::before {
+  //     border: 1px solid blue;
+  //     content: ": ";
+  //     position: relative;
+  //     left: -0.05em;
+  //     color: var(--accent);
+  //   }
+  // }  
+}
+
 .HyperMD-header {
   $base-width-percentage: 100%;
   $multiple: 15%;
@@ -80,4 +166,73 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
     );
     @include clipPath($addend: 80%)
   }
+}
+
+/* # H1 styling */
+.markdown-source-view .markdown-embed-content .markdown-preview-sizer.markdown-preview-section h1[data-heading="="] {
+  background: var(--material-color-deep-orange-900);
+  outline: 2px solid var(--material-color-brown-700);
+  padding: 0.1em 2em;
+  color: var(--tertiary-blue-800);
+  border-radius: 0 0 50px 50px;
+} 
+
+/* note background blue glass color */
+.markdown-preview-sizer.markdown-preview-section h1[data-heading^="---"] {
+  background: var(--material-color-red-900);
+  border: 2px dashed var(--material-color-brown-700);
+  padding: 0.2em 3em;
+  border-radius: 0.5em 1.8em 0.3em 0.5em;
+}
+
+.HyperMD-header.HyperMD-header-1.cm-line:has(.is-collapsed)
+  > .cm-header.cm-header-1::before {
+  content: "";
+  position: relative;
+  left: -0.05em;
+  color: var(--accent);
+}
+
+// # Heading indent prefixing
+
+$header-levels: 5;
+
+@function repeat($character: "", $to: 5){
+  $c:"";
+
+  @for $i from 1 through $to {
+    $c: $c + $character;
+  }
+  @return $c
+}
+
+%header-indent-position {
+  position: relative;
+  left: -0.05em;
+  color: var(--accent);
+}
+
+@mixin header-x-list {
+  @for $i from 1 through $header-levels {
+    .HyperMD-header.HyperMD-header-#{$i} {
+
+      &.cm-line  {
+        > *:last-child::before {
+  
+          content: repeat(":",$i) + " ";
+          @extend %header-indent-position;
+        }
+      }
+      &.cm-line:has(.is-collapsed) > .cm-header.cm-header-#{$i}::before {
+        content: repeat(":",$i) + " ";
+        @extend %header-indent-position;
+      }
+    }
+  }
+};
+
+// Prefixing colons (based on HLevel) to anchor headings
+.cm-contentContainer {
+  // shared
+  @include header-x-list();
 }

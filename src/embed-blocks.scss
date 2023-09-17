@@ -1,6 +1,6 @@
 @use "./shared/index.scss" as shared;
 
-.markdown-source-view {
+.canvas-wrapper, .markdown-source-view {
 
   .cm-preview-code-block.cm-embed-block.markdown-rendered {
     .internal-query {
@@ -16,5 +16,106 @@
       max-height: 30vmin;
     }
   }
+  // .markdown-source-view.mod-cm6.is-readable-line-width .markdown-embed .markdown-embed-link[aria-label="Open link"] {
+  //   padding-top: 1em;
+  //   margin-right: 1em;
+  // }
+  .markdown-embed  {
+    .markdown-embed-link[aria-label="Open link"] {
+      padding-top: 1em;
+      margin-right: 1em;
+      // pointer-events: none;
+    }
+  
+  
+  }
+  /*  # OLK */
+
+  /** :: hide transcluded headers for olk (omit linkage) **/
+  .internal-embed[alt*="olk"].markdown-embed,
+  .internal-embed[alt*="olk"].markdown-embed {
+    .markdown-preview-sizer > div:nth-of-type(3) {
+      display: none;
+    }
+    /*  ## OLK::Remove Scrollbar */
+    .markdown-embed-title .markdown-preview-view.markdown-rendered.show-indentation-guide.allow-fold-headings.allow-fold-lists {
+      overflow: hidden;
+    }
+    .markdown-preview-sizer.markdown-preview-section {
+      padding: 0 !important;
+      padding-left: 5px !important;
+      pointer-events: none;
+    }
+    .markdown-embed-link[aria-label="Open link"] {
+      display: none;
+    }
+  }
+ .markdown-embed-content {
+  .markdown-preview-view.markdown-rendered {
+
+    .block-language-dataviewjs{
+      // border: 2px solid shared.$embedBorderColor;
+      // padding-left: .5em;
+    }
+  }
+ }
 
 }
+
+/** WORKING EMBED CONTAINER **/
+// TODO what does this do again?
+.internal-embed.markdown-embed.inline-embed.is-loaded {
+  padding-left: 0 !important;
+}
+/** : Tranclusion/Embed sections */
+
+.internal-embed[alt*="nlk"].markdown-embed {
+  /* hide file name on transcludes */
+  .embed-title.markdown-embed-title {
+    display: none;
+  }
+  // padding: 0 !important;
+  // padding-left: 5px !important;
+  .markdown-preview-sizer.markdown-preview-section {
+    padding: 2em 0 0 0 !important;
+    padding-left: 5px !important;
+  }
+
+  .markdown-preview-sizer > div:nth-of-type(3) {
+    display: none;
+  }
+}
+
+span[alt*="nlk"] {
+  &.internal-embed.markdown-embed {
+    padding: 0;
+    .markdown-preview-sizer.markdown-preview-section {
+      padding-left: 0 !important;
+    }
+  }
+}
+
+
+/*  # OLK */
+
+/** :: hide transcluded headers for olk (omit linkage) **/
+// .internal-embed[alt*="olk"].markdown-embed,
+// .internal-embed[alt*="olk"].markdown-embed {
+//   .markdown-preview-sizer > div:nth-of-type(3) {
+//     display: none;
+//   }
+//   /*  ## OLK::Remove Scrollbar */
+//   .markdown-embed-title .markdown-preview-view.markdown-rendered.show-indentation-guide.allow-fold-headings.allow-fold-lists {
+//     overflow: hidden;
+//   }
+//   .markdown-preview-sizer.markdown-preview-section {
+//     padding: 0 !important;
+//     padding-left: 5px !important;
+//     pointer-events: none;
+//   }
+
+// }
+
+// DEPRECATED because ui only shows content between - and = in embeds.
+/** :: hide transcluded headers for nlk **/
+
