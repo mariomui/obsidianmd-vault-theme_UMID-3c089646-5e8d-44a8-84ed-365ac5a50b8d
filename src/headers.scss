@@ -169,13 +169,18 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
 }
 
 /* # H1 styling */
-.markdown-source-view .markdown-embed-content .markdown-preview-sizer.markdown-preview-section h1[data-heading="="] {
-  background: var(--material-color-deep-orange-900);
-  outline: 2px solid var(--material-color-brown-700);
-  padding: 0.1em 2em;
-  color: var(--tertiary-blue-800);
-  border-radius: 0 0 50px 50px;
-} 
+.markdown-source-view {
+
+  .markdown-embed-content .markdown-preview-sizer.markdown-preview-section {
+    h1[data-heading="="] {
+      background: var(--material-color-deep-orange-900);
+      outline: 2px solid var(--material-color-brown-700);
+      padding: 0.1em 2em;
+      color: var(--tertiary-blue-800);
+      border-radius: 0 0 50px 50px;
+    }
+  } 
+}
 
 /* note background blue glass color */
 .markdown-preview-sizer.markdown-preview-section h1[data-heading^="---"] {
@@ -213,13 +218,13 @@ $header-levels: 5;
 }
 
 @mixin header-x-list {
-  @for $i from 1 through $header-levels {
+  @for $i from 2 through $header-levels {
     .HyperMD-header.HyperMD-header-#{$i} {
 
       &.cm-line  {
         > *:last-child::before {
   
-          content: repeat(":",$i) + " ";
+          content: repeat(":",$i - 1) + " ";
           @extend %header-indent-position;
         }
       }

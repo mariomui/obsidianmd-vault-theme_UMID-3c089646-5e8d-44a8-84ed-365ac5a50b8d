@@ -1,0 +1,17 @@
+// hide all = signs if I use the nlk
+.markdown-source-view {
+
+  .cm-contentContainer{
+    .internal-embed[alt*="nlk"] {
+      .markdown-embed-content {
+        .markdown-preview-view {
+          .markdown-preview-sizer.markdown-preview-section {
+            h1[data-heading="="] {
+              display: none
+            }
+          }
+        }
+      }
+    }
+  }
+}
