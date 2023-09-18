@@ -1,3 +1,5 @@
+@use './shared/index.scss' as shared;
+
 @import "./base-colors.scss";
 @import "./wallpapers.scss";
 @import "./material-ui-colors.scss";
@@ -82,3 +84,34 @@
   user-select: text;
 }
 
+// embedded query
+.internal-query {
+
+  .internal-query-header {
+    display: none;
+  }
+  .search-result-container {
+    @extend %fixed-bg;
+
+    .search-results-children {
+      .search-result {
+        .search-result-file-title {
+          font-size: larger;
+        }
+        .search-result-file-matches {
+          font-size: medium;
+        }
+      }
+      .tree-item.search-result:nth-of-type(2n + 1) {
+        .search-result-file-matches {
+          background: $material-color-purple-700
+        }
+      }
+      .tree-item.search-result:nth-of-type(2n) {
+        .search-result-file-matches {
+          background: $material-color-purple-900;
+        }
+      }
+    }
+  } 
+}
