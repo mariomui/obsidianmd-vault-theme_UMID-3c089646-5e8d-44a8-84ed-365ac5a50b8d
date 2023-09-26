@@ -1,4 +1,5 @@
 @use "./shared/index.scss" as shared;
+@use 'sass:math';
 
 //  make some extended thing so that both views are reusing styles
 
@@ -20,10 +21,22 @@
     }
   }
 }
+
 .markdown-source-view {
   .cm-preview-code-block.cm-embed-block.markdown-rendered {
     .block-language-dataviewjs {
       @extend %dataview-container;
+      ul.dataview.list-view-ul:nth-of-type(1) {
+        ul.dataview.dataview-ul.dataview-result-list-ul:nth-of-type(1) {
+          li.dataview-result-list-li:has(ul) {
+            li.dataview-result-list-li:not(:first-of-type) {
+              a {
+                color: shared.$embedPrimaryLinkColor;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
