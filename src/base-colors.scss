@@ -1,3 +1,5 @@
+$accent: #37cdbe;
+
 :root {
   --accent: #37cdbe;
   --primary: #570df8;
@@ -13,7 +15,7 @@
   // BLUE TOPAX COLORS
   --theme-color-translucent-1: #2f93e426;
 
-  --progress-color: var(--accent);
+  --progress-color: #{$accent};
   --progress-bg-color: var(--primary);
 
   /* # RANDOM GLOBALS */

@@ -1,17 +1,31 @@
-// hide all = signs if I use the nlk
+
 .markdown-source-view {
 
   .cm-contentContainer{
     .internal-embed[alt*="nlk"] {
-      .markdown-embed-content {
-        .markdown-preview-view {
-          .markdown-preview-sizer.markdown-preview-section {
-            h1[data-heading="="] {
-              display: none
+        .markdown-embed-content {
+          .markdown-preview-view {
+            .markdown-preview-sizer.markdown-preview-section {
+              h1[data-heading="="] {
+                display: none
+              }
             }
           }
         }
-      }
     }
   }
 }
+
+/*  Code-block in Reading view embeds  */
+.markdown-reading-view {
+  .internal-embed.markdown-embed.inline-embed.is-loaded {
+
+    .markdown-embed-content {
+      .markdown-preview-view.markdown-rendered {
+        background: var(--tertiary-blue-700);
+        border-radius: 0 .2em 0 0;
+      }
+    }
+  } 
+}
+

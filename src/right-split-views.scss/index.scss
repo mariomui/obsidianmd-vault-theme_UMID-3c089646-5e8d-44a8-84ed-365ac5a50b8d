@@ -4,9 +4,16 @@
     .workspace-tabs {
       .workspace-tab-container {
         .workspace-leaf {
+          
           .view-content > div:first-of-type {
-            background: rgba(0,0,0,.65);
+            // background: rgba(0,0,0,.65);
             padding: .1em .5em;
+          }
+
+          .workspace-leaf-content {
+            li {
+              background: transparent;
+            }
           }
         }
       }

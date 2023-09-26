@@ -1,5 +1,33 @@
 @use "./shared/index.scss" as shared;
 
+//  make some extended thing so that both views are reusing styles
+
+%dataview-container {
+  border: 2px solid var(--material-color-deep-orange);
+  border-right-width: 1em;
+  background-image: var(--dark-blue-grad);
+  border-radius: .5em .5em;
+  padding-left: .4em;
+}
+
+// # dataview 
+.markdown-reading-view {
+  .markdown-preview-view.markdown-rendered {
+    .markdown-preview-sizer.markdown-preview-section {   
+      .block-language-dataviewjs {
+        @extend %dataview-container;
+      }
+    }
+  }
+}
+.markdown-source-view {
+  .cm-preview-code-block.cm-embed-block.markdown-rendered {
+    .block-language-dataviewjs {
+      @extend %dataview-container;
+    }
+  }
+}
+
 .canvas-wrapper, .markdown-source-view {
 
   .cm-preview-code-block.cm-embed-block.markdown-rendered {
@@ -29,8 +57,8 @@
   
   
   }
-  /*  # OLK */
 
+  /*  # OLK */
   /** :: hide transcluded headers for olk (omit linkage) **/
   .internal-embed[alt*="olk"].markdown-embed,
   .internal-embed[alt*="olk"].markdown-embed {
@@ -51,12 +79,12 @@
     }
   }
  .markdown-embed-content {
-  .markdown-preview-view.markdown-rendered {
-
+   .markdown-preview-view.markdown-rendered {
     .block-language-dataviewjs{
       // border: 2px solid shared.$embedBorderColor;
       // padding-left: .5em;
     }
+
   }
  }
 
@@ -95,27 +123,4 @@ span[alt*="nlk"] {
   }
 }
 
-
-/*  # OLK */
-
-/** :: hide transcluded headers for olk (omit linkage) **/
-// .internal-embed[alt*="olk"].markdown-embed,
-// .internal-embed[alt*="olk"].markdown-embed {
-//   .markdown-preview-sizer > div:nth-of-type(3) {
-//     display: none;
-//   }
-//   /*  ## OLK::Remove Scrollbar */
-//   .markdown-embed-title .markdown-preview-view.markdown-rendered.show-indentation-guide.allow-fold-headings.allow-fold-lists {
-//     overflow: hidden;
-//   }
-//   .markdown-preview-sizer.markdown-preview-section {
-//     padding: 0 !important;
-//     padding-left: 5px !important;
-//     pointer-events: none;
-//   }
-
-// }
-
-// DEPRECATED because ui only shows content between - and = in embeds.
-/** :: hide transcluded headers for nlk **/
 

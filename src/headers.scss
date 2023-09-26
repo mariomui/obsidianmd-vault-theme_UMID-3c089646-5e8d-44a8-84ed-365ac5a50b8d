@@ -96,7 +96,7 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
 } 
 
 // both views
-.markdown-reading-view,.markdown-source-view {
+.markdown-source-view {
   .HyperMD-header {
     .HyperMD-header-1.cm-line + .HyperMD-header.HyperMD-header-1.cm-line {
       background: var(--material-color-deep-orange-800);
@@ -182,7 +182,7 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
   } 
 }
 
-/* note background blue glass color */
+
 .markdown-preview-sizer.markdown-preview-section h1[data-heading^="---"] {
   background: var(--material-color-red-900);
   border: 2px dashed var(--material-color-brown-700);
@@ -190,13 +190,13 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
   border-radius: 0.5em 1.8em 0.3em 0.5em;
 }
 
-.HyperMD-header.HyperMD-header-1.cm-line:has(.is-collapsed)
-  > .cm-header.cm-header-1::before {
-  content: "";
-  position: relative;
-  left: -0.05em;
-  color: var(--accent);
-}
+// .HyperMD-header.HyperMD-header-1.cm-line:has(.is-collapsed)
+//   > .cm-header.cm-header-1::before {
+//   content: "";
+//   position: relative;
+//   left: -0.05em;
+//   color: var(--accent);
+// }
 
 // # Heading indent prefixing
 
@@ -229,7 +229,7 @@ $header-levels: 5;
         }
       }
       &.cm-line:has(.is-collapsed) > .cm-header.cm-header-#{$i}::before {
-        content: repeat(":",$i) + " ";
+        content: repeat(":",$i - 1) + " ";
         @extend %header-indent-position;
       }
     }

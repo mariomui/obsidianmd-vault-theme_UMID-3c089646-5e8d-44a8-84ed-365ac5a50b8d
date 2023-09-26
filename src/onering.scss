@@ -15,6 +15,7 @@
 @import "./right-split-views.scss/index.scss";
 
 @import "./table.scss";
+@import "./popover.scss";
 
 // What does this do again?
 .markdown-rendered {
@@ -102,16 +103,46 @@
           font-size: medium;
         }
       }
-      .tree-item.search-result:nth-of-type(2n + 1) {
-        .search-result-file-matches {
-          background: $material-color-purple-700
-        }
+      .tree-item.search-result:nth-child(2n + 1) {
+        background: $material-color-brown-900;
+
+        // .search-result-file-matches {
+        //   background: $material-color-purple-700
+        // }
       }
-      .tree-item.search-result:nth-of-type(2n) {
-        .search-result-file-matches {
-          background: $material-color-purple-900;
-        }
+      .tree-item.search-result:nth-child(2n) {
+        background: $material-color-purple-700;
+        // .search-result-file-matches {
+        //   background: $material-color-purple-700
+        // }
       }
     }
   } 
+}
+
+
+// floating highlights toc
+.heading-list-item.located .text-wrap:not(.located) .text {
+  color: var(--accent);
+}
+
+// H3 when bulletpoint
+.markdown-source-view
+.cm-contentContainer
+.HyperMD-list-line.HyperMD-list-line-1.cm-line
+span.cm-header.cm-header-3.cm-list-1 {
+  color: $material-color-yellow-300 !important;
+}
+
+
+// # buttons
+
+.markdown-embed-content {
+
+  .block-language-dataviewjs {
+    button {
+      @include shared.orange-to-right-color(to right, $material-color-brown-800, $material-color-blue-800);
+      border: 1px solid shared.$button-border-color;
+    }
+  }
 }

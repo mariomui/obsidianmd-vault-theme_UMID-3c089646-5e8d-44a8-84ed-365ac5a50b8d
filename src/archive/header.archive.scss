@@ -1,3 +1,61 @@
+/* # H2 Styling */
+
+.HyperMD-header.HyperMD-header-2.cm-line:has(.is-collapsed)
+  > .cm-header.cm-header-2::before {
+  content: ": ";
+  position: relative;
+  left: -0.05em;
+  color: var(--accent);
+}
+.HyperMD-header.HyperMD-header-3.cm-line:has(.is-collapsed)
+  > .cm-header.cm-header-3::before {
+  content: ":: ";
+  position: relative;
+  left: -0.05em;
+  color: var(--accent);
+}
+.HyperMD-header.HyperMD-header-4.cm-line:has(.is-collapsed)
+  > .cm-header.cm-header-4::before {
+  content: "::: ";
+  position: relative;
+  left: -0.05em;
+  color: var(--accent);
+}
+.HyperMD-header.HyperMD-header-5.cm-line:has(.is-collapsed)
+  > .cm-header.cm-header-5::before {
+  content: ":::: ";
+  position: relative;
+  left: -0.05em;
+  color: var(--accent);
+}
+
+.HyperMD-header.HyperMD-header-2.cm-line > *:last-child::before {
+  content: ": ";
+  position: relative;
+  left: -0.05em;
+  color: var(--accent);
+}
+
+.HyperMD-header.HyperMD-header-3.cm-line > *:last-child::before {
+  content: ":: ";
+  position: relative;
+  left: -0.05em;
+  color: var(--accent);
+}
+.HyperMD-header.HyperMD-header-4.cm-line > *:last-child::before {
+  content: "::: ";
+  position: relative;
+  left: -0.05em;
+  color: var(--accent);
+}
+
+.HyperMD-header.HyperMD-header-5.cm-line > *:last-child::before {
+  content: ":::: ";
+  position: relative;
+  left: -0.05em;
+  color: var(--accent);
+}
+
  /* # H1 styling Source */
 
  /* ## H1 reading view */

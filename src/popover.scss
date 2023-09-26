@@ -1,0 +1,45 @@
+/* # API specific Feature To ONLY TAKE API BETWEEN = and --- */
+/* NAME: SELECTED-TRANSCLUSION-PREVIEW CSS SNIPPET */
+.popover.hover-popover .markdown-embed.is-loaded 
+.markdown-preview-view.markdown-rendered 
+.markdown-preview-sizer.markdown-preview-section 
+div:has(> h1[data-heading="-"]) ~ div:not(:has(h1[data-heading="="])) {
+  display: none;
+}
+.popover.hover-popover .markdown-embed.is-loaded 
+.markdown-preview-view.markdown-rendered 
+.markdown-preview-sizer.markdown-preview-section 
+div:has(> h1[data-heading="="]) ~ div:not(:has(h1[data-heading^="---"])) {
+  display: initial;
+}
+.popover.hover-popover .markdown-embed.is-loaded 
+.markdown-preview-view.markdown-rendered 
+.markdown-preview-sizer.markdown-preview-section 
+div:has(> h1[data-heading="-"]) {
+  display: none;
+}
+.popover.hover-popover .markdown-embed.is-loaded 
+.markdown-preview-view.markdown-rendered 
+.markdown-preview-sizer.markdown-preview-section 
+div:has(> h1[data-heading^='---']) ~ * > * {
+  display: none
+}
+
+// # margin spacing on popover
+.popover.hover-popover
+.markdown-embed-content
+.markdown-preview-view.markdown-rendered {
+  .markdown-preview-sizer.markdown-preview-section {
+    padding : 0;
+  }
+}
+.popover.hover-popover {
+    .markdown-embed-content {
+      .markdown-preview-sizer.markdown-preview-section {
+        .markdown-rendered h2 {
+        border: 1px solid blue;
+      }
+    }
+  }
+}
+
