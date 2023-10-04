@@ -1,6 +1,10 @@
 // Make bullet points more readable using color
 .HyperMD-list-line.cm-line:nth-child(even) {
   color: var(--material-color-deep-purple-200);
+  
+  span.cm-hmd-internal-link {
+    color: $material-color-orange-300;
+  }
 }
 
 // indentation on all list items in source
