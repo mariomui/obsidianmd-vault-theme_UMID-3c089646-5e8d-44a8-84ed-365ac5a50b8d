@@ -1,3 +1,4 @@
+// # SHARED between splits.
 .workspace-split:is(.mod-left-split, .mod-right-split) {
   .view-content {
     background-image: var(--mm-image);
@@ -6,3 +7,32 @@
     background-size: 100% 100%;
   }
 }
+
+// # RIGHT SPLIT
+.workspace.is-right-sidedock-open {
+  .workspace-split.mod-right-split {
+    .workspace-tabs.mod-top-right-space {
+      .workspace-tab-container {
+        .workspace-leaf {
+          .view-content > div:first-of-type {
+            background: rgba(0,0,0,.6)
+          }
+        }
+      }
+    } 
+
+    // anything that is dragged from the top right split window to the bottom r. window.
+    .workspace-tabs {
+      .workspace-tab-container {
+        .workspace-leaf {
+          .workspace-leaf-content {
+            .view-content > div:nth-of-type(2) {
+              background: rgba(0,0,0,.8)
+            }
+          }
+        }
+      }
+    }
+  }
+} 
+

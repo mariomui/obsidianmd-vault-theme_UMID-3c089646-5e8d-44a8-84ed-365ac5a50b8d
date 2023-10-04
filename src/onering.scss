@@ -146,3 +146,32 @@ span.cm-header.cm-header-3.cm-list-1 {
     }
   }
 }
+
+.obsidian-banner {
+
+  .banner-image {
+  
+    height: 40vh;
+    object-position: top;
+  }
+}
+
+
+// # Citations
+
+
+
+ cite {
+  background-color: var(--book-source);
+  color: white;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+  display: block;
+}
+
+// cite a:link {
+//   color: white;
+// }
