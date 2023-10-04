@@ -1,0 +1,12 @@
+/** Make bullet points more readable **/
+.HyperMD-list-line.cm-line:nth-child(even) {
+  color: var(--material-color-deep-purple-200);
+}
+input.task-list-item-checkbox[type="checkbox"] {
+  border-color: var(--material-color-deep-purple-200);
+}
+
+/* provides a borderless tcg card like experience to the checked box making the checkedbox seem fuller and brighter. */
+input.task-list-item-checkbox[type="checkbox"]:checked {
+  border-color: var(--checkbox-color);
+}
