@@ -19,17 +19,20 @@
         div:has(> h1[data-heading="-"]) {
           display: none;
         }
-        // Dissapear everything after the --- tag.
-        div:has(> h1[data-heading^='---']) ~ div {
-          display: none;
+        // Dissapear everything after the --- tag.†
+        div:has(> h1[data-heading^='---']) ~ * > * {
+          display: none
         }
+
+        // †You'd think that the following works but it doesnt because not everything is a div.
+        // div:has(> h1[data-heading^='---']) ~ div {
+        //   display: none;
+        // }
+
         // Remove the --- H1
         div:has(> h1[data-heading^='---']) {
           display: none;
         }
-        // div:has(> h1[data-heading^='---']) ~ * > * {
-        //   display: none
-        // }
       }
     }
   }

@@ -1,0 +1,38 @@
+// This code powers the codelet housed in ![[~view-for-local-tasks-using-a-progress-bar-MUID-698#=|nlk]]
+// custom class targeted: .mario-progress
+.markdown-preview-view progress.mario-progress,
+.markdown-rendered progress.mario-progress,
+.markdown-source-view.is-live-preview progress.mario-progress {
+  appearance: none;
+  height: 2em;
+  width: 100%;
+  color: --var(--primary);
+}
+
+.markdown-preview-view progress.mario-progress::-webkit-progress-bar,
+.markdown-rendered progress.mario-progress::-webkit-progress-bar,
+.markdown-source-view.is-live-preview
+  progress.mario-progress::-webkit-progress-bar {
+  border: 0.2em solid var(--progress-color);
+  background-color: var(--progress-bg-color) !important;
+}
+
+@keyframes progressAnimationStrike {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.markdown-preview-view progress.mario-progress::-webkit-progress-value,
+.markdown-rendered progress.mario-progress::-webkit-progress-value,
+.markdown-source-view.is-live-preview
+  progress.mario-progress::-webkit-progress-value {
+  background-color: var(--progress-color) !important;
+  transition: 0.4s bicubic;
+  transition-property: width, background-color;
+  animation: progressAnimationStrike 6s;
+}

@@ -1,7 +1,13 @@
-/** Make bullet points more readable **/
+// Make bullet points more readable using color
 .HyperMD-list-line.cm-line:nth-child(even) {
   color: var(--material-color-deep-purple-200);
 }
+
+// indentation on all list items in source
+.cm-hmd-list-indent {
+  font-family: var(--font-monospace) !important;
+}
+
 input.task-list-item-checkbox[type="checkbox"] {
   border-color: var(--material-color-deep-purple-200);
 }
