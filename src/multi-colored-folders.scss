@@ -31,7 +31,10 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
 
         .nav-file-title-content {
           color: var(--FoldText);
+          line-height: 1.4em;
+          max-height: 3em;
           white-space: pre-wrap;
+          text-overflow: ellipsis;
         }
 
         &[data-path^="_"] {
