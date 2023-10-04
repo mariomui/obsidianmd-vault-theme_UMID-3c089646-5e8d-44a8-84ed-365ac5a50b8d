@@ -31,6 +31,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
 
         .nav-file-title-content {
           color: var(--FoldText);
+          white-space: pre-wrap;
         }
 
         &[data-path^="_"] {
