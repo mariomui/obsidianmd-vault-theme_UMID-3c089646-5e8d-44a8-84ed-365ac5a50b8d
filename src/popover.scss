@@ -1,29 +1,58 @@
 /* # API specific Feature To ONLY TAKE API BETWEEN = and --- */
 /* NAME: SELECTED-TRANSCLUSION-PREVIEW CSS SNIPPET */
-.popover.hover-popover .markdown-embed.is-loaded 
-.markdown-preview-view.markdown-rendered 
-.markdown-preview-sizer.markdown-preview-section 
-div:has(> h1[data-heading="-"]) ~ div:not(:has(h1[data-heading="="])) {
-  display: none;
+
+.popover.hover-popover {
+  .markdown-embed.is-loaded {
+    .markdown-preview-view.markdown-rendered {
+      .markdown-preview-sizer.markdown-preview-section {
+        // [!warning] This code requires the exact filtering cascade to only show elems between two specific h1s (- and =).
+        // Dissapear all the divs that follow the h1 - but are not the the = sign.(effectively dissapearing any $elems that aren't - and =)
+        div:has(> h1[data-heading="-"]) ~ div:not(:has(h1[data-heading="="])) {
+          display: none;
+        }
+        // Reappear all the divs that follow the = mark but does not contain the --- mark.
+        // Effectively reappears the = content as as well as the content under ---
+        div:has(> h1[data-heading="="]) ~ div:not(:has(h1[data-heading^="---"])) {
+          display: initial;
+        }
+        // Disspaear the - heading
+        div:has(> h1[data-heading="-"]) {
+          display: none;
+        }
+        // Dissapear everything after the --- tag.
+        div:has(> h1[data-heading^='---']) ~ div {
+          display: none;
+        }
+        // Remove the --- H1
+        div:has(> h1[data-heading^='---']) {
+          display: none;
+        }
+        // div:has(> h1[data-heading^='---']) ~ * > * {
+        //   display: none
+        // }
+      }
+    }
+  }
 }
-.popover.hover-popover .markdown-embed.is-loaded 
-.markdown-preview-view.markdown-rendered 
-.markdown-preview-sizer.markdown-preview-section 
-div:has(> h1[data-heading="="]) ~ div:not(:has(h1[data-heading^="---"])) {
-  display: initial;
-}
-.popover.hover-popover .markdown-embed.is-loaded 
-.markdown-preview-view.markdown-rendered 
-.markdown-preview-sizer.markdown-preview-section 
-div:has(> h1[data-heading="-"]) {
-  display: none;
-}
-.popover.hover-popover .markdown-embed.is-loaded 
-.markdown-preview-view.markdown-rendered 
-.markdown-preview-sizer.markdown-preview-section 
-div:has(> h1[data-heading^='---']) ~ * > * {
-  display: none
-}
+
+// .popover.hover-popover .markdown-embed.is-loaded 
+// .markdown-preview-view.markdown-rendered 
+// .markdown-preview-sizer.markdown-preview-section 
+// div:has(> h1[data-heading="="]) ~ div:not(:has(h1[data-heading^="---"])) {
+//   display: initial;
+// }
+// .popover.hover-popover .markdown-embed.is-loaded 
+// .markdown-preview-view.markdown-rendered 
+// .markdown-preview-sizer.markdown-preview-section 
+// div:has(> h1[data-heading="-"]) {
+//   display: none;
+// }
+// .popover.hover-popover .markdown-embed.is-loaded 
+// .markdown-preview-view.markdown-rendered 
+// .markdown-preview-sizer.markdown-preview-section 
+// div:has(> h1[data-heading^='---']) ~ * > * {
+//   display: none
+// }
 
 // # margin spacing on popover
 .popover.hover-popover
