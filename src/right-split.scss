@@ -26,8 +26,11 @@
       .workspace-tab-container {
         .workspace-leaf {
           .workspace-leaf-content {
-            .view-content > div:nth-of-type(2) {
-              background: rgba(0,0,0,.8)
+            .view-content {
+              > :is(div:nth-of-type(2),div:nth-of-type(1)) {
+
+                background: rgba(0,0,0,.8)
+              }
             }
           }
         }
