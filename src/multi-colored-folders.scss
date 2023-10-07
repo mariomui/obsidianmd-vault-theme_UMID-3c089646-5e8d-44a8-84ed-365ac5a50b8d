@@ -8,6 +8,15 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
   margin: 0px 5px;
 }
 
+// Wrap all folder titles.
+.nav-folder {
+  .nav-folder-title {
+    .nav-folder-title-content {
+      white-space: pre-wrap;
+    }
+  }
+}
+
 .nav-folder.mod-root {
   border-radius: 0.5em 2em 0.4em 0.2em;
 
