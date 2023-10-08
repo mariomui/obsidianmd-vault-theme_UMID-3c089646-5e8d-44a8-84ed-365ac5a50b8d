@@ -18,6 +18,7 @@
 @import "./popover.scss";
 @import "./lists.scss";
 
+@import "./plugin-stylings/index.scss";
 @import "./experiments/index";
 // What does this do again?
 .markdown-rendered {
@@ -99,10 +100,10 @@
     .search-results-children {
       .search-result {
         .search-result-file-title {
-          font-size: larger;
+          font-size: 1rem;
         }
         .search-result-file-matches {
-          font-size: medium;
+          font-size: .9rem;
         }
       }
       .tree-item.search-result:nth-child(2n + 1) {

@@ -7,6 +7,7 @@
 
 $bar-outline-color: MAT_COLORS.$material-color-blue-800;
 $bar-color: MAT_COLORS.$material-color-blue-900;
+
 @mixin shareHeaderStyle($bar-outline-color) {
 
   content: "";
@@ -17,8 +18,8 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
   // clip-path: polygon(0 26%, 50% 40%, 100% 25%);
   // clip-path: polygon(0 26%, 50% 57%, 100% 25%);
   margin-top: 0.2em;
-  margin-bottom: 0.5em;
-  padding: 0.1em;
+  // margin-bottom: 0.3em;
+  padding: 0.1em 0.1em 0 0.1em;
 }
 @mixin clipPath($base: 50%, $addend: 5%) {
   $calced: calc($base + $addend);
@@ -40,6 +41,7 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
     );
 }
 
+
  /* # H1 styling Source */
 
  /* ## H1 reading view */
@@ -57,7 +59,7 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
       .HyperMD-header.HyperMD-header-1.cm-line {
         > span ~ span {
           border: unset;
-          padding: 0.05em 0.05em;
+          padding: 0.05em 0.05em 0 .05em;
         } 
       }
     }
@@ -70,7 +72,7 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
         @include orange-to-right-color();
         border: 2px solid var(--material-color-brown-900);
         color: var(--material-color-brown-50);
-        padding: 0.2em 1em;
+        padding: 0.2em 1em 0 1em;
         border-radius: 0.5em 1.8em 0.3em 0.5em;
       }
 
@@ -123,12 +125,13 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
 
 .HyperMD-header {
   $base-width-percentage: 100%;
-  $multiple: 15%;
+  $multiple: 13%;
+  //shared
   :is(.cm-header-2, .cm-header-3, .cm-header-4, .cm-header-5, .cm-header-6):last-child:after {
 
     @include shareHeaderStyle(($bar-outline-color));
 
-    @include manuBackgroundImageLG($baseHue: -30deg, $hueAdd: 100deg)
+    @include manuBackgroundImageLG($baseHue: -30deg, $hueAdd: 100deg);
 
   }
   .cm-header-2:last-child:after  {
@@ -152,7 +155,7 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
       $bar-color: $bar-color,
       $bar-outline-color: $bar-outline-color,
     );
-    @include clipPath($addend: 40%)
+    @include clipPath($addend: 40%);
   }
   .cm-header-4:last-child:after  {
     $bar-color: MAT_COLORS.$material-color-green-700;
@@ -220,6 +223,9 @@ $header-levels: 5;
 @mixin header-x-list {
   @for $i from 2 through $header-levels {
     .HyperMD-header.HyperMD-header-#{$i} {
+      
+      // every header shift the next line up a bit.
+      margin: -.5em 0 -.75em 0 !important;
 
       &.cm-line  {
         > *:last-child::before {
