@@ -13,11 +13,11 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
   content: "";
   display: block;
   height: .9em;
-  border: 1px solid #{$bar-outline-color};
+  outline: 1px solid #{$bar-outline-color};
   // border-radius: 0 0 100% 100%;
   // clip-path: polygon(0 26%, 50% 40%, 100% 25%);
   // clip-path: polygon(0 26%, 50% 57%, 100% 25%);
-  margin-top: 0.2em;
+  margin-top: 0.1em;
   // margin-bottom: 0.3em;
   padding: 0.1em 0.1em 0 0.1em;
 }
@@ -59,7 +59,7 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
       .HyperMD-header.HyperMD-header-1.cm-line {
         > span ~ span {
           border: unset;
-          padding: 0.05em 0.05em 0 .05em;
+          padding: 0.05em 0.05em 0.05em .05em;
         } 
       }
     }
@@ -107,20 +107,9 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
       color: var(--material-color-brown-50);
       /* padding: 0.2em 1em; */
       border-radius: 0.5em 1.8em 0.3em 0.5em;
-      border: 10px solid
+      border: 1px solid white;
     }
   }
-
-  // Customize the colons for indentingg deprecated.
-  // .markdown-rendered {
-  //   :is(h2,h3,h4,h5)::before {
-  //     border: 1px solid blue;
-  //     content: ": ";
-  //     position: relative;
-  //     left: -0.05em;
-  //     color: var(--accent);
-  //   }
-  // }  
 }
 
 .HyperMD-header {
@@ -223,9 +212,16 @@ $header-levels: 5;
 @mixin header-x-list {
   @for $i from 2 through $header-levels {
     .HyperMD-header.HyperMD-header-#{$i} {
+       + .cm-line:not(.HyperMD-header) {
+        // border: 1px solid blue;
+        margin-top: -.5em !important;
+      }
+    }
+    .HyperMD-header.HyperMD-header-#{$i} {
       
       // every header shift the next line up a bit.
-      margin: -.5em 0 -.75em 0 !important;
+      // BUG where you cant click on the link cuz it shifts too hard.
+      // margin: -.5em 0 -.75em 0 !important;
 
       &.cm-line  {
         > *:last-child::before {
