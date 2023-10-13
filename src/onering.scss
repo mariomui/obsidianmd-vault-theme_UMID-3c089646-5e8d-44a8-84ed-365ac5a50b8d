@@ -7,12 +7,14 @@
 @import "./multi-colored-folders.scss";
 @import "./statusbar.scss";
 
-@import "./right-split.scss";
 @import "./tab-bar";
 @import "./headers";
 @import "./embed-blocks";
 @import "./embedded-headers.scss";
+
 @import "./right-split-views.scss/index.scss";
+@import "./left-split-views.scss/index.scss";
+@import "./center-split-views.scss/index.scss";
 
 @import "./table.scss";
 @import "./popover.scss";
@@ -157,7 +159,8 @@
   }
 }
 
-// # Citations
+// # custom
+// ## Citations
 
 cite {
   background-color: var(--book-source);
@@ -168,8 +171,9 @@ cite {
   padding-right: 10px;
   text-align: right;
   display: block;
+  a:link {
+    color: white;
+  }
 }
 
-// cite a:link {
-//   color: white;
-// }
+// MISC

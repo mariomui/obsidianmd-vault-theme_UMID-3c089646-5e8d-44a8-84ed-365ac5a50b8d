@@ -5,10 +5,15 @@
   .cm-contentContainer {
     // dataview tables
     .cm-embed-block.markdown-rendered {
-      tbody {
-        > tr {
-          > td:nth-child(even),
-          > td:nth-child(even) a {
+      .table-view-table {
+        tbody {
+          > tr {
+            > td:nth-child(even),
+            > td:nth-child(even) a {
+              color: shared.$embedPrimaryLinkColor;
+            }
+          }
+          > tr:nth-child(odd) td a.internal-link {
             color: shared.$embedPrimaryLinkColor;
           }
         }

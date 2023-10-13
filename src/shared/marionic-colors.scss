@@ -1,8 +1,10 @@
 @use "./raw-colors.scss" as raw-colors;
 
+$secondaryAlt: raw-colors.$material-color-orange-700;
 $secondary: raw-colors.$material-color-orange-800;
 $primary: raw-colors.$tertiary-blue;
 
 $embedBorderColor: $secondary;
 
 $embedPrimaryLinkColor: raw-colors.$material-color-orange-700;
+$accentAlt: raw-colors.$material-color-brown-900;

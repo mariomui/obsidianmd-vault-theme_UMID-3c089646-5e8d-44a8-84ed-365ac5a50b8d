@@ -1,13 +1,14 @@
+@use "./right-split.scss";
+
 // i think the .65 number should be some kindah mathematical heuristic depending on some ui center.
 .workspace.is-right-sidedock-open {
   .workspace-split.mod-right-split {
     .workspace-tabs {
       .workspace-tab-container {
         .workspace-leaf {
-          
           .view-content > div:first-of-type {
             // background: rgba(0,0,0,.65);
-            padding: .1em .5em;
+            padding: 0.1em 0.5em;
           }
 
           .workspace-leaf-content {
