@@ -1,4 +1,4 @@
-@use './shared/index.scss' as shared;
+@use "./shared/index.scss" as shared;
 
 @import "./base-colors.scss";
 @import "./wallpapers.scss";
@@ -40,7 +40,7 @@
 %backdrop {
   color: white;
   text-shadow: 1px 4px 3px rgb(233 117 71 / 153%);
-  background: rgba(0,0,0,.6);
+  background: rgba(0, 0, 0, 0.6);
   padding: 1em 0.5em;
   border-radius: 15px 15px 0 0;
   margin-bottom: 0;
@@ -65,7 +65,7 @@
   // embeds
   .inline-embed .markdown-embed-content {
     border: 1px solid var(--material-color-deep-purple-200);
-    padding: 0 .2em;
+    padding: 0 0.2em;
     border-radius: 0 1em 1em 0;
   }
   // .markdown-embed .markdown-embed-link[aria-label="Open link"]{
@@ -78,7 +78,6 @@
 
   .mod-header:has(~ .obsidian-banner-wrapper) {
     > .inline-title {
-
       text-shadow: 1px 4px 3px rgb(233 117 71 / 113%);
       color: white;
       margin-left: 5%;
@@ -91,7 +90,6 @@
 
 // embedded query
 .internal-query {
-
   .internal-query-header {
     display: none;
   }
@@ -104,7 +102,7 @@
           font-size: 1rem;
         }
         .search-result-file-matches {
-          font-size: .9rem;
+          font-size: 0.9rem;
         }
       }
       .tree-item.search-result:nth-child(2n + 1) {
@@ -121,9 +119,8 @@
         // }
       }
     }
-  } 
+  }
 }
-
 
 // floating highlights toc
 .heading-list-item.located .text-wrap:not(.located) .text {
@@ -132,40 +129,37 @@
 
 // H3 when bulletpoint
 .markdown-source-view
-.cm-contentContainer
-.HyperMD-list-line.HyperMD-list-line-1.cm-line
-span.cm-header.cm-header-3.cm-list-1 {
+  .cm-contentContainer
+  .HyperMD-list-line.HyperMD-list-line-1.cm-line
+  span.cm-header.cm-header-3.cm-list-1 {
   color: $material-color-yellow-300 !important;
 }
-
 
 // # buttons
 
 .markdown-embed-content {
-
   .block-language-dataviewjs {
     button {
-      @include shared.orange-to-right-color(to right, $material-color-brown-800, $material-color-blue-800);
+      @include shared.orange-to-right-color(
+        to right,
+        $material-color-brown-800,
+        $material-color-blue-800
+      );
       border: 1px solid shared.$button-border-color;
     }
   }
 }
 
 .obsidian-banner {
-
   .banner-image {
-  
     height: 40vh;
     object-position: top;
   }
 }
 
-
 // # Citations
 
-
-
- cite {
+cite {
   background-color: var(--book-source);
   color: white;
   margin-left: -10px;
