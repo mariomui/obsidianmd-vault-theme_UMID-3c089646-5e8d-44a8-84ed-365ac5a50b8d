@@ -1,21 +1,30 @@
-
 @use "./shared/index.scss" as shared;
 
-.markdown-preview-view, .markdown-source-view {
-  .cm-contentContainer.cm-contentContainer {
+.markdown-preview-view,
+.markdown-source-view {
+  .cm-contentContainer {
+    // dataview tables
+    .cm-embed-block.markdown-rendered {
+      tbody {
+        > tr {
+          > td:nth-child(even),
+          > td:nth-child(even) a {
+            color: shared.$embedPrimaryLinkColor;
+          }
+        }
+      }
+    }
     .cm-embed-block.cm-table-widget {
       div.markdown-rendered:has(table) {
-        padding: .4em .4em;
+        padding: 0.4em 0.4em;
         border: 1px solid $material-color-purple-700;
       }
     }
-    >.cm-content {
-
+    > .cm-content {
       table {
         // outline: 4px solid $material-color-purple-700;
         background: transparent;
       }
     }
-
   }
-} 
+}
