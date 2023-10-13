@@ -23,9 +23,9 @@
         }
 
         // †You'd think that the following works but it doesnt because not everything is a div.
-        // div:has(> h1[data-heading^='---']) ~ div {
-        //   display: none;
-        // }
+        div:has(> h1[data-heading^="---"]) ~ div {
+          display: none;
+        }
         // Remove the --- H1 †You'd think that this would work but removing the --- forces refresh.
         // div:has(> h1[data-heading^="---"]) {
         //   display: none;
