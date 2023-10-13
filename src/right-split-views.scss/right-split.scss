@@ -1,0 +1,44 @@
+@use "../shared/index.scss" as shared;
+// # SHARED between splits.
+.workspace-split:is(.mod-left-split, .mod-right-split) {
+  .view-content {
+    background-image: var(--mm-image);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+}
+
+// # RIGHT SPLIT
+.workspace.is-right-sidedock-open {
+  .workspace-split.mod-right-split {
+    // * right-split-vertical-sidedock-border.png
+    &.mod-horizontal {
+      border-left: 0.1em solid #{shared.$accentAlt} !important;
+    }
+    .workspace-tabs.mod-top-right-space {
+      .workspace-tab-container {
+        .workspace-leaf {
+          .view-content > div:first-of-type {
+            background: rgba(0, 0, 0, 0.6);
+          }
+        }
+      }
+    }
+
+    // anything that is dragged from the top right split window to the bottom r. window.
+    .workspace-tabs {
+      .workspace-tab-container {
+        .workspace-leaf {
+          .workspace-leaf-content {
+            .view-content {
+              > :is(div:nth-of-type(2), div:nth-of-type(1)) {
+                background: rgba(0, 0, 0, 0.8);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

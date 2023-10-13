@@ -1,0 +1,13 @@
+@use "../shared/index.scss" as shared;
+
+// # minimal theme overrides
+// ## type:override mode:off name:middle-right-center-split-rightest-right.jpeg
+.workspace-split {
+  &.mod-vertical > * {
+    > .workspace-leaf-resize-handle {
+      border-color: shared.$secondaryAlt !important;
+      // * [!warning] This resize handle is invisibled by minimal theme
+      // display: block !important;
+    }
+  }
+}

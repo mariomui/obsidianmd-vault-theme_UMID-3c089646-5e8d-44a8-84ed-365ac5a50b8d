@@ -1,0 +1,9 @@
+@use "../shared/index.scss" as shared;
+// left-split-right-border-when-dock-opens.jpeg
+.workspace-split {
+  &.mod-left-split {
+    > .workspace-leaf-resize-handle {
+      border-color: shared.$secondaryAlt !important;
+    }
+  }
+}
