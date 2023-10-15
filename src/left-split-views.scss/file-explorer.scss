@@ -1,0 +1,16 @@
+
+.nav-files-container {
+  border-left: 1px solid var(--material-color-orange-500);
+  background-image: var(--midnight-grad), var(--mm-image), var(--anu-image);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-blend-mode: color;
+  contain: paint;
+}
+
+/* NAV FILE EXPLORER BACKDROP */
+.nav-files-container .tree-item.nav-folder {
+  background: rgba(0,0,0,.6);
+
+}

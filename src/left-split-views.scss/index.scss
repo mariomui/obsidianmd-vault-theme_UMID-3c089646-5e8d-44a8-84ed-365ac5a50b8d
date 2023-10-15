@@ -1,4 +1,6 @@
 @use "../shared/index.scss" as shared;
+@forward "./file-explorer.scss";
+
 // left-split-right-border-when-dock-opens.jpeg
 .workspace-split {
   &.mod-left-split {
