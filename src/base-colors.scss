@@ -1,9 +1,10 @@
+@use "./shared/index.scss" as shared;
 $accent: #37cdbe;
 
 :root {
   --accent: #37cdbe;
   --primary: #570df8;
-  --secondary: var(--material-color-purple-a100);
+  --secondary: shared.$primaryAlt;
   --neutral: #3d4451;
   --base-100: #ffffff;
   --info: #3abff8;
@@ -19,11 +20,11 @@ $accent: #37cdbe;
   --progress-bg-color: var(--primary);
 
   /* # RANDOM GLOBALS */
-  
+
   /* ## Translucency Helpers */
-  --blurbrightness: .28;
+  --blurbrightness: 0.28;
   --blur: 7px;
-  --shade: rgba(0,0,0,.8);
+  --shade: rgba(0, 0, 0, 0.8);
 
   /* ## I HATE NAMING */
   --topbar-blend: hard-light;

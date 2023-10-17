@@ -1,3 +1,4 @@
+@use "./shared/index.scss" as shared;
 /*
 A-source: https://forum.obsidian.md/t/adding-color-to-obsidian-a-rainbow-of-possibility/12805/11
 B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main/02%20-%20Community%20Expansions/02.05%20All%20Community%20Expansions/CSS%20Snippets/Files%20explorer%20relations%20%26%20color%20%28Mara-Li%29.md
@@ -13,8 +14,9 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
   .nav-folder-title {
     .nav-folder-title-content {
       white-space: pre-wrap;
+    }
   }
-}}
+}
 
 .nav-folder.mod-root {
   border-radius: 0.5em 2em 0.4em 0.2em;
@@ -58,7 +60,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
 
         &[data-path^="_"] {
           /* apply style to any child of a _ prefixed virtual file */
-          border-bottom: 1px solid var(--secondary);
+          // border-bottom: 1px solid shared.$primaryAlt;
           display: none;
         }
       }
