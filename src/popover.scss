@@ -30,6 +30,7 @@
         // div:has(> h1[data-heading^="---"]) {
         //   display: none;
         // }
+
         // Rather than removing the element from dom, just toggle the visibility.
         div:has(> h1[data-heading^="---"]) {
           visibility: hidden;
