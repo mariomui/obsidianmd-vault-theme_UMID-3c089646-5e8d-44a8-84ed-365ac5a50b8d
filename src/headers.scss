@@ -1,18 +1,27 @@
-@use 'sass:color' as color;
+@use "sass:color" as color;
 @use "./material-ui-colors" as MAT_COLORS;
 
-@mixin orange-to-right-color($deg: to bottom, $col1: MAT_COLORS.$material-color-deep-orange, $col2: MAT_COLORS.$material-color-red-900) {
-  background-image: linear-gradient($deg, $col1, $col2);
-}
+// # Global Shared variables
 
+// ## Knobs
 $bar-outline-color: MAT_COLORS.$material-color-blue-800;
 $bar-color: MAT_COLORS.$material-color-blue-900;
 
-@mixin shareHeaderStyle($bar-outline-color) {
+// ## H1 Mixins
+// ### H1 background color color
+@mixin orange-to-right-color(
+  $deg: to bottom,
+  $col1: MAT_COLORS.$material-color-deep-orange,
+  $col2: MAT_COLORS.$material-color-red-900
+) {
+  background-image: linear-gradient($deg, $col1, $col2);
+}
 
+// ## Base header style
+@mixin shareHeaderStyle($bar-outline-color) {
   content: "";
   display: block;
-  height: .9em;
+  height: 0.9em;
   outline: 1px solid #{$bar-outline-color};
   // border-radius: 0 0 100% 100%;
   // clip-path: polygon(0 26%, 50% 40%, 100% 25%);
@@ -21,30 +30,33 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
   // margin-bottom: 0.3em;
   padding: 0.1em 0.1em 0 0.1em;
 }
+// ## HeaderBgStyling
+// ### HeaderBgStyling.Clipping
 @mixin clipPath($base: 50%, $addend: 5%) {
   $calced: calc($base + $addend);
   clip-path: polygon(0 26%, 50% #{$calced}, 100% 25%);
 }
-
+// ### HeaderBgStyling.BaseColors
 @mixin manuBackgroundImageLG(
-  $bar-color: $bar-color, 
-  $bar-outline-color: $bar-outline-color, 
-  $baseHue: -30deg, 
-  $hueAdd : 0deg) {
-    $calculatedHue: calc($baseHue + $hueAdd);
-    background-image: repeating-linear-gradient(
-      -75deg,
-      #{$bar-color} 0%,
-      color.adjust($bar-color, $hue: $calculatedHue) 4%,
-      color.adjust($bar-color, $hue: calc($calculatedHue - 10deg)) 8%,
-      #{$bar-outline-color} 10%
-    );
+  $bar-color: $bar-color,
+  $bar-outline-color: $bar-outline-color,
+  $baseHue: -30deg,
+  $hueAdd: 0deg
+) {
+  $calculatedHue: calc($baseHue + $hueAdd);
+  background-image: repeating-linear-gradient(
+    -75deg,
+    #{$bar-color} 0%,
+    color.adjust($bar-color, $hue: $calculatedHue) 4%,
+    color.adjust($bar-color, $hue: calc($calculatedHue - 10deg)) 8%,
+    #{$bar-outline-color} 10%
+  );
 }
 
+/* # H1 styling Source */
 
- /* # H1 styling Source */
-
- /* ## H1 reading view */
+// what was this for again?
+/* ## H1 reading view */
 .markdown-reading-view {
   .markdown-preview-sizer.markdown-preview-section {
     h1[data-heading] {
@@ -59,12 +71,12 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
       .HyperMD-header.HyperMD-header-1.cm-line {
         > span ~ span {
           border: unset;
-          padding: 0.05em 0.05em 0.05em .05em;
-        } 
+          padding: 0.05em 0.05em 0.05em 0.05em;
+        }
       }
     }
   }
-}  
+}
 .markdown-source-view {
   .cm-contentContainer {
     .HyperMD-header.HyperMD-header-1 {
@@ -82,22 +94,21 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
         outline: 2px solid --material-color-deep-orange-300;
       }
       &.cm-line:has(> span.cm-hashtag) > span {
-        background-color: unset;;
+        background-color: unset;
         color: var(--material-color-deep-orange-300);
       }
 
       /* on hover blinks */
       &.cm-line:has(> span.cm-hashtag):hover > span {
-        background-color: unset;;
+        background-color: unset;
         color: var(--material-color-deep-orange-200);
         /* font: small-caption */
       }
-
     }
   }
-} 
+}
 
-// both views
+// ## eh?
 .markdown-source-view {
   .HyperMD-header {
     .HyperMD-header-1.cm-line + .HyperMD-header.HyperMD-header-1.cm-line {
@@ -112,57 +123,89 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
   }
 }
 
+// # Custom header underbar
+
 .HyperMD-header {
   $base-width-percentage: 100%;
   $multiple: 13%;
   //shared
-  :is(.cm-header-2, .cm-header-3, .cm-header-4, .cm-header-5, .cm-header-6):last-child:after {
-
+  :is(
+      .cm-header-2,
+      .cm-header-3,
+      .cm-header-4,
+      .cm-header-5,
+      .cm-header-6
+    ):last-child:after {
     @include shareHeaderStyle(($bar-outline-color));
 
     @include manuBackgroundImageLG($baseHue: -30deg, $hueAdd: 100deg);
-
   }
-  .cm-header-2:last-child:after  {
+  .cm-header-2:last-child:after {
     $bar-color: MAT_COLORS.$material-color-red-100;
     $bar-outline-color: MAT_COLORS.$material-color-red-200;
 
     @include manuBackgroundImageLG(
       $bar-color: $bar-color,
-      $bar-outline-color: $bar-outline-color,
+      $bar-outline-color: $bar-outline-color
     );
-    @include clipPath()
+    @include clipPath();
   }
 
-  .cm-header-3:last-child:after  {
+  .cm-header-3:last-child:after {
     $bar-color: MAT_COLORS.$material-color-deep-orange-700;
     $bar-outline-color: MAT_COLORS.$material-color-deep-orange-900;
 
-    width: calc($base-width-percentage - 1*$multiple);
+    width: calc($base-width-percentage - 1 * $multiple);
     margin: 0 auto;
     @include manuBackgroundImageLG(
       $bar-color: $bar-color,
-      $bar-outline-color: $bar-outline-color,
+      $bar-outline-color: $bar-outline-color
     );
     @include clipPath($addend: 40%);
   }
-  .cm-header-4:last-child:after  {
+  .cm-header-4:last-child:after {
     $bar-color: MAT_COLORS.$material-color-green-700;
     $bar-outline-color: MAT_COLORS.$material-color-green-900;
 
-    width: calc($base-width-percentage - 2*$multiple);
+    width: calc($base-width-percentage - 2 * $multiple);
     margin: 0 auto;
     @include manuBackgroundImageLG(
       $bar-color: $bar-color,
-      $bar-outline-color: $bar-outline-color,
+      $bar-outline-color: $bar-outline-color
     );
-    @include clipPath($addend: 80%)
+    @include clipPath($addend: 80%);
+  }
+  .cm-header-5:last-child:after {
+    $bar-color: MAT_COLORS.$material-color-blue-700;
+    $bar-outline-color: MAT_COLORS.$material-color-blue-900;
+
+    width: calc($base-width-percentage - 2 * $multiple);
+    margin: 0 auto;
+    @include manuBackgroundImageLG(
+      $bar-color: $bar-color,
+      $bar-outline-color: $bar-outline-color
+    );
+    @include clipPath($addend: 80%);
+  }
+  .cm-header-6:last-child:after {
+    $bar-color: MAT_COLORS.$material-color-indigo-700;
+    $bar-outline-color: MAT_COLORS.$material-color-indigo-900;
+
+    width: calc($base-width-percentage - 2 * $multiple);
+    margin: 0 auto;
+    @include manuBackgroundImageLG(
+      $bar-color: $bar-color,
+      $bar-outline-color: $bar-outline-color
+    );
+
+    @include clipPath($addend: 80%);
   }
 }
 
-/* # H1 styling */
-.markdown-source-view {
+/* # H1 styling SPECIAL */
 
+// ## Public api
+.markdown-source-view {
   .markdown-embed-content .markdown-preview-sizer.markdown-preview-section {
     h1[data-heading="="] {
       background: var(--material-color-deep-orange-900);
@@ -171,10 +214,10 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
       color: var(--tertiary-blue-800);
       border-radius: 0 0 50px 50px;
     }
-  } 
+  }
 }
 
-
+//  ## Private api
 .markdown-preview-sizer.markdown-preview-section h1[data-heading^="---"] {
   background: var(--material-color-red-900);
   border: 2px dashed var(--material-color-brown-700);
@@ -182,25 +225,17 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
   border-radius: 0.5em 1.8em 0.3em 0.5em;
 }
 
-// .HyperMD-header.HyperMD-header-1.cm-line:has(.is-collapsed)
-//   > .cm-header.cm-header-1::before {
-//   content: "";
-//   position: relative;
-//   left: -0.05em;
-//   color: var(--accent);
-// }
-
 // # Heading indent prefixing
 
-$header-levels: 5;
+$header-levels: 6;
 
-@function repeat($character: "", $to: 5){
-  $c:"";
+@function repeat($character: "", $to: #{$header-levels}) {
+  $c: "";
 
   @for $i from 1 through $to {
     $c: $c + $character;
   }
-  @return $c
+  @return $c;
 }
 
 %header-indent-position {
@@ -212,31 +247,29 @@ $header-levels: 5;
 @mixin header-x-list {
   @for $i from 2 through $header-levels {
     .HyperMD-header.HyperMD-header-#{$i} {
-       + .cm-line:not(.HyperMD-header) {
+      + .cm-line:not(.HyperMD-header) {
         // border: 1px solid blue;
-        margin-top: -.5em !important;
+        margin-top: -0.5em !important;
       }
     }
     .HyperMD-header.HyperMD-header-#{$i} {
-      
       // every header shift the next line up a bit.
       // BUG where you cant click on the link cuz it shifts too hard.
       // margin: -.5em 0 -.75em 0 !important;
 
-      &.cm-line  {
+      &.cm-line {
         > *:last-child::before {
-  
-          content: repeat(":",$i - 1) + " ";
+          content: repeat(":", $i - 1) + " ";
           @extend %header-indent-position;
         }
       }
       &.cm-line:has(.is-collapsed) > .cm-header.cm-header-#{$i}::before {
-        content: repeat(":",$i - 1) + " ";
+        content: repeat(":", $i - 1) + " ";
         @extend %header-indent-position;
       }
     }
   }
-};
+}
 
 // Prefixing colons (based on HLevel) to anchor headings
 .cm-contentContainer {

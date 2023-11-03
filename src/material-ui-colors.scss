@@ -46,6 +46,10 @@ $material-color-yellow-700: #fbc02d;
 $material-color-yellow-800: #f9a825;
 $material-color-yellow-900: #f57f17;
 
+$material-color-indigo-700: #303f9f;
+$material-color-indigo-800: #283593;
+$material-color-indigo-900: #1a237e;
+
 :root {
   --material-color-red: #f44336;
   --material-color-red-50: #ffebee;
@@ -350,5 +354,4 @@ $material-color-yellow-900: #f57f17;
   --tertiary-blue-900: #114;
 
   --nbc: var(--tertiary-blue-800);
-
 }
