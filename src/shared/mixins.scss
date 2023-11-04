@@ -1,6 +1,18 @@
 @use "./material-ui-colors" as MAT_COLORS;
+@use "../wallpapers.scss" as WALLPAPERS;
 // this material colors are scss only.
 
-@mixin orange-to-right-color($deg: to bottom, $col1: MAT_COLORS.$material-color-deep-orange, $col2: MAT_COLORS.$material-color-red-900) {
+@mixin orange-to-right-color(
+  $deg: to bottom,
+  $col1: MAT_COLORS.$material-color-deep-orange,
+  $col2: MAT_COLORS.$material-color-red-900
+) {
   background-image: linear-gradient($deg, $col1, $col2);
+}
+
+%notForMarkdownBackgroundImage {
+  background-image: WALLPAPERS.$midnight-grad;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }

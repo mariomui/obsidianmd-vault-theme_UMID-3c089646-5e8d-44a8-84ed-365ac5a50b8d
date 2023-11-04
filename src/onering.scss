@@ -177,3 +177,12 @@ cite {
 }
 
 // MISC
+.workspace-tabs.mod-top-left-space {
+  .workspace-tab-container {
+    .workspace-leaf-content:not([data-type="markdown"]) {
+      .view-content {
+        @extend %notForMarkdownBackgroundImage;
+      }
+    }
+  }
+}
