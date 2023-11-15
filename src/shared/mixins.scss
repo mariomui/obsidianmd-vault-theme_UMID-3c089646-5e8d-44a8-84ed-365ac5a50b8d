@@ -1,5 +1,5 @@
 @use "./material-ui-colors" as MAT_COLORS;
-@use "../wallpapers.scss" as WALLPAPERS;
+@use "./wallpapers/wallpapers.scss" as WALLPAPERS;
 // this material colors are scss only.
 
 @mixin orange-to-right-color(

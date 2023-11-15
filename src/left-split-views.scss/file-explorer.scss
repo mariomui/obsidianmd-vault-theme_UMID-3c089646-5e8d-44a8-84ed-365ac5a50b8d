@@ -1,7 +1,8 @@
+@use "../shared/index.scss" as shared;
 
 .nav-files-container {
   border-left: 1px solid var(--material-color-orange-500);
-  background-image: var(--midnight-grad), var(--mm-image), var(--anu-image);
+  background-image: shared.$midnight-grad, shared.$mm-image, shared.$anu-image;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -11,6 +12,5 @@
 
 /* NAV FILE EXPLORER BACKDROP */
 .nav-files-container .tree-item.nav-folder {
-  background: rgba(0,0,0,.6);
-
+  background: rgba(0, 0, 0, 0.6);
 }

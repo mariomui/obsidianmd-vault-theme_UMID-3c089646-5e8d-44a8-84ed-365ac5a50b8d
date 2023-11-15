@@ -1,7 +1,6 @@
 @use "./shared/index.scss" as shared;
 
 @import "./base-colors.scss";
-@import "./wallpapers.scss";
 @import "./material-ui-colors.scss";
 
 @import "./multi-colored-folders.scss";
@@ -27,12 +26,12 @@
 .markdown-rendered {
   tbody {
     tr:nth-child(odd) {
-      color: var(--material-color-deep-purple-200);
+      color: $material-color-deep-purple-200;
       code {
-        color: var(--material-color-deep-purple-200);
+        color: $material-color-deep-purple-200;
       }
       strong {
-        color: var(--material-color-deep-purple-200);
+        color: $material-color-deep-purple-200;
       }
     }
   }
@@ -48,7 +47,7 @@
   margin-bottom: 0;
 }
 %bg {
-  background-image: var(--mm-image);
+  background-image: shared.$mm-image;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 150% 100%;
@@ -66,7 +65,7 @@
   }
   // embeds
   .inline-embed .markdown-embed-content {
-    border: 1px solid var(--material-color-deep-purple-200);
+    border: 1px solid $material-color-deep-purple-200;
     padding: 0 0.2em;
     border-radius: 0 1em 1em 0;
   }
