@@ -16,3 +16,21 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+
+// specifically for headers and that little dot tthingie.
+$header-levels: 6;
+
+@function repeat($character: "", $to: #{$header-levels}) {
+  $c: "";
+
+  @for $i from 1 through $to {
+    $c: $c + $character;
+  }
+  @return $c;
+}
+
+@mixin header-indent-position($color: var(--accent)) {
+  position: relative;
+  left: -0.05em;
+  color: $color;
+}
