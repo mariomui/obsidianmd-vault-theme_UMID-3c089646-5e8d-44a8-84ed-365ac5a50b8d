@@ -162,7 +162,7 @@
 // ## Citations
 
 cite {
-  background-color: var(--book-source);
+  background-color: shared.$bookSource;
   color: white;
   margin-left: -10px;
   margin-right: -10px;
