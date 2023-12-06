@@ -86,7 +86,7 @@
   }
 }
 .yt-transcript__transcript-block {
-  user-select: text;
+  user-select: text !important;
 }
 
 // embedded query
@@ -184,4 +184,14 @@ cite {
       }
     }
   }
+}
+
+// BOLDED TEXT
+span.cm-strong {
+  color: shared.$accentSecondary;
+  background-clip: text;
+  font-family: Futura;
+  background-color: #666666;
+  text-shadow: 2px 4px 4px #555;
+  // text-align: center;
 }

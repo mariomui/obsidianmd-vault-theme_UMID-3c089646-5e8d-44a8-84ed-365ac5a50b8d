@@ -179,19 +179,19 @@ $bar-color: MAT_COLORS.$material-color-blue-900;
     $bar-color: MAT_COLORS.$material-color-blue-700;
     $bar-outline-color: MAT_COLORS.$material-color-blue-900;
 
-    width: calc($base-width-percentage - 2 * $multiple);
+    width: calc($base-width-percentage - 3 * $multiple);
     margin: 0 auto;
     @include manuBackgroundImageLG(
       $bar-color: $bar-color,
       $bar-outline-color: $bar-outline-color
     );
-    @include clipPath($addend: 80%);
+    @include clipPath($addend: 90%);
   }
   .cm-header-6:last-child:after {
     $bar-color: MAT_COLORS.$material-color-indigo-700;
     $bar-outline-color: MAT_COLORS.$material-color-indigo-900;
 
-    width: calc($base-width-percentage - 2 * $multiple);
+    width: calc($base-width-percentage - 5 * $multiple);
     margin: 0 auto;
     @include manuBackgroundImageLG(
       $bar-color: $bar-color,
@@ -275,4 +275,9 @@ $header-levels: 6;
 .cm-contentContainer {
   // shared
   @include header-x-list();
+}
+
+// undo the h5 variant font in app.css
+.HyperMD-header.HyperMD-header-5 {
+  font-variant: unset;
 }
