@@ -1,0 +1,39 @@
+
+@use "../shared/index.scss" as shared;
+
+%frontmatter_backdrop {
+  color: white;
+  text-shadow: 1px 4px 3px rgb(233 117 71 / 153%);
+  background: rgba(0, 0, 0, 0.75);
+  padding: 1em 0.5em;
+  margin-bottom: 0;
+}
+
+body:not(.metadata-heading-on) .metadata-properties-heading {
+  display: unset;
+  display: initial;
+
+}
+
+.markdown-source-view.mod-cm6.is-readable-line-width {
+
+  .cm-sizer > .metadata-container {
+    @extend %frontmatter_backdrop;
+    width: 75%;
+    border-radius: 15px 15px 0 0;
+
+    //background: var(--shade);
+    .metadata-properties-heading {
+      .collapse-indicator.collapse-icon {
+
+        @extend %frontmatter_backdrop;
+        border-radius: 15px 0 0 15px;
+        border: 1px solid #{shared.$borderColor};
+        border-right: transparent;
+        left: -2.2em;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

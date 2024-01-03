@@ -23,8 +23,30 @@
   }
 }
 
+
 .markdown-source-view {
+  .markdown-embed-content {
+
+    .markdown-preview-view.markdown-rendered {
+  
+      .block-language-dataviewjs {
+        li:has(span.internal-embed[alt*="=$"]) {
+          &~ li:nth-child(2n+2) {
+
+            border-top: .1em solid shared.$borderColor;
+            background-color: shared.$callout;
+          }
+          &~ li:nth-child(2n+1) {
+            background-color: shared.$calloutAlt;
+
+            border-top: .1em solid shared.$borderColor;
+          }
+        }
+      }
+    }
+  }
   .cm-preview-code-block.cm-embed-block.markdown-rendered {
+
     .block-language-dataviewjs {
       @extend %dataview-container;
       ul.dataview.list-view-ul:nth-of-type(1) {
@@ -87,6 +109,8 @@
     }
   }
 }
+
+// ---------- end dataview section ---- ///
 
 /** WORKING EMBED CONTAINER **/
 // TODO what does this do again?

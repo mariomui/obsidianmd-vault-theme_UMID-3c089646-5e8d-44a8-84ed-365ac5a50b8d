@@ -22,6 +22,7 @@
 @import "./plugin-stylings/index.scss";
 @import "./experiments/index";
 
+@import "./frontmatter/index.scss";
 //What does this do again?
 .markdown-rendered {
   tbody {
@@ -195,3 +196,4 @@ span.cm-strong {
   text-shadow: 2px 4px 4px #555;
   // text-align: center;
 }
+
