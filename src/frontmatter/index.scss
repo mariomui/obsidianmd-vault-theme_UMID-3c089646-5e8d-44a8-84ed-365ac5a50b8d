@@ -1,4 +1,3 @@
-
 @use "../shared/index.scss" as shared;
 
 %frontmatter_backdrop {
@@ -12,20 +11,19 @@
 body:not(.metadata-heading-on) .metadata-properties-heading {
   display: unset;
   display: initial;
-
 }
 
 .markdown-source-view.mod-cm6.is-readable-line-width {
-
   .cm-sizer > .metadata-container {
     @extend %frontmatter_backdrop;
-    width: 75%;
+    // if below 800px then 75% if above 50% width
+    // TODO container query or media query this
+    width: clamp(800px, 75%, 50%);
     border-radius: 15px 15px 0 0;
 
     //background: var(--shade);
     .metadata-properties-heading {
       .collapse-indicator.collapse-icon {
-
         @extend %frontmatter_backdrop;
         border-radius: 15px 0 0 15px;
         border: 1px solid #{shared.$borderColor};
@@ -33,6 +31,12 @@ body:not(.metadata-heading-on) .metadata-properties-heading {
         left: -2.2em;
         top: 50%;
         transform: translateY(-50%);
+
+        .metadata-properties {
+          display: flex;
+          flex-wrap: wrap;
+          max-height: 11vh;
+        }
       }
     }
   }
