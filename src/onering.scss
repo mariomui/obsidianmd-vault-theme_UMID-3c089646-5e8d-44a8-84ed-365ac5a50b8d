@@ -197,3 +197,17 @@ span.cm-strong {
   // text-align: center;
 }
 
+.timer {
+  svg.timer {
+    display: none;
+  }
+}
+.timer {
+  .mode {
+    font-size: clamp(1rem, 20vw, 5rem);
+    text-decoration: underline;
+  }
+  .timer-text {
+    font-size: clamp(1rem, 4vw, 12rem);
+  }
+}
