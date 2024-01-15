@@ -197,17 +197,71 @@ span.cm-strong {
   // text-align: center;
 }
 
+.container:has(.timer) {
+  justify-content: center;
+  .pomodoro-extra {
+    max-height: 2vh;
+  }
+}
 .timer {
   svg.timer {
     display: none;
   }
 }
-.timer {
-  .mode {
-    font-size: clamp(1rem, 20vw, 5rem);
-    text-decoration: underline;
+div[data-type="timer-view"] {
+  .timer {
+    width: 100%;
+    height: 100%;
+    .timer-display {
+      padding: unset;
+      .status {
+        .mode {
+          font-size: clamp(1em, 14vw, 5em);
+          // padding: 1.2em 2em;
+          text-decoration: underline;
+        }
+
+        // }
+      }
+      .control {
+        h2.timer-text {
+          font-size: clamp(1em, 4vw, 19rem) !important;
+        }
+      }
+    }
   }
-  .timer-text {
-    font-size: clamp(1rem, 4vw, 12rem);
+}
+
+.block-language-dataviewjs {
+  .replaceme {
+    .view-content {
+      @extend %bg;
+      // padding-top: 4em !important;
+      background-image: shared.$mm-image !important;
+      background-attachment: fixed !important;
+      background-repeat: no-repeat !important;
+      background-size: 100% 100% !important;
+    }
+  }
+  .timer {
+    width: 100%;
+    height: 100%;
+    .timer-display {
+      height: 100%;
+      .status {
+        .mode {
+          font-size: 3em;
+        }
+      }
+      .control {
+        h2.timer-text {
+          @extend %backdrop;
+          padding: 0.1em 0.2em;
+          border-radius: 0.2em 0.2em;
+          margin: 0 auto;
+          font-size: 5em;
+        }
+      }
+    }
   }
 }
