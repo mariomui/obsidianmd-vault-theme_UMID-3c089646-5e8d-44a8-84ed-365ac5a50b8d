@@ -1,4 +1,5 @@
 @use "./shared/index.scss" as shared;
+
 /* # API specific Feature To ONLY TAKE API BETWEEN = and --- */
 /* NAME: SELECTED-TRANSCLUSION-PREVIEW CSS SNIPPET */
 
@@ -88,6 +89,8 @@
 //     }
 //   }
 // }
+
+// # Creating the proper prefixing colons on headings during popover
 .popover.hover-popover {
   background-color: shared.$primary;
   @for $i from 2 through shared.$header-levels {
@@ -100,6 +103,26 @@
             &:before {
               content: shared.repeat(":", $i - 1) + " ";
               @include shared.header-indent-position();
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// # Create word wrap on code during popover
+.popover.hover-popover {
+  .markdown-embed.is-loaded {
+    .markdown-embed-content {
+      .markdown-preview-view {
+        pre > code {
+          white-space: pre-wrap;
+          .ec-line {
+            span.indent {
+              display: inline-block;
+              max-width: 2rem;
+              margin: 0;
             }
           }
         }
