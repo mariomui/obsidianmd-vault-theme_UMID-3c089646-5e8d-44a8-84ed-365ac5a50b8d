@@ -1,0 +1,9 @@
+@use "../shared/marionic-colors.scss" as shared;
+
+.BC-Matrix.markdown-preview-view {
+  .BC-matrix-hier {
+    .internal-link.BC-Link.is-unresolved {
+      color: shared.$unresolvedLinkColor;
+    }
+  }
+}
