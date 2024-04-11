@@ -9,3 +9,9 @@
     }
   }
 }
+.workspace-leaf-content
+  .floating-toc-div.floating-left
+  ~ .markdown-reading-view
+  .markdown-preview-view {
+  padding-left: 0.1em;
+}

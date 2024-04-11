@@ -13,18 +13,49 @@
 }
 
 // # dataview
+
+// ## Dataview:Shared between views
+.markdown-source-view, .markdown-reading-view {
+  .block-language-dataview {
+
+    border: 2px solid var(--material-color-deep-orange);
+    border-radius: 1em 1em;
+    background: var(--shade);
+  }
+}
+
+// ## Dataview: Reading View
 .markdown-reading-view {
   .markdown-preview-view.markdown-rendered {
     .markdown-preview-sizer.markdown-preview-section {
       .block-language-dataviewjs {
         @extend %dataview-container;
+        padding: .5em 1em;
+      }
+      // Make the inner dataview box be 90% of the containing embed box
+      > div:last-child {
+        max-width: 90%;
       }
     }
   }
 }
 
 
+
+// # source view
 .markdown-source-view {
+  /* Remove scroll on embeds. */
+
+  .internal-embed.markdown-embed.is-loaded[alt*="ui-noscroll"] {
+    .markdown-embed-content {
+      .markdown-preview-view.markdown-rendered.node-insert-event.show-indentation-guide
+      .markdown-preview-sizer.markdown-preview-section {
+        overflow: hidden;
+      }
+    }
+  }
+
+  
   .markdown-embed-content {
 
     .markdown-preview-view.markdown-rendered {
@@ -44,6 +75,11 @@
         }
       }
     }
+
+    // .markdown-preview-view.markdown-rendered.node-insert-event.show-indentation-guide
+    // .markdown-preview-sizer.markdown-preview-section {
+    //   padding-left: 2rem;
+    // }
   }
   .cm-preview-code-block.cm-embed-block.markdown-rendered {
 
@@ -145,6 +181,7 @@ span[alt*="nlk"] {
   }
 }
 
+// # Reading View
 .markdown-reading-view {
   .internal-embed[alt*="nlk"].markdown-embed
     .markdown-preview-sizer.markdown-preview-section {
@@ -152,4 +189,41 @@ span[alt*="nlk"] {
     padding-left: 0px !important;
     margin: 0;
   }
+
+  // Reading view content container
+  .markdown-preview-sizer.markdown-preview-section {
+    /* level 2 */
+    // margin: 0 2em;
+    border-radius: 1.5em 1.5em;
+    background: var(--shade);
+  }
+}
+
+
+/** : Tranclusion/Embed sections */
+.internal-embed[alt*=nlk].markdown-embed {
+  /* hide file name on transcludes */
+}
+.internal-embed[alt*=nlk].markdown-embed .embed-title.markdown-embed-title {
+  display: none;
+}
+.internal-embed[alt*=nlk].markdown-embed .markdown-preview-sizer.markdown-preview-section {
+  padding: .1em 0 0 0 !important;
+  padding-left: 5px !important;
+}
+.internal-embed[alt*=nlk].markdown-embed .markdown-preview-sizer > div:nth-of-type(3) {
+  display: none;
+}
+
+span[alt*=nlk].internal-embed.markdown-embed {
+  padding: 0;
+}
+span[alt*=nlk].internal-embed.markdown-embed .markdown-preview-sizer.markdown-preview-section {
+  padding-left: 0 !important;
+}
+
+.markdown-reading-view .internal-embed[alt*=nlk].markdown-embed .markdown-preview-sizer.markdown-preview-section {
+  padding: 0 0 0 0 !important;
+  padding-left: 0px !important;
+  margin: 0;
 }
