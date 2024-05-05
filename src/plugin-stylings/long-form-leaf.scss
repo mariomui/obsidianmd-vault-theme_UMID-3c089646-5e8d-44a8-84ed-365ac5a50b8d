@@ -1,50 +1,57 @@
 /* Font for the markdown source (edit) view */
-.longform-leaf .cm-s-obsidian {
-  /* font-family: Atkinson Hyperlegible; */
-  /* font-size: 1.1em; */
-  line-height: 2em;
+.longform-leaf {
+
+  .cm-s-obsidian {
+    /* font-family: Atkinson Hyperlegible; */
+    /* font-size: 1.1em; */
+    line-height: 2em;
+  }
+  .cm-hmd-frontmatter {
+   font-family: monospace;
+   font-size: 0.8em;
+   line-height: 1em;
+   color: firebrick;
+  }
+
+  .cm-comment {
+    font-family: monospace;
+    font-size: 0.8em;
+    line-height: 1em;
+  }
+
+  .cm-header-1 {
+    font-family: Garamond;
+    font-size: 1.5em;
+    line-height: 2em;
+    font-weight: bold !important;
+  }
+
+  .cm-header-2 {
+    font-family: Garamond;
+    font-size: 1.2em;
+    line-height: 1.5em;
+  }
+
+  .cm-header-4 {
+    font-family: Garamond;
+    font-size: 1em;
+    line-height: 1em;
+    font-weight: normal;
+  }
+  /* Font for the markdown preview view */
+  .markdown-preview-view {
+    font-family: Garamond;
+    font-size: 1.2em;
+    text-indent: 1em;
+    text-align: justify;
+  }
 }
 
-.longform-leaf .cm-hmd-frontmatter {
-  font-family: monospace;
-  font-size: 0.8em;
-  line-height: 1em;
-  color: firebrick;
-}
 
-.longform-leaf .cm-comment {
-  font-family: monospace;
-  font-size: 0.8em;
-  line-height: 1em;
-}
 
-.longform-leaf .cm-header-1 {
-  font-family: Garamond;
-  font-size: 1.5em;
-  line-height: 2em;
-  font-weight: bold !important;
-}
 
-.longform-leaf .cm-header-2 {
-  font-family: Garamond;
-  font-size: 1.2em;
-  line-height: 1.5em;
-}
 
-.longform-leaf .cm-header-4 {
-  font-family: Garamond;
-  font-size: 1em;
-  line-height: 1em;
-  font-weight: normal;
-}
 
-/* Font for the markdown preview view */
-.longform-leaf .markdown-preview-view {
-  font-family: Garamond;
-  font-size: 1.2em;
-  text-indent: 1em;
-  text-align: justify;
-}
 
 .longform-leaf ul {
   list-style-position: outside;
@@ -91,7 +98,8 @@
 }
 
 .longform-leaf {
-  --background-primary: antiquewhite;
+  //--background-primary: antiquewhite;
+  background: antiquewhite;
   --background-primary-alt: white;
   /* --background-secondary: white; */
   /* --background-secondary-alt: white; */
