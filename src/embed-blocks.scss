@@ -152,6 +152,10 @@
 // embedded content
 .internal-embed.markdown-embed.inline-embed.is-loaded {
   padding-left: 1em !important;
+  .markdown-preview-view.markdown-rendered {
+    // padding so that the click to enter the embed link doesn't interfere with buttons.
+    padding-top: 1.4em;
+  }
 }
 /** : Tranclusion/Embed sections */
 
