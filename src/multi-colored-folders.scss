@@ -1,4 +1,7 @@
 @use "./shared/index.scss" as shared;
+@use "sass:list";
+@use "sass:map";
+
 /*
 A-source: https://forum.obsidian.md/t/adding-color-to-obsidian-a-rainbow-of-possibility/12805/11
 B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main/02%20-%20Community%20Expansions/02.05%20All%20Community%20Expansions/CSS%20Snippets/Files%20explorer%20relations%20%26%20color%20%28Mara-Li%29.md
@@ -7,160 +10,169 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
 /* Remove collapse arrow from top level folders */
 .nav-files-container {
   margin: 0px 5px;
-}
+  // Wrap all folder titles.
+  .nav-folder {
+    border-radius: 0.5em 2em 0.4em 0.2em;
 
-// Wrap all folder titles.
-.nav-folder {
-  .nav-folder-title {
-    .nav-folder-title-content {
-      white-space: pre-wrap;
-    }
-  }
-}
-
-.nav-folder.mod-root {
-  border-radius: 0.5em 2em 0.4em 0.2em;
-
-  .nav-folder-children .nav-folder-children {
-    margin-left: 0;
-    padding-left: 0;
-    border-left: unset !important;
-    border-radius: 0px;
-    transition: all 400ms ease-in;
-  }
-
-  > .nav-folder-children {
-    .nav-file {
-      .nav-file-title {
-        padding-left: 5px;
-        // line-height: 1.4em;
-        // max-height: 3.2em;
-        &:after {
-          width: 80%;
-          border: 1px solid $material-color-red-900;
-          position: absolute;
-          content: "";
-          bottom: 1px;
-          display: block;
-          transform: translate(-50%, 0);
-          left: 50%;
-        }
-        &.is-active {
-          /* active file increase font size and removes normal highlight marker */
-          background-color: var(--theme-color-translucent-1);
-        }
-
-        .nav-file-title-content {
-          color: var(--FoldText);
-          line-height: 1.5em;
-          max-height: 3.2em;
-          white-space: pre-wrap;
-          text-overflow: ellipsis;
-        }
-
-        &[data-path^="_"] {
-          /* apply style to any child of a _ prefixed virtual file */
-          // border-bottom: 1px solid shared.$primaryAlt;
-          display: none;
-        }
-      }
-    }
-
-    > .nav-folder.is-collapsed {
-      > .nav-folder-title {
-        border-radius: 5px;
-      }
-    }
-
-    > .nav-folder {
-      > .nav-folder-title-content {
-        padding-left: 0.5em !important;
-      }
-
-      > .nav-folder-title[data-path^="A"] {
-        background-color: var(--FoldA);
-        + .nav-folder-children {
-          background-color: var(--FoldA-1);
-        }
-      }
-
-      > .nav-folder-title[data-path^="B_"] {
-        background-color: var(--FoldB);
-        + .nav-folder-children {
-          background-color: var(--FoldB-1);
-        }
-      }
-
-      > .nav-folder-title[data-path^="C"] {
-        background-color: var(--FoldC);
-        + .nav-folder-children {
-          background-color: var(--FoldC-1);
-        }
-      }
-
-      > .nav-folder-title[data-path^="D"] {
-        background-color: var(--FoldD);
-        + .nav-folder-children {
-          background-color: var(--FoldD-1);
-        }
-      }
-
-      > .nav-folder-title[data-path^="E"] {
-        background-color: var(--FoldE);
-        + .nav-folder-children {
-          background-color: var(--FoldE-1);
-        }
-      }
-
-      > .nav-folder-title[data-path^="F"] {
-        background-color: var(--FoldF);
-        + .nav-folder-children {
-          background-color: var(--FoldF-1);
-        }
-      }
-      > .nav-folder-title[data-path^="Y_"] {
-        background-color: var(--FoldTT);
-        + .nav-folder-children {
-          background-color: var(--FoldTT-1);
-        }
-      }
-
-      > .nav-folder-title[data-path^="Z_"] {
-        background-color: var(--FoldZ);
-        + .nav-folder-children {
-          background-color: var(--FoldZ-1);
-        }
-      }
-      > .nav-folder-children {
-        /* General Nav Folder Children (this is the part that expands from each top level folder) */
-
-        border-radius: 0px 0px 5px 5px;
-        padding: 0.1em 0.2em;
-      }
-
-      > .nav-folder-title {
-        /* Set up explorer container margins */
+    .nav-folder-title {
+      .nav-folder-title-content {
+        white-space: pre-wrap;
         color: var(--FoldText);
-        padding-left: 0.3em !important;
-        margin-top: 0.1em;
-        border-radius: 0.5em 1em 0em 1px;
+        line-height: 1.5em;
+        max-height: 3.2em;
+        text-overflow: ellipsis;
+      }
+    }
+  }
 
-        > .nav-folder-collapse-indicator {
-          display: none; /* Remove collapse arrow from top level folders */
+  .nav-folder {
+    .nav-folder-children .nav-folder-children {
+      margin-left: 0;
+      padding-left: 0;
+      border-left: unset !important;
+      border-radius: 0px;
+      transition: all 400ms ease-in;
+    }
+  }
+
+  .nav-folder {
+    > .nav-folder-children {
+      .nav-file {
+        .nav-file-title {
+          padding-left: 5px;
+          // line-height: 1.4em;
+          // max-height: 3.2em;
+
+          // add a line
+          &:after {
+            width: 80%;
+            border: 1px solid $material-color-red-900;
+            position: absolute;
+            content: "";
+            bottom: 1px;
+            display: block;
+            transform: translate(-50%, 0);
+            left: 50%;
+          }
+          &.is-active {
+            // active file increase font size and removes normal highlight marker
+            background-color: var(--theme-color-translucent-1);
+          }
+
+          .nav-file-title-content {
+            color: var(--FoldText);
+            line-height: 1.5em;
+            max-height: 3.2em;
+            white-space: pre-wrap;
+            text-overflow: ellipsis;
+          }
         }
       }
     }
   }
 }
 
-/* Scrollbars eliminated */
+@mixin renderFoldColorsMixin() {
+  $foldA-datum: (
+    prefix: "A_",
+    color: "--FoldA",
+  );
+  $foldB-datum: (
+    prefix: "B_",
+    color: "--FoldB",
+  );
+  $foldC-datum: (
+    prefix: "C_",
+    color: "--FoldC",
+  );
+  $foldD-datum: (
+    prefix: "D_",
+    color: "--FoldD",
+  );
+  $foldZ-datum: (
+    prefix: "Y_",
+    color: "--FoldY",
+  );
+  $foldY-datum: (
+    prefix: "Z_",
+    color: "--FoldZ",
+  );
+
+  $file-fold-colors-map: (
+    $foldA-datum,
+    $foldB-datum,
+    $foldC-datum,
+    $foldD-datum,
+    $foldY-datum,
+    $foldZ-datum
+  );
+  @each $foldmip in $file-fold-colors-map {
+    $dp: map-get($foldmip, "prefix");
+    $fold-color: map-get($foldmip, "color");
+    .nav-files-container > div > .nav-folder {
+      &:has(.nav-folder-title[data-path^="#{$dp}"]) {
+        background-color: var(#{$fold-color}) !important;
+      }
+      .nav-folder-children {
+        .nav-folder:has(.nav-folder-title[data-path^="#{$dp}"]) {
+          background-color: var(#{$fold-color + "-1"}) !important;
+        }
+      }
+    }
+  }
+}
+@include renderFoldColorsMixin();
+
+.nav-folder {
+  border-radius: 0.5em 2em 0.4em 0.2em;
+  > .nav-folder.is-collapsed {
+    > .nav-folder-title {
+      border-radius: 5px;
+    }
+  }
+  > .nav-folder-title-content {
+    padding-left: 0.5em !important;
+  }
+  > .nav-folder-children {
+    // General Nav Folder Children (this is the part that expands from each top level folder)
+
+    border-radius: 0px 0px 5px 5px;
+    padding: 0.1em 0.2em;
+  }
+  > .nav-folder-title {
+    // Set up explorer container margins
+    // Shift into unused left-side gutter (filenames in the file explorer)
+    color: var(--FoldText);
+    padding-left: 0.3em !important;
+    margin-top: 0.1em;
+    border-radius: 0.5em 1em 0em 1px;
+
+    > .nav-folder-collapse-indicator {
+      display: none; // Remove collapse arrow from top level folders
+    }
+  }
+}
+// Scrollbars eliminate on File Explorer
 .workspace-leaf-content[data-type="file-explorer"] ::-webkit-scrollbar {
   width: 0px;
   height: 0px;
 }
 
-/* Relationship lines for 2nd, 3rd, and 4th level folders */
-.nav-folder.mod-root
+// v1.6.3
+// 1 Bug fixes Due to css changes in Obsidian the old nested code for multi colored pages has been broken.
+// 2 A consequence of this bug is a break in hidden tag folders.Underscore does not turn invisible
+// 3 The following is a temporary fix.
+
+.nav-files-container {
+  .nav-file-title[data-path^="_"] {
+    //   // apply style to any child of a _ prefixed virtual file (only works in root)
+    //   // border-bottom: 1px solid shared.$primaryAlt;
+    display: none;
+  }
+}
+
+// Relationship lines for 2nd, 3rd, and 4th level folders
+.nav-folder
   > .nav-folder-children
   > .nav-folder
   > .nav-folder-children
@@ -170,7 +182,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
   border-left: var(--nestlinestyle1) var(--nestlinesize1) var(--nestlinecolor1);
   margin-left: 12px;
 }
-.nav-folder.mod-root
+.nav-folder
   > .nav-folder-children
   > .nav-folder
   > .nav-folder-children
@@ -181,7 +193,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
   margin-left: 12px;
 }
 
-.nav-folder.mod-root
+.nav-folder
   > .nav-folder-children
   > .nav-folder
   > .nav-folder-children
@@ -193,7 +205,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
   border-left: var(--nestlinestyle2) var(--nestlinesize2) var(--nestlinecolor2);
   margin-left: 12px;
 }
-.nav-folder.mod-root
+.nav-folder
   > .nav-folder-children
   > .nav-folder
   > .nav-folder-children
@@ -206,7 +218,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
   margin-left: 12px;
 }
 
-.nav-folder.mod-root
+.nav-folder
   > .nav-folder-children
   > .nav-folder
   > .nav-folder-children
@@ -220,7 +232,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
   border-left: var(--nestlinestyle3) var(--nestlinesize3) var(--nestlinecolor3);
   margin-left: 12px;
 }
-.nav-folder.mod-root
+.nav-folder
   > .nav-folder-children
   > .nav-folder
   > .nav-folder-children
@@ -234,11 +246,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
   border-left: var(--nestlinestyle3) var(--nestlinesize3) var(--nestlinecolor3);
   margin-left: 12px;
 }
-.nav-folder.mod-root > .nav-folder-children > .nav-folder > *,
-.nav-folder.mod-root
-  > .nav-folder-children
-  > .nav-folder
-  > *
-  + .nav-folder-children {
+.nav-folder > .nav-folder-children > .nav-folder > *,
+.nav-folder > .nav-folder-children > .nav-folder > * + .nav-folder-children {
   margin-left: 0 !important;
 }
