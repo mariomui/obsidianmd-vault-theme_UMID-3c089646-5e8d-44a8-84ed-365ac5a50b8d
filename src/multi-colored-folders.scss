@@ -21,6 +21,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
         line-height: 1.5em;
         max-height: 3.2em;
         text-overflow: ellipsis;
+        max-width: 80%;
       }
     }
   }
@@ -57,6 +58,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
           &.is-active {
             // active file increase font size and removes normal highlight marker
             background-color: var(--theme-color-translucent-1);
+            border-radius: 0.5em 2em 0.4em 0.2em;
           }
 
           .nav-file-title-content {
@@ -65,10 +67,16 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
             max-height: 3.2em;
             white-space: pre-wrap;
             text-overflow: ellipsis;
+            max-width: 75%;
           }
         }
       }
     }
+  }
+
+  // FUDGE FOR 1.6.3 overrides on inline indent style.
+  > div > .nav-file > .nav-file-title * {
+    margin-left: -1rem !important;
   }
 }
 
@@ -249,4 +257,8 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
 .nav-folder > .nav-folder-children > .nav-folder > *,
 .nav-folder > .nav-folder-children > .nav-folder > * + .nav-folder-children {
   margin-left: 0 !important;
+}
+.nav-folder-children {
+  background-color: var(--theme-color-translucent-1);
+  border-radius: 0.5em 2em 0.4em 0.2em;
 }
