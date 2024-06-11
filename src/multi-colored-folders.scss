@@ -125,6 +125,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
         .nav-folder:has(.nav-folder-title[data-path^="#{$dp}"]) {
           overflow: hidden;
           background-color: var(#{$fold-color + "-1"}) !important;
+          margin-bottom: 1px;
           > .nav-folder-children {
             background-color: var(--theme-color-translucent-1);
             overflow: hidden;
