@@ -123,12 +123,34 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
       }
       .nav-folder-children {
         .nav-folder:has(.nav-folder-title[data-path^="#{$dp}"]) {
+          overflow: hidden;
           background-color: var(#{$fold-color + "-1"}) !important;
+          > .nav-folder-children {
+            background-color: var(--theme-color-translucent-1);
+            overflow: hidden;
+            > .nav-folder {
+              .nav-folder-title {
+                background: var(#{$fold-color});
+              }
+            }
+          }
         }
       }
     }
   }
 }
+
+// 3rd level folders
+// .nav-files-container
+//   .nav-folder
+//   .nav-folder-children
+//   .nav-folder
+//   .nav-folder-children
+//   .nav-folder
+//   .nav-folder-title {
+//   // background: blue !important;
+//   margin: 0 !important;
+// }
 @include renderFoldColorsMixin();
 
 .nav-folder {
@@ -180,6 +202,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
 }
 
 // Relationship lines for 2nd, 3rd, and 4th level folders
+
 .nav-folder
   > .nav-folder-children
   > .nav-folder
@@ -188,7 +211,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
   > .nav-folder-children
   > .nav-file {
   border-left: var(--nestlinestyle1) var(--nestlinesize1) var(--nestlinecolor1);
-  margin-left: 12px;
+  // margin-left: 12px;
 }
 .nav-folder
   > .nav-folder-children
@@ -198,7 +221,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
   > .nav-folder-children
   > .nav-folder {
   border-left: var(--nestlinestyle1) var(--nestlinesize1) var(--nestlinecolor1);
-  margin-left: 12px;
+  // margin-left: 12px;
 }
 
 .nav-folder
@@ -211,7 +234,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
   > .nav-folder-children
   > .nav-file {
   border-left: var(--nestlinestyle2) var(--nestlinesize2) var(--nestlinecolor2);
-  margin-left: 12px;
+  // margin-left: 12px;
 }
 .nav-folder
   > .nav-folder-children
@@ -223,7 +246,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
   > .nav-folder-children
   > .nav-folder {
   border-left: var(--nestlinestyle2) var(--nestlinesize2) var(--nestlinecolor2);
-  margin-left: 12px;
+  // margin-left: 12px;
 }
 
 .nav-folder
@@ -238,7 +261,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
   > .nav-folder-children
   > .nav-file {
   border-left: var(--nestlinestyle3) var(--nestlinesize3) var(--nestlinecolor3);
-  margin-left: 12px;
+  // margin-left: 12px;
 }
 .nav-folder
   > .nav-folder-children
@@ -252,13 +275,19 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
   > .nav-folder-children
   > .nav-folder {
   border-left: var(--nestlinestyle3) var(--nestlinesize3) var(--nestlinecolor3);
-  margin-left: 12px;
+  // margin-left: 12px;
 }
-.nav-folder > .nav-folder-children > .nav-folder > *,
-.nav-folder > .nav-folder-children > .nav-folder > * + .nav-folder-children {
-  margin-left: 0 !important;
-}
+
+// For folders nested in the second level
 .nav-folder-children {
   background-color: var(--theme-color-translucent-1);
   border-radius: 0.5em 2em 0.4em 0.2em;
+}
+
+.nav-folder > .nav-folder-children > .nav-folder > *,
+.nav-folder > .nav-folder-children > .nav-folder > * {
+  + .nav-folder-children {
+    margin-left: 0.5em !important;
+    background: var(--theme-color-translucent-2);
+  }
 }
