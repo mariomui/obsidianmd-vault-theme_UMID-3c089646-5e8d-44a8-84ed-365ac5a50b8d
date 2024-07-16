@@ -52,58 +52,6 @@
       }
     }
   }
-
-  .markdown-embed-content {
-    .markdown-preview-view.markdown-rendered {
-      .block-language-dataviewjs {
-        p {
-          width: 100% !important;
-          background-color: shared.$callout;
-          ul {
-            margin: 0 !important;
-          }
-        }
-        > div:first-of-type {
-          background-color: shared.$accentAlt;
-          ul {
-            margin-top: 0.5em;
-          }
-        }
-        li:has(span.internal-embed[alt*="=$"]) {
-          & ~ li:nth-child(2n + 2) {
-            border-top: 0.1em solid shared.$borderColor;
-            background-color: shared.$callout;
-          }
-          & ~ li:nth-child(2n + 1) {
-            background-color: shared.$calloutAlt;
-
-            border-top: 0.1em solid shared.$borderColor;
-          }
-        }
-      }
-    }
-
-    // .markdown-preview-view.markdown-rendered.node-insert-event.show-indentation-guide
-    // .markdown-preview-sizer.markdown-preview-section {
-    //   padding-left: 2rem;
-    // }
-  }
-  .cm-preview-code-block.cm-embed-block.markdown-rendered {
-    .block-language-dataviewjs {
-      @extend %dataview-container;
-      ul.dataview.list-view-ul:nth-of-type(1) {
-        ul.dataview.dataview-ul.dataview-result-list-ul:nth-of-type(1) {
-          li.dataview-result-list-li:has(ul) {
-            li.dataview-result-list-li:not(:first-of-type) {
-              a {
-                color: shared.$embedPrimaryLinkColor;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 :is(.canvas-wrapper, .markdown-source-view) {

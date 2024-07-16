@@ -1,0 +1,67 @@
+@use "../shared/index.scss" as shared;
+
+// #TODO i need to share this dataview container
+%dataview-container {
+  // border: 2px solid var(--material-color-deep-orange);
+  border: 2px solid shared.$borderColor;
+  border-right-width: 1em;
+  background-image: var(--dark-blue-grad);
+  border-radius: 0.5em 0.5em;
+  padding-left: 0.1em;
+}
+
+:root {
+  body {
+    --container-table-width: clamp(1000px, 500px, 50%);
+  }
+}
+
+// # source view
+.markdown-source-view {
+  .markdown-embed-content {
+    .markdown-preview-view.markdown-rendered {
+      .block-language-dataviewjs {
+        p {
+          width: 100% !important;
+          background-color: shared.$callout;
+          ul {
+            margin: 0 !important;
+          }
+        }
+        > div:first-of-type {
+          background-color: shared.$accentAlt;
+          ul {
+            margin-top: 0.5em;
+          }
+        }
+        li:has(span.internal-embed[alt*="=$"]) {
+          & ~ li:nth-child(2n + 2) {
+            border-top: 0.1em solid shared.$borderColor;
+            background-color: shared.$callout;
+          }
+          & ~ li:nth-child(2n + 1) {
+            background-color: shared.$calloutAlt;
+
+            border-top: 0.1em solid shared.$borderColor;
+          }
+        }
+      }
+    }
+  }
+  .cm-preview-code-block.cm-embed-block.markdown-rendered {
+    .block-language-dataviewjs {
+      @extend %dataview-container;
+      ul.dataview.list-view-ul:nth-of-type(1) {
+        ul.dataview.dataview-ul.dataview-result-list-ul:nth-of-type(1) {
+          li.dataview-result-list-li:has(ul) {
+            li.dataview-result-list-li:not(:first-of-type) {
+              a {
+                color: shared.$embedPrimaryLinkColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
