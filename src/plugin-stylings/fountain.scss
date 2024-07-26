@@ -1,0 +1,46 @@
+.screenplay {
+  width: 70.5%;
+  p.centered {
+    text-align: center;
+  }
+
+  h2 {
+    text-align: right;
+  }
+
+  & > .dialogue {
+    p:not(.parenthetical):last-of-type {
+      margin: 0;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    + p {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+    h4 {
+      margin-top: 0em !important;
+      margin-bottom: 0em !important;
+    }
+    h4 + p {
+      margin-top: 0 !important;
+    }
+
+    h4:has(+ .parenthetical) {
+      margin: 0 auto !important;
+      // padding-top: 1em;
+      & + .parenthetical {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-left: 0;
+        padding-right: 30%;
+        text-align: center;
+      }
+    }
+
+    .parenthetical {
+      // margin-left: 0;
+      //   text-align: center;
+    }
+  }
+}
