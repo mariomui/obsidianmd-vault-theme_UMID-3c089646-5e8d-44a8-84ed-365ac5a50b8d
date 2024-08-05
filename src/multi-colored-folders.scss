@@ -47,13 +47,13 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
           // add a line
           &:after {
             width: 80%;
-            border: 1px solid $material-color-red-900;
+            border-bottom: 1px solid $material-color-red-900;
             position: absolute;
             content: "";
             bottom: 1px;
             display: block;
             transform: translate(-50%, 0);
-            left: 50%;
+            left: 65%;
           }
           &.is-active {
             // active file increase font size and removes normal highlight marker
@@ -67,7 +67,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
             max-height: 3.2em;
             white-space: pre-wrap;
             text-overflow: ellipsis;
-            max-width: 75%;
+            // max-width: 75%;
           }
         }
       }
