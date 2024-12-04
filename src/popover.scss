@@ -4,6 +4,14 @@
 /* NAME: SELECTED-TRANSCLUSION-PREVIEW CSS SNIPPET */
 
 .popover.hover-popover {
+
+  // dataview padding
+  .dataview {
+    .markdown-preview-view.markdown-rendered.show-indentation-guide {
+      padding: 0;
+    }
+  }
+
   .markdown-embed {
     .markdown-preview-view.markdown-rendered {
       .markdown-preview-sizer.markdown-preview-section {
