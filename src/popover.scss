@@ -3,6 +3,18 @@
 /* # API specific Feature To ONLY TAKE API BETWEEN = and --- */
 /* NAME: SELECTED-TRANSCLUSION-PREVIEW CSS SNIPPET */
 
+// Popover left side indentation
+.popover.hover-popover {
+  .markdown-embed {
+    .markdown-embed-content {
+      .markdown-preview-view, .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller {
+        padding-left: .3em !important;
+        background-color: blue;
+      } 
+    } 
+  }
+}
+
 .popover.hover-popover {
 
   // dataview padding
