@@ -1,4 +1,5 @@
-.nav-files-container .nav-file-title::after {
+.nav-files-container .nav-folder > .nav-folder-children .nav-file .nav-file-title::after,
+.nav-folder-title .nav-files-container .nav-file-title::after {
   content: attr(data-novel-word-count-plugin) !important;
   flex: 1 0 auto;
   font-size: 0.8em;
@@ -16,4 +17,7 @@
   text-align: right;
   padding-right: 5em;
   text-align: right;
+  right: 1em;
+  position: absolute;
 }
+

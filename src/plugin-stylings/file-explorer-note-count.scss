@@ -12,8 +12,9 @@ $num-colors: 100;
   font-weight: bold; /* Make text bolder */
 }
 @function poof() {
-  $note_color: color.adjust($note_color, $lightness: 10%, $saturation: 30%);
-  @return $note_color;
+  // $note_color: color.adjust($note_color, $lightness: 10%, $saturation: 30%);
+  $note_color: rgb(random(255),random(255), random(105));
+  @return color.adjust($note_color, $lightness: 50%, $saturation: 30%);
 }
 
 // media queries dont work here in obsidianland
@@ -36,12 +37,13 @@ $num-colors: 100;
         transition: opacity 100ms ease-in-out;
         // width: 2.43rem;
         position: absolute;
-        transform: translateY(-50%);
-        top: 50%;
-        right: 2em;
+        transform: translateY(-85%);
+        top: 85%;
+        right: 1rem;
         // $brightness: 100%
         // chain += `* <b style="filter: hue-rotate(180deg) saturate(0%) brightness(100%)"> ${slice}</b>\n`
       }
     }
   }
 }
+
