@@ -18,6 +18,7 @@ $num-colors: 100;
 }
 
 // media queries dont work here in obsidianland
+
 @for $i from 0 to $num-colors {
   // because of scope and pre-read-process behavior, anything dynamic inside of the curly braces can't be acted upon. Some exceptions like the computed value given by the widht of the containing element, but generally no.
   .nav-files-container .tree-item.nav-folder:nth-child(#{$i}) {
