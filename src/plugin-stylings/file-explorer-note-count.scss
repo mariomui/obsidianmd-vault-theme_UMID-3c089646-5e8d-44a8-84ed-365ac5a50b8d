@@ -1,0 +1,47 @@
+@use "sass:color";
+@use "../shared/index.scss" as shared;
+
+// https://github.com/ozntel/file-explorer-note-count
+
+$note_color: shared.$secondaryAlt;
+// $hue: 80deg,
+$num-colors: 100;
+
+@mixin random-bgr() {
+  color: poof();
+  font-weight: bold; /* Make text bolder */
+}
+@function poof() {
+  $note_color: color.adjust($note_color, $lightness: 10%, $saturation: 30%);
+  @return $note_color;
+}
+
+// media queries dont work here in obsidianland
+@for $i from 0 to $num-colors {
+  // because of scope and pre-read-process behavior, anything dynamic inside of the curly braces can't be acted upon. Some exceptions like the computed value given by the widht of the containing element, but generally no.
+  .nav-files-container .tree-item.nav-folder:nth-child(#{$i}) {
+    .nav-folder-title[data-count] {
+      &[data-count]::before {
+        // "|";
+        /* background-color: var(--background-secondary-alt); */
+        /* border-radius: 3px; */
+        @include random-bgr;
+        content: attr(data-count) "\2009" "\2229";
+        // display: inline-block;
+        font-size: calc(100% * 0.8);
+        // margin-right: 4px;
+        padding-left: 3px;
+        // padding: 2px 0;
+        text-align: right;
+        transition: opacity 100ms ease-in-out;
+        // width: 2.43rem;
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        right: 2em;
+        // $brightness: 100%
+        // chain += `* <b style="filter: hue-rotate(180deg) saturate(0%) brightness(100%)"> ${slice}</b>\n`
+      }
+    }
+  }
+}
