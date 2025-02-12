@@ -33,6 +33,7 @@ $dark-blue-grad: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gxYSUND
 // # DERIVED COMPOSITE
 // $bg-image: #{$mm-image, $anu-image}; you cannot pre-interpolate so add a wfb flag to signal
 $wfb--bg-image: $mm-image, $anu-image; 
+$bg-image: $wfb--bg-image; // for legacy;
 
 :root {
   --midnight-grad: url("https://external-preview.redd.it/1cF1RegPa5GF0ikMOZ7YfN_g-GeirkmpRxSqbblCSsg.png?auto=webp&s=42af368cb2e0cf58d11c9ca0d9cbddee58a66cb5");

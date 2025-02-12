@@ -1,5 +1,19 @@
 @use "../shared/index.scss" as shared;
+// KNOBS
+$ßlocal-wfb--active-vtabheader-bg-image: shared.$dark-blue-grad, shared.$mm-image, shared.$anu-image;
+
+// domain driven knobs;
+$local-wfb--active-vtabheader-bg-image: $ßlocal-wfb--active-vtabheader-bg-image;
+$local-wfb--prevalent-bg: shared.$midnight-grad, shared.$mm-image, shared.$anu-image;
+
+
+
 /* minimal theme overrides */
+%bgfixednorepeat {
+  background-image: #{shared.$wfb--bg-image};
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
 
 /* NAV FILE EXPLORER BACKDROP */
 .nav-files-container .tree-item.nav-folder {
@@ -19,10 +33,8 @@ body.is-hidden-frameless .workspace.should-maximize:not(.workspace.is-right-side
 .workspace-split.mod-horizontal.mod-left-split
 .workspace-leaf-content
 .nav-header {
+  @extend %bgfixednorepeat;
 
-  background-image: var(--bg-image);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: 100% 100%;
   background-blend-mode: hard-light;
 
@@ -46,9 +58,7 @@ body.is-hidden-frameless .workspace.should-maximize:not(.workspace.is-right-side
 .workspace
 .workspace-split.mod-horizontal.mod-left-split
 .workspace-leaf-content[data-type="search"] {
-  background-image: var(--bg-image);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  @extend %bgfixednorepeat;
   background-size: 100% 100%;
 }
 
@@ -64,9 +74,8 @@ body.is-hidden-frameless .workspace.should-maximize:not(.workspace.is-right-side
 .workspace-leaf
 .workspace-leaf-content
 .view-header {
-  background-image: var(--bg-image);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  @extend %bgfixednorepeat;
+
   background-size: 100% 100%;
   background-blend-mode: hard-light;
 }
@@ -167,17 +176,15 @@ body.minimal-theme {
 
 /* ## TOP BAR FOR LEAF */
 .workspace .workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-container .workspace-leaf .workspace-leaf-content .view-header {
-  background-image: var(--bg-image);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  @extend %bgfixednorepeat;
+
   background-size: 100% 100%;
   background-blend-mode: var(--topbar-blend);
 }
 
 .workspace-tabs.mod-top-left-space .workspace-tab-container .workspace-leaf-content[data-type="markdown"] .view-content  {
-  background-image: var(--bg-image);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  @extend %bgfixednorepeat;
+
   background-size: 100% 100%;
 }
 
@@ -218,17 +225,13 @@ body.minimal-theme {
 
 .sidebar-toggle-button.mod-left,
 .sidebar-toggle-button.mod-right {
-  background-image: var(--bg-image);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  @extend %bgfixednorepeat;
+
   background-size: 100% 100%;
   background-blend-mode: var(--topbar-blend);
 }
 .workspace-tab-header-tab-list {
-  /* background-image: var(--bg-image); */
   background-image: unset;
-
-
 }
 
 .sidebar-toggle-button.mod-right {
@@ -241,23 +244,19 @@ body.minimal-theme {
 /* LEFT BAR RIBBON (VERTICAL)*/
 .workspace-ribbon.mod-left:before,
 .workspace-ribbon.side-dock-ribbon.mod-left {
-  background-image: var(--bg-image);
-  background-attachment: fixed;
-  /* difference or lighten works here too */
-  background-blend-mode: normal; 
-  background-repeat: no-repeat;
+  @extend %bgfixednorepeat; // this is the most obvious element on the farthest left side. use to debug if ui changes work
+
+  background-blend-mode: normal; //difference or lighten works here too
   background-size: 100% 100%;
-  /* contain: strict; */
 }
 
 
 
 
 .workspace.is-left-sidedock-open.is-sliding {
-  background-image: var(--bg-image);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  @extend %bgfixednorepeat;
 }
+
 .workspace-ribbon.side-dock-ribbon.mod-left .clickable-icon.side-dock-ribbon-action {
   border: 1px solid var(--material-color-deep-orange-a200);
   background-color: var(--tertiary-blue-800);
@@ -268,9 +267,7 @@ body.minimal-theme {
 
 /* # File Explorer Styling */
 .workspace-tab-container .workspace-leaf-content[data-type="file-explorer"] {
-  background-image: var(--bg-image);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  @extend %bgfixednorepeat;
   background-blend-mode: screen;
   /* var(--dark-blue-grad), */
 }
@@ -278,9 +275,8 @@ body.minimal-theme {
 
 /* UIFRAME :: TOP BAR */
 .app-container .horizontal-main-container .workspace-tab-header-container {
-  background-image: var(--bg-image);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  @extend %bgfixednorepeat;
+
   background-size: 100% 100%;
   background-blend-mode: var(--topbar-blend);
 }
@@ -335,10 +331,8 @@ body.minimal-theme {
 /* ### Active Vertical Note Title Text */
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.mod-active.is-active,
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header {
-  background-image: var(--dark-blue-grad), var(--mm-image), var(--anu-image);
-  /* background-blend-mode: screen; */
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-image: #{$local-wfb--active-vtabheader-bg-image};
+
   background-size: 100% 100%;
 
 }
@@ -348,6 +342,7 @@ body.minimal-theme {
 }
 
 /* INNER TAB FOR FILE */
+$local-wfb--inner-tab: shared.$white-grad, shared.$anu-image, shared.$mm-image;
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.mod-active.is-active .workspace-tab-header-inner,
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header .workspace-tab-header-inner {
   transition-duration:  100ms;
@@ -356,7 +351,8 @@ body.minimal-theme {
   transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   min-height: 21vh;
   height: auto;
-  background-image: var(--white-grad), var(--anu-image), var(--mm-image);
+  background-image: #{$local-wfb--inner-tab};
+  
   background-blend-mode: screen;
   /* Set the background size and repeat properties if needed */
   background-attachment: fixed;
@@ -382,7 +378,7 @@ jesus the psuedo trick has limitations;
 
  .workspace-split .workspace-tab-container .workspace-leaf-content .markdown-source-view .search-results-children {
 
-  background-image: var(--bg-image);
+  background-image: #{shared.$wfb--bg-image};
   background-attachment: fixed;
   background-blend-mode: multiply, difference;
 }
@@ -391,7 +387,7 @@ jesus the psuedo trick has limitations;
 }
 
 .workspace-split .workspace-tab-container .workspace-leaf-content .markdown-reading-view .search-results-children {
-  background-image: var(--bg-image);
+  background-image: #{shared.$wfb--bg-image};
   background-attachment: fixed;
   background-blend-mode: multiply, difference;
 }
@@ -402,7 +398,7 @@ jesus the psuedo trick has limitations;
 /* only global search */
 .workspace-leaf-content[data-type="search"]
 .search-result-container.mod-global-search {
-  background-image: var(--midnight-grad), var(--mm-image), var(--anu-image);
+  background-image: #{$local-wfb--prevalent-bg};
   background-blend-mode: screen, darken;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -440,7 +436,7 @@ body:not(.full-file-names) .tree-item-self {
 }
 
 .workspace-tabs .workspace-tab-container .workspace-leaf .workspace-leaf-content .view-content .pending-notes-view-container li {
-  background-image: var(--midnight-grad), var(--mm-image), var(--anu-image);
+  background-image: #{$local-wfb--prevalent-bg};
   /* background-blend-mode: difference, darken; */
   background-attachment: fixed;
   white-space: nowrap;
@@ -459,7 +455,7 @@ body:not(.full-file-names) .tree-item-self {
 .workspace-split.mod-horizontal.mod-right-split
 .workspace-tabs.mod-top.mod-top-right-space 
 .workspace-leaf-content {
-  background-image: var(--midnight-grad), var(--mm-image), var(--anu-image);
+  background-image: #{$local-wfb--prevalent-bg};
   background-blend-mode: difference, multiply;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -471,7 +467,7 @@ body:not(.full-file-names) .tree-item-self {
 .workspace-tabs
 .workspace-tab-container
 .workspace-leaf-content[data-type*=" "] {
-  background-image: var(--midnight-grad), var(--mm-image), var(--anu-image);
+  background-image: #{$local-wfb--prevalent-bg};
   background-blend-mode: difference, multiply;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -490,10 +486,9 @@ body:not(.full-file-names) .tree-item-self {
 .workspace-split.mod-horizontal.mod-right-split
 .workspace-tabs
 .workspace-tab-header-container {
-  background-image: var(--bg-image);
+  @extend %bgfixednorepeat;
+
   background-blend-mode: difference, multiply;
-  background-attachment: fixed; 
-  background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
@@ -557,10 +552,8 @@ body:not(.full-file-names) .tree-item-self {
 @container (width > 80cqw){
 
   .canvas-background {
-    background-image: var(--bg-image);
+    @extend %bgfixednorepeat;
     background-blend-mode: color-dodge;
-    background-attachment: fixed; 
-    background-repeat: no-repeat;
     background-size: 100% 100%;
     /* transform: none !important; */
 
@@ -593,11 +586,12 @@ body:not(.full-file-names) .tree-item-self {
   --tab-text-color-focused-active-current: var(--minimal-tab-text-color-active);
 }
 
+$local-wfb--workspace-tab-header: shared.$anu-image, shared.$white-grad;
 .workspace .mod-root .workspace-tab-header {
-  background-image: var(--anu-image), var(--white-grad);
+  background-image: $local-wfb--workspace-tab-header; 
+  background-attachment: fixed;
   background-blend-mode: screen;
   /* Set the background size and repeat properties if needed */
-  background-attachment: fixed;
   background-size: 100%, 100%;
   color: var(--tertiary-blue-800);
 
