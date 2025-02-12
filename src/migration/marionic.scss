@@ -2,6 +2,7 @@
 
 // KNOBS
 $ßlocal-wfb--active-vtabheader-bg-image: shared.$dark-blue-grad, shared.$mm-image, shared.$anu-image;
+$local-bg-image: shared.$bg-image;
 
 // domain driven knobs;
 $local-wfb--active-vtabheader-bg-image: $ßlocal-wfb--active-vtabheader-bg-image;
@@ -11,7 +12,7 @@ $local-wfb--prevalent-bg: shared.$midnight-grad, shared.$mm-image, shared.$anu-i
 
 /* minimal theme overrides */
 %bgfixednorepeat {
-  background-image: #{shared.$wfb--bg-image};
+  background-image: #{$local-bg-image};
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
@@ -45,12 +46,12 @@ body.is-hidden-frameless .workspace.should-maximize:not(.workspace.is-right-side
 .workspace-leaf 
 .workspace-leaf-content 
 .nav-header .nav-buttons-container {
-  background: shared.$shade;
+  background: #{shared.$shade};
   border-radius: .5em 1em 0 0;
 }
 .workspace-tabs.mod-top.mod-top-left-space
 .workspace-tab-header-container-inner {
-  background: shared.$shade;
+  background: #{shared.$shade};
   border-radius: .5em 1em 0 0;
   padding: 0 1em 0 .5em;;
 }
@@ -377,7 +378,7 @@ jesus the psuedo trick has limitations;
 
  .workspace-split .workspace-tab-container .workspace-leaf-content .markdown-source-view .search-results-children {
 
-  background-image: #{shared.$wfb--bg-image};
+  background-image: #{$local-bg-image};
   background-attachment: fixed;
   background-blend-mode: multiply, difference;
 }
@@ -386,7 +387,7 @@ jesus the psuedo trick has limitations;
 }
 
 .workspace-split .workspace-tab-container .workspace-leaf-content .markdown-reading-view .search-results-children {
-  background-image: #{shared.$wfb--bg-image};
+  background-image: #{$local-bg-image};
   background-attachment: fixed;
   background-blend-mode: multiply, difference;
 }
@@ -422,7 +423,7 @@ jesus the psuedo trick has limitations;
 }
 
 .daily-note-container .daily-note .daily-note-title {
-  background: shared.$shade;
+  background: #{shared.$shade};
   border-radius: 15px 15px 0 0;
   padding-left: .5em;
 }
@@ -512,7 +513,7 @@ body:not(.full-file-names) .tree-item-self {
 .view-content
 .nav-header
 .nav-buttons-container {
-  background: shared.$shade;
+  background: #{shared.$shade};
   padding: 0 .2em;
   border-radius: 0px 40px 0 0;
 }

@@ -31,9 +31,10 @@ $dark-blue-grad: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gxYSUND
   $mm-image: url(https://cdnb.artstation.com/p/assets/images/images/003/508/149/large/lorenz-hideyoshi-ruwwe-barbarossa-brunhilde-final-s.jpg);
 
 // # DERIVED COMPOSITE
-// $bg-image: #{$mm-image, $anu-image}; you cannot pre-interpolate so add a wfb flag to signal
-$wfb--bg-image: $mm-image, $anu-image; 
-$bg-image: $wfb--bg-image; // for legacy;
+
+$ßwfb--bg-image: $mm-image, $anu-image; 
+// $bg-image: black;
+$bg-image: #{$ßwfb--bg-image}; // for legacy;
 
 :root {
   --midnight-grad: url("https://external-preview.redd.it/1cF1RegPa5GF0ikMOZ7YfN_g-GeirkmpRxSqbblCSsg.png?auto=webp&s=42af368cb2e0cf58d11c9ca0d9cbddee58a66cb5");
@@ -120,7 +121,7 @@ $bg-image: $wfb--bg-image; // for legacy;
   /* # ARCHIVED */
   /* MAIN */
 
-  --bg-image: #{$wfb--bg-image}; // be careful to interpolate
+  --bg-image: #{$ßwfb--bg-image}; // be careful to interpolate
 
 }
 

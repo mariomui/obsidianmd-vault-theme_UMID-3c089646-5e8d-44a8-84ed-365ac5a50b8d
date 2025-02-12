@@ -1,6 +1,9 @@
 @use "./shared/index.scss" as shared;
+// eventually combine to the base of shared so i can use overrides
+
 $accent: hsl(174, 60%, 51%);
 $topbar-blend: hard-light;
+$shade: shared.$shade;
 
 :root {
   --accent: #37cdbe;
@@ -25,7 +28,7 @@ $topbar-blend: hard-light;
   /* ## Translucency Helpers */
   --blurbrightness: 0.28;
   --blur: 7px;
-  --shade: rgba(0, 0, 0, 0.8);
+  --shade: #{shared.$shade};
 
   /* ## I HATE NAMING */
   --topbar-blend: hard-light;
