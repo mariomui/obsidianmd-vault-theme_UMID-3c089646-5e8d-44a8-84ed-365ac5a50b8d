@@ -1,17 +1,5 @@
 /* minimal theme overrides */
 
-/* Fix pixel-banner bug see   - https://github.com/jparkerweb/pixel-banner/blob/e1ee849c4a1b6c5769792b6394ed7402e932a2b3/src/main.js#L2247 */
-:root {
-  .markdown-embed-content .markdown-preview-view {
-
-    --pixel-banner-embed-min-height: 1% !important;
-    .pixel-banner-image {
-      background-size: contain !important;
-    }
-  }
-}
-
-
 /* NAV FILE EXPLORER BACKDROP */
 .nav-files-container .tree-item.nav-folder {
   background: rgba(0,0,0,.2);
