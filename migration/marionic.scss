@@ -1,31 +1,5 @@
 /* minimal theme overrides */
 
-/* .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
-.workspace-split.mod-left-split > .workspace-leaf-resize-handle {
-  border-color: var(--material-color-orange-700) !important;
-} */
-/* 
-
-
-
-.is-hidden-frameless:not(.colorful-frame)
-  .mod-left-split
-  .mod-top
-  .workspace-tab-header-container {
-  border-color: var(--material-color-orange-500);
-}
-
-.nav-files-container {
-  border-left: 1px solid var(--material-color-orange-500);
-  background-image: var(--midnight-grad), var(--mm-image), var(--anu-image);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-blend-mode: color;
-  contain: paint;
-}
-*/
-
 /* Fix pixel-banner bug see   - https://github.com/jparkerweb/pixel-banner/blob/e1ee849c4a1b6c5769792b6394ed7402e932a2b3/src/main.js#L2247 */
 :root {
   .markdown-embed-content .markdown-preview-view {
@@ -107,25 +81,7 @@ body.is-hidden-frameless .workspace.should-maximize:not(.workspace.is-right-side
   background-size: 100% 100%;
   background-blend-mode: hard-light;
 }
-/* .workspace
-.workspace-split.mod-vertical.mod-root
-.workspace-tabs
-.workspace-tab-container
-.workspace-leaf
-.workspace-leaf-content
-.view-header:before {
-  content: "";
-  position: absolute;
-  width: 99%;
-  height: 70%;
-  background-color: rgba(0,0,0,.5);
-  display: block;
-  transform: translate(50%, -50%);
-  top: 50%;
-  left: -49%;
-  border: 1px solid rgba(0,0,0,.5);
-  border-radius: 0.5em 0.5em 0.1em 0.1em;
-} */
+
 .workspace
 .workspace-split.mod-vertical.mod-root
 .workspace-tabs
@@ -152,16 +108,6 @@ body.is-hidden-frameless .workspace.should-maximize:not(.workspace.is-right-side
   filter: brightness(1);
 }
 
-
-/* .nav-buttons-container::before {
-  content: '';
-  position: absolute;
-  left: -3%;
-  width: 200px;
-  height: 1.4em;
-  border-left: 30px solid var(--nbc);
-  margin-left: 8px;
-} */
 
 /* // what is this? */
 .workspace .mod-root .workspace-tab-header-spacer.drawer {
@@ -200,30 +146,6 @@ body.minimal-theme {
   --max-width: 100%;
 }
 
-
-/* .markdown-preview-view progress.mario-progress::before, .markdown-rendered progress.mario-progress::before, .markdown-source-view.is-live-preview progress::before {
-    content: "ddd";
-    position: absolute;
-    left: 50%;
-    color: blue;
-    height: 100%;
-    top: 50%;
-    transform: translate(-50%, -28%);
-    font-size: 3em;
-} */
-
-/* progress::-webkit-progress-bar {
-  background-color: blue;
-}
-
-progress::-webkit-progress-value {
-  background-color: green;
-}
-
-progress::-moz-progress-bar {
-  background-color: brown;
-} */
-
 .markdown-source-view.mod-cm6 .task-list-item-checkbox {
   border: 1px solid --var(--material-color-red-a700);
 }
@@ -232,25 +154,6 @@ progress::-moz-progress-bar {
   display: none;
 }
 
-/* input[type=checkbox]:checked:after {
-  content: "";
-  top: -1px;
-  left: -1px;
-  position: absolute;
-  width: var(--checkbox-size);
-  height: var(--checkbox-size);
-  display: block;
-  background-color: var(--checkbox-marker-color);
-  -webkit-mask-position: 52% 52%;
-  -webkit-mask-size: 65%;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-image: url('data:image/svg+xml; utf8, <svg width="12px" height="10px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-4.000000, -6.000000)" fill="%23000000"><path d="M8.1043257,14.0367999 L4.52468714,10.5420499 C4.32525014,10.3497722 4.32525014,10.0368095 4.52468714,9.8424863 L5.24777413,9.1439454 C5.44721114,8.95166768 5.77142411,8.95166768 5.97086112,9.1439454 L8.46638057,11.5903727 L14.0291389,6.1442083 C14.2285759,5.95193057 14.5527889,5.95193057 14.7522259,6.1442083 L15.4753129,6.84377194 C15.6747499,7.03604967 15.6747499,7.35003511 15.4753129,7.54129009 L8.82741268,14.0367999 C8.62797568,14.2290777 8.3037627,14.2290777 8.1043257,14.0367999"></path></g></g></svg>');
-} */
-/* :root {
-  --text-indent: -70px;
-} */
-
-/* make h1s appear different per 1 in the same note */
 
 .cm-content.cm-lineWrapping
   div.HyperMD-header.HyperMD-header-1.cm-line
@@ -262,28 +165,6 @@ progress::-moz-progress-bar {
 }
 
 
-
-/* linear gradients and filtering causes lag */
-/* .workspace-split.mod-root .view-content {
-  //background-color: var(--material-color-blue-grey-900) !important;
-  background-color: unset;
-  background-color: transparent;
-  background-image: linear-gradient(
-    180deg,
-    var(--tertiary-blue-900) 0%,
-    var(--tertiary-blue-900) 15%,
-    var(--tertiary-blue-800) 55%,
-    var(--tertiary-blue-900) 70%,
-    var(--tertiary-blue-800) 80%,
-    var(--tertiary-blue-900) 100%
-  );
-}
-.markdown-source-view.mod-cm6 .cm-sizer {
-  //background: var(--material-color-blue-grey-900) !important;
-  background-color: unset;
-  background-color: transparent;
-} */
-
 .workspace-tab-header-tab-list .clickable-icon,
 .workspace-tab-header-new-tab .clickable-icon {
   border-radius: 50% 50%;
@@ -292,19 +173,6 @@ progress::-moz-progress-bar {
   background-color: transparent;
   margin-right: 1em;
 }
-
-/* body:not(.is-popout-window)
-  .mod-root.is-sliding:not(.has-maximized)
-  div.workspace-tabs.mod-top.mod-top-right-space
-  .workspace-tab-header-container {
-  background: linear-gradient(
-    -90deg,
-    var(--tertiary-blue-800) 0%,
-    var(--tertiary-blue-800) 70%,
-    var(--material-color-blue-grey-900) 80%,
-    var(--tertiary-blue-800) 100%
-  );
-} */
 
 /* <BORDERLESS UI >*/
 
@@ -418,19 +286,6 @@ progress::-moz-progress-bar {
   /* var(--dark-blue-grad), */
 }
 
-/* fake psuedo for shade */
-/* .workspace-tab-container .workspace-leaf-content[data-type="file-explorer"]::before { */
-  /* content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,.7); */
-  /* background-image: var(--mm-image), var(--anu-image) !important; */
-  /* background-attachment: fixed; */
-
-/* } */
 
 /* UIFRAME :: TOP BAR */
 .app-container .horizontal-main-container .workspace-tab-header-container {
@@ -454,14 +309,7 @@ progress::-moz-progress-bar {
   border-right: 0.2em solid var(--material-color-brown-500);
 
   border-top-left-radius: 5%;
-  /* background: linear-gradient(
-    -90deg,
-    var(--tertiary-blue-800) 0%,
-    var(--tertiary-blue-800) 70%,
-    var(--material-color-blue-grey-900) 80%,
-    var(--tertiary-blue-800) 100%
-  ) !important; */
-  /* toggle for new ui */
+ 
 }
 
 
@@ -493,11 +341,6 @@ progress::-moz-progress-bar {
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner-title {
   color: var(--tertiary-blue-800);
 
-  /* background-image: linear-gradient(to right, var(--nbc) 13%, var(--material-color-blue-grey-900) 23%, var(--material-color-blue-grey-800) 34%, var(--material-color-blue-grey-600) 60%, var(--nbc) 61%, var(--nbc) 81%);
-  font-weight: 700;
-  -webkit-background-clip: text; 
-  -webkit-text-fill-color: transparent; */
-  /* text-shadow: 1px 4px 3px rgb(233 117 71 / 153%); */
 }
 
 /* ### Active Vertical Note Title Text */
@@ -541,85 +384,6 @@ progress::-moz-progress-bar {
   color: var(--material-color-deep-orange-a900);
 }
 
-/* </BORDERLESS UI > */
-
-/* done to the horizontal main container */
-
-/* < UI-FRAME */
-/*
-.is-hidden-frameless.theme-dark:not(.minimal-dark-black):not(
-    .colorful-frame
-  ):not(.minimal-dark-tonal):not(.minimal-light-white)
-  .workspace-ribbon.mod-left:not(.is-collapsed),
-.is-hidden-frameless.theme-light:not(.minimal-light-tonal):not(
-    .colorful-frame
-  ):not(.minimal-dark-tonal):not(.minimal-light-white)
-  .workspace-ribbon.mod-left:not(.is-collapsed) {
-  background: var(--tertiary-blue-800);
-  border-radius: 1px 1px 0 0;
-}
-
-.is-hidden-frameless.theme-dark:not(.minimal-dark-black):not(
-    .colorful-frame
-  ):not(.minimal-dark-tonal):not(.minimal-light-white)
-  .workspace-ribbon.mod-left:not(.is-collapsed):after {
-  content: '';
-  position: absolute;
-  background: var(--tertiary-blue-800);
-  left: 41px;
-  height: 41px;
-  top: 39px;
-  width: 10px;
-  border: 1px solid var(--material-color-deep-orange-300);
-  border-radius: 0 0 0 4rem;
-}
-
-.is-hidden-frameless.theme-dark:not(.minimal-dark-black):not(
-    .colorful-frame
-  ):not(.minimal-dark-tonal):not(.minimal-light-white)
-  .workspace-ribbon.mod-left:not(.is-collapsed):before {
-  content: '';
-  position: absolute;
-  background: var(--tertiary-blue-800);
-  width: 3em;
-  height: 1em;
-  top: 32px;
-  border-top: 2px solid darkorange;
-  border-bottom: none;
-  border-top-right-radius: 1em;
-}
-*/
-/* </UI-FRAME> */
-
-/* inline title with banner */
-/* .markdown-reading-view .mod-header:has(~ .obsidian-banner-wrapper) {
-  z-index: 300;
-  position: absolute;
-} */
-/* fix for BANNERS */
-.markdown-source-view .inline-title:has(+ .cm-contentContainer .cm-content .has-banner) {
-  position: absolute;
-  z-index: 50;
-}
-
-
-
-/*  */
-
-.markdown-reading-view .obsidian-banner.gradient.loaded {
-  z-index: 200;
-}
-
-
-/* .markdown-source-view .embedded-backlinks:has( div.backlink-pane)::before {
-  content: '';
-  background-color: rgba(0,0,0,.7);
-  width: 100%;
-  height: 33vmin;
-  position: absolute;
-  left: 0;
-  display: block;
-} */
 
 /* 
 My current idea is that giant spaces should use backdrop filter. Smaller spaces use the pseudo.
@@ -646,48 +410,6 @@ jesus the psuedo trick has limitations;
   background: rgba(0,0,0,.7);
 }
 
-/* 
-
-
-.workspace-split .workspace-tab-container .workspace-leaf-content .markdown-reading-view .embedded-backlinks .backlink-pane .search-results-children > * {
-  background-image: var(--midnight-grad), var(--mm-image), var(--anu-image);
-  background-attachment: fixed;
-  background-blend-mode: darken, screen;
-} */
-
-/* .workspace-split .workspace-tab-container .workspace-leaf-content .search-results-children .search-result-file-match {
-  background-image: var(--dark-blue-grad), var(--mm-image), var(--anu-image);
-  background-attachment: fixed;
-  background-blend-mode: color, multiply, darken;
-  color: var(--material-color-grey-200);
-}
-.workspace-split .workspace-tab-container .workspace-leaf-content .search-results-children .search-result-file-match .search-result-file-matched-text
-{
-  color: var(--material-color-grey-200);
-  background-color: var(--material-color-deep-orange-900);
-  padding: .2em .5em;
-  border-radius: 5px 5px;
-} */
-/* .embedded-backlinks .backlink-pane .search-result-container > .search-result-file-match {
-  background: var(--dark-blue-grad);
-} */
-
-/* .markdown-source-view .cm-sizer .embedded-backlinks .backlink-pane:before {
-
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  display: block;
-  left: 0;
-  content: '';
-  background: rgba(0,0,0,.8);
-} */
-/* .markdown-reading-view .embedded-backlinks .backlink-pane > .tree-item.search-result{
-  background-image: var(--bg-image);
-  background-attachment: fixed;
-  background-blend-mode: screen;
-} */
-
 /* only global search */
 .workspace-leaf-content[data-type="search"]
 .search-result-container.mod-global-search {
@@ -697,13 +419,6 @@ jesus the psuedo trick has limitations;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-/* .workspace-split .workspace-tab-container .workspace-leaf-content[data-type="search"] .backlink-pane 
-.search-result-container .search-results-children {
-  background-image: var(--midnight-grad),var(--mm-image), var(--anu-image);
-  background-blend-mode: multiply;
-  background-attachment: fixed;
-} */
-
 
 /* #Outliner Plugin Integration */
 .workspace-tabs .workspace-tab-container .workspace-leaf .workspace-leaf-content .view-content .backlink-pane::before,
