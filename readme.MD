@@ -7,16 +7,17 @@ This note is an external guide to how to apply this repo to create a dev environ
 The overarching goal is to go into the current vault in obsidian, place a git repo inside its internals where the css is kept but have the dev environment and all its node_modules be in a seperate environment.
 
 You can then sync your entire vault withou worrying about minute dev files get in theway.
+
 ### Requirements
 
 * pnpm
 * Node 18+
-* Your own snippets repo 
+* Your own snippets repo
   * Go to your obsidian snippets location (herewither known as and referred to as OBSNIP) and make/upload a repo.
 ## Implementation
 
 * Have this repo
-* update the submodule located inside of obs-snippets 
+* update the submodule located inside of obs-snippets
   * #todo/to-confirm/on-readme/regarding-accuracy
     * `git submodule add OBSNIP-CLOUD-ADDRESS snippets`
       * this adds a subrepo under your main dev repo (hereto known as DEVUMBRELLA)

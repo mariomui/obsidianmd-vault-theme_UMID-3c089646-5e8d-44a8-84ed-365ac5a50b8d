@@ -25,6 +25,8 @@
 @import "./frontmatter/index.scss";
 @import "./sliding-window/index.scss";
 
+@import "./migration/index.scss"; // migration of old scss
+
 //What does this do again?
 .markdown-rendered {
   tbody {
