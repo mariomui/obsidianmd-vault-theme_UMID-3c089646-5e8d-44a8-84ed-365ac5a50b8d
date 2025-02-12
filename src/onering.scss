@@ -1,6 +1,7 @@
 @use "./shared/index.scss" as shared;
 
-@import "./base-colors.scss";
+@import "./base-colors.scss"; // this needs to be refactore;
+
 @import "./material-ui-colors.scss";
 
 @import "./multi-colored-folders.scss";

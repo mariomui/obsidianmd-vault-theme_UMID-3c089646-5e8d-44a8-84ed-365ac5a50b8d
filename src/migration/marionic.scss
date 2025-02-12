@@ -1,4 +1,5 @@
 @use "../shared/index.scss" as shared;
+
 // KNOBS
 $ßlocal-wfb--active-vtabheader-bg-image: shared.$dark-blue-grad, shared.$mm-image, shared.$anu-image;
 
@@ -44,12 +45,12 @@ body.is-hidden-frameless .workspace.should-maximize:not(.workspace.is-right-side
 .workspace-leaf 
 .workspace-leaf-content 
 .nav-header .nav-buttons-container {
-  background: var(--shade);
+  background: shared.$shade;
   border-radius: .5em 1em 0 0;
 }
 .workspace-tabs.mod-top.mod-top-left-space
 .workspace-tab-header-container-inner {
-  background: var(--shade);
+  background: shared.$shade;
   border-radius: .5em 1em 0 0;
   padding: 0 1em 0 .5em;;
 }
@@ -63,8 +64,8 @@ body.is-hidden-frameless .workspace.should-maximize:not(.workspace.is-right-side
 }
 
 .workspace-leaf .view-header {
-  border-bottom: 0.1em solid var(--material-color-brown-500);
-  border-top: 0.1em solid var(--material-color-brown-400);
+  border-bottom: 0.1em solid shared.$material-color-brown-500;
+  border-top: 0.1em solid var shared.$material-color-brown-400;
 }
 
 .workspace
@@ -109,7 +110,7 @@ body.is-hidden-frameless .workspace.should-maximize:not(.workspace.is-right-side
 
 /* // what is this? */
 .workspace .mod-root .workspace-tab-header-spacer.drawer {
-  background: var(--tertiary-blue-800);
+  background: shared.$nbc;
   height: 69%;
   border: 1px solid darkorange;
   border-radius: 0 0 1em 1em;
@@ -122,7 +123,8 @@ body.is-hidden-frameless .workspace.should-maximize:not(.workspace.is-right-side
 
 .nav-file-title.is-active {
   /* background: var(--theme-color-translucent-2); */
-  border: 1px dashed var(--material-color-red-800);
+  border: 1px dashed shared.$material-color-red-800;
+  
 }
 
 .nav-file-title.is-active > .tree-item-inner.nav-file-title-content::after {
@@ -145,7 +147,7 @@ body.minimal-theme {
 }
 
 .markdown-source-view.mod-cm6 .task-list-item-checkbox {
-  border: 1px solid --var(--material-color-red-a700);
+  border: 1px solid shared.$material-color-red-a700;
 }
 
 .daily-note-editor .embedded-backlinks {
@@ -179,7 +181,7 @@ body.minimal-theme {
   @extend %bgfixednorepeat;
 
   background-size: 100% 100%;
-  background-blend-mode: var(--topbar-blend);
+  background-blend-mode: shared.$topbar-blend;
 }
 
 .workspace-tabs.mod-top-left-space .workspace-tab-container .workspace-leaf-content[data-type="markdown"] .view-content  {
@@ -228,7 +230,7 @@ body.minimal-theme {
   @extend %bgfixednorepeat;
 
   background-size: 100% 100%;
-  background-blend-mode: var(--topbar-blend);
+  background-blend-mode: shared.$topbar-blend;
 }
 .workspace-tab-header-tab-list {
   background-image: unset;
@@ -258,11 +260,12 @@ body.minimal-theme {
 }
 
 .workspace-ribbon.side-dock-ribbon.mod-left .clickable-icon.side-dock-ribbon-action {
-  border: 1px solid var(--material-color-deep-orange-a200);
-  background-color: var(--tertiary-blue-800);
+  border: 1px solid shared.$material-color-deep-orange-a200;
+  background-color: shared.$tertiary-blue-800;
 }
 .workspace-ribbon.side-dock-ribbon.mod-left .clickable-icon.side-dock-ribbon-action:hover {
-  border: 1px solid var(--material-color-deep-orange-a100);
+  border: 1px solid shared.$material-color-deep-orange-a100;
+
 }
 
 /* # File Explorer Styling */
@@ -278,7 +281,7 @@ body.minimal-theme {
   @extend %bgfixednorepeat;
 
   background-size: 100% 100%;
-  background-blend-mode: var(--topbar-blend);
+  background-blend-mode: shared.$topbar-blend;
 }
 
 
@@ -289,9 +292,8 @@ body.minimal-theme {
   .workspace-tab-container
   .workspace-tab-header-inner {
 
-  /* border-right: 0.1em solid var(--material-color-brown-500); */
   border-left: none;
-  border-right: 0.2em solid var(--material-color-brown-500);
+  border-right: 0.2em solid shared.$material-color-brown-500;
 
   border-top-left-radius: 5%;
  
@@ -300,9 +302,9 @@ body.minimal-theme {
 
 
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner-icon {
-  color: var(--material-color-deep-orange-800);
+  color: shared.$material-color-deep-orange-800;
   border-radius: 20% 20% 20% 50%;
-  outline: 1px solid var(--tertiary-blue-900);
+  outline: 1px solid shared.$tertiary-blue-900;
   font-weight: 300;
 }
 
@@ -324,7 +326,7 @@ body.minimal-theme {
 
 /* ## Vertical Note Title (NON-ACTIVE) Text */
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner-title {
-  color: var(--tertiary-blue-800);
+  color: shared.$nbc;
 
 }
 
@@ -362,11 +364,8 @@ $local-wfb--inner-tab: shared.$white-grad, shared.$anu-image, shared.$mm-image;
 /* Active text title */
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.mod-active.is-active .workspace-tab-header-inner-title {
 
-  /* background-image: linear-gradient(to right, var(--material-color-deep-orange-900) 13%, var(--material-color-deep-orange-900) 23%, var(--material-color-deep-orange-800) 34%, var(--material-color-deep-orange-600) 60%, var(--material-color-deep-orange-800) 61%, var(--material-color-deep-orange-900) 81%); */
   font-weight: 800;
-  /* -webkit-background-clip: text; 
-  -webkit-text-fill-color: transparent; */
-  color: var(--material-color-deep-orange-a900);
+  color: shared.$material-color-deep-orange-a900;
 }
 
 
@@ -423,13 +422,13 @@ jesus the psuedo trick has limitations;
 }
 
 .daily-note-container .daily-note .daily-note-title {
-  background: var(--shade);
+  background: shared.$shade;
   border-radius: 15px 15px 0 0;
   padding-left: .5em;
 }
 
 body:not(.full-file-names) .tree-item-inner {
-  color: var(--material-color-orange-300);
+  color: shared.$material-color-orange-300;
 }
 body:not(.full-file-names) .tree-item-self {
   white-space: pre-wrap;
@@ -479,7 +478,7 @@ body:not(.full-file-names) .tree-item-self {
 .workspace-tabs
 .workspace-tab-container
 .workspace-leaf-content[data-type*=" "] * {
-  color: var(--material-color-amber-a400) !important;
+  color: shared.$material-color-amber-a400 !important;
 }
 
 .workspace.is-right-sidedock-open
@@ -513,7 +512,7 @@ body:not(.full-file-names) .tree-item-self {
 .view-content
 .nav-header
 .nav-buttons-container {
-  background: var(--shade);
+  background: shared.$shade;
   padding: 0 .2em;
   border-radius: 0px 40px 0 0;
 }
@@ -558,9 +557,11 @@ body:not(.full-file-names) .tree-item-self {
     /* transform: none !important; */
 
   }
+
+  $local-wfb--canvaembed: shared.$dark-blue-grad, shared.$anu-image;
   .canvas .canvas-node-content.markdown-embed{
     /* max-height: 0 !important; */
-    background-image: var(--dark-blue-grad), var(--anu-image) !important;
+    background-image: #{$local-wfb--canvaembed} !important;
     background-blend-mode: multiply;
     background-attachment: fixed; 
     background-repeat: no-repeat;
@@ -572,15 +573,15 @@ body:not(.full-file-names) .tree-item-self {
 
 .workspace .mod-root .workspace-tab-header.is-active {
   background-blend-mode: exclusion;
-  color: var(--tertiary-blue-800);
+  color: shared.$nbc;
 }
 .is-focused .workspace-tab-header.is-active {
   background-color: unset;
   box-shadow: unset;
-  color: var(--tertiary-blue-800);
+  color: shared.$nbc;
 }
 .workspace-tabs:not(.mod-stacked) {
-  --minimal-tab-text-color-active: var(--tertiary-blue-800);
+  --minimal-tab-text-color-active: shared.$nbc;
   --tab-text-color-active: var(--minimal-tab-text-color-active);
   --tab-text-color-focused-active: var(--minimal-tab-text-color-active);
   --tab-text-color-focused-active-current: var(--minimal-tab-text-color-active);
@@ -593,7 +594,7 @@ $local-wfb--workspace-tab-header: shared.$anu-image, shared.$white-grad;
   background-blend-mode: screen;
   /* Set the background size and repeat properties if needed */
   background-size: 100%, 100%;
-  color: var(--tertiary-blue-800);
+  color: shared.$nbc;
 
 }
 .workspace-split.mod-root .workspace-tab-header::before, 

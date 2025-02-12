@@ -3,4 +3,7 @@
 @forward "./mixins.scss";
 @forward "./wallpapers/wallpapers.scss";
 @forward "./material-ui-colors.scss";
-$button-border-color: white;
+
+$button-border-color: #ffffff;
+$topbar-blend: hard-light;
+$shade:rgba(0, 0, 0, 0.8);

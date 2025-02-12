@@ -1,5 +1,6 @@
 @use "./shared/index.scss" as shared;
-$accent: #37cdbe;
+$accent: hsl(174, 60%, 51%);
+$topbar-blend: hard-light;
 
 :root {
   --accent: #37cdbe;

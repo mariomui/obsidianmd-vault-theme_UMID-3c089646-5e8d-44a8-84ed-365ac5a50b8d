@@ -1,6 +1,6 @@
 // $material-color-red: #f44336;
 // this is only reference material.
-// i want to deprecate this to raw-colors.
+// i want to deprecate this to raw-colors. eventually
 $material-color-blue-100: #bbdefb;
 $material-color-blue-200: #90caf9;
 $material-color-blue-300: #64b5f6;
@@ -10,16 +10,26 @@ $material-color-blue-700: #1976d2;
 $material-color-blue-800: #1565c0;
 $material-color-blue-900: #0d47a1;
 $material-color-blue: #2196f3;
+
+$material-color-brown: #795548;
+$material-color-brown-400: #8d6e63;
+$material-color-brown-500: $material-color-brown;
 $material-color-brown-700: #5d4037;
 $material-color-brown-800: #4e342e;
 $material-color-brown-900: #3e2723;
+
+$material-color-deep-orange: #ff5722;
 $material-color-deep-orange-100: #ffccbc;
 $material-color-deep-orange-200: #ffab91;
 $material-color-deep-orange-300: #ff8a65;
 $material-color-deep-orange-700: #e64a19;
 $material-color-deep-orange-800: #d84315;
 $material-color-deep-orange-900: #bf360c;
-$material-color-deep-orange: #ff5722;
+
+$material-color-deep-orange-a100: #ff9e80;
+$material-color-deep-orange-a200: #ff6e40;
+$material-color-deep-orange-a900: #c02400;
+$hsl-material-color-deep-orange-a900: hsl(11, 100%, 38%);
 
 $material-color-green-700: #388e3c;
 $material-color-green-800: #2e7d32;
@@ -53,6 +63,7 @@ $material-color-red-700: #d32f2f;
 $material-color-red-800: #c62828;
 $material-color-red-900: #b71c1c;
 $material-color-red-a200: #ff5252;
+$material-color-red-a700: #d50000;
 
 
 $material-color-yellow-100: #fff9c4;
@@ -61,3 +72,6 @@ $material-color-yellow-300: #fff176;
 $material-color-yellow-700: #fbc02d;
 $material-color-yellow-800: #f9a825;
 $material-color-yellow-900: #f57f17;
+
+$material-color-amber-a400: #ffc400;
+
