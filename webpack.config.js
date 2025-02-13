@@ -6,6 +6,9 @@ const { access, constants, readdir } = require("fs/promises");
 const util = require("util");
 const http = require("node:http");
 
+const lightningcss = require('lightningcss');
+const browserslist = require('browserslist');
+
 // # webpack core deps
 const webpack = require("webpack");
 const middleware = require("webpack-dev-middleware");
@@ -58,6 +61,17 @@ const config = {
         exclude: /node_modules/,
         type: "asset",
       },
+    ],
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new CssMinimizerPlugin({
+        minify: CssMinimizerPlugin.lightningCssMinify,
+        minimizerOptions: {
+          targets: lightningcss.browserslistToTargets(browserslist('>= 0.25%'))
+        },
+      }),
     ],
   },
   resolve: {
