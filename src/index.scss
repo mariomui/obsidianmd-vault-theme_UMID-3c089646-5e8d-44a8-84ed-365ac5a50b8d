@@ -1,0 +1,247 @@
+@use "./shared/index.scss" as shared;
+//What does this do again?
+.markdown-rendered {
+  tbody {
+    tr:nth-child(odd) {
+      color: shared.$material-color-deep-purple-200;
+      code {
+        color: shared.$material-color-deep-purple-200;
+      }
+      strong {
+        color: shared.$material-color-deep-purple-200;
+      }
+    }
+  }
+}
+
+/* # Source and reading view for title/file name on content top */
+%backdrop {
+  color: white;
+  text-shadow: 1px 4px 3px rgb(233 117 71 / 153%);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1em 0.5em;
+  border-radius: 15px 15px 0 0;
+  margin-bottom: 0;
+}
+%bg {
+  // background-image: #{shared.$mm-image} !important;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.markdown-source-view.mod-cm6.is-readable-line-width {
+  @extend %bg;
+
+  .inline-title {
+    @extend %backdrop;
+  }
+  .metadata-content {
+    @extend %backdrop;
+    text-shadow: initial;
+  }
+  // embeds
+  .inline-embed .markdown-embed-content {
+    border: 1px solid $material-color-deep-purple-200;
+    padding: 0 0.2em;
+    border-radius: 0 1em 1em 0;
+  }
+  // .markdown-embed .markdown-embed-link[aria-label="Open link"]{
+  //   padding-top: 1em;
+  //   margin-right: 1em;
+  // }
+}
+.markdown-reading-view {
+  @extend %bg;
+
+  // .mod-header:has(~ .obsidian-banner-wrapper) {
+  //   > .inline-title {
+  //     text-shadow: 1px 4px 3px rgb(233 117 71 / 113%);
+  //     color: white;
+  //     margin-left: 5%;
+  //   }
+  // }
+}
+.yt-transcript__transcript-block {
+  user-select: text !important;
+}
+
+// embedded query
+.internal-query {
+  .internal-query-header {
+    display: none;
+  }
+  .search-result-container {
+    @extend %fixed-bg;
+
+    .search-results-children {
+      .search-result {
+        .search-result-file-title {
+          font-size: 1rem;
+        }
+        .search-result-file-matches {
+          font-size: 0.9rem;
+        }
+      }
+      .tree-item.search-result:nth-child(2n + 1) {
+        background: $material-color-brown-900;
+
+        // .search-result-file-matches {
+        //   background: $material-color-purple-700
+        // }
+      }
+      .tree-item.search-result:nth-child(2n) {
+        background: $material-color-purple-700;
+        // .search-result-file-matches {
+        //   background: $material-color-purple-700
+        // }
+      }
+    }
+  }
+}
+
+// floating highlights toc
+.heading-list-item.located .text-wrap:not(.located) .text {
+  color: var(--accent);
+}
+
+// H3 when bulletpoint
+.markdown-source-view
+  .cm-contentContainer
+  .HyperMD-list-line.HyperMD-list-line-1.cm-line
+  span.cm-header.cm-header-3.cm-list-1 {
+  color: $material-color-yellow-a200 !important;
+}
+
+// # buttons
+
+.markdown-embed-content {
+  .block-language-dataviewjs {
+    button {
+      @include shared.orange-to-right-color(
+        to right,
+        $material-color-brown-800,
+        $material-color-blue-800
+      );
+      border: 1px solid shared.$button-border-color;
+    }
+  }
+}
+
+// .obsidian-banner {
+//   .banner-image {
+//     height: 40vh;
+//     object-position: top;
+//   }
+// }
+
+// # custom
+// ## Citations
+
+cite {
+  background-color: shared.$bookSource;
+  color: white;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+  display: block;
+  a:link {
+    color: white;
+  }
+}
+
+// MISC
+.workspace-tabs.mod-top-left-space {
+  .workspace-tab-container {
+    .workspace-leaf-content:not([data-type="markdown"]) {
+      .view-content {
+        @extend %notForMarkdownBackgroundImage;
+      }
+    }
+  }
+}
+
+// BOLDED TEXT
+span.cm-strong {
+  color: shared.$accentSecondary;
+  background-clip: text;
+  font-family: Futura;
+  background-color: #666666;
+  text-shadow: 2px 4px 4px #555;
+  // text-align: center;
+}
+
+.container:has(.timer) {
+  justify-content: center;
+  .pomodoro-extra {
+    max-height: 2vh;
+  }
+}
+.timer {
+  svg.timer {
+    display: none;
+  }
+}
+div[data-type="timer-view"] {
+  .timer {
+    width: 100% !important;
+    aspect-ratio: 4/3;
+    .timer-display {
+      padding: unset;
+      .status {
+        .mode {
+          font-size: clamp(1em, 14vw, 5em);
+          // padding: 1.2em 2em;
+          text-decoration: underline;
+        }
+
+        // }
+      }
+      .control {
+        h2.timer-text {
+          font-size: clamp(1em, 3.5vw, 19rem) !important;
+        }
+      }
+    }
+  }
+}
+
+.block-language-dataviewjs {
+  .replaceme {
+    .view-content {
+      @extend %bg;
+      // padding-top: 4em !important;
+      // background-image: shared.$mm-image !important;
+      background-attachment: fixed !important;
+      background-repeat: no-repeat !important;
+      background-size: 100% 100% !important;
+    }
+  }
+  .timer {
+    width: 100% !important;
+    aspect-ratio: 16 / 9;
+    .timer-display {
+      height: 100%;
+      .status {
+        .mode {
+          font-size: 3em;
+        }
+      }
+      .control {
+        h2.timer-text {
+          @extend %backdrop;
+          padding: 0.1em 0.2em;
+          border-radius: 0.2em 0.2em;
+          margin: 0 auto;
+          font-size: 5em;
+        }
+      }
+    }
+  }
+}
+
+.workspace .workspace-sidedock-vault-profile {
+  display: none !important;
+}
