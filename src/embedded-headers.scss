@@ -23,7 +23,7 @@
 
     .markdown-embed-content {
       .markdown-preview-view.markdown-rendered {
-        background: var(--tertiary-blue-700);
+        background: shared.$tertiary-blue-700;
         border-radius: 0 .2em 0 0;
       }
     }

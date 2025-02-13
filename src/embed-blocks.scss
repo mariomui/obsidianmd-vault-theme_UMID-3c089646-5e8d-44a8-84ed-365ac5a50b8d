@@ -7,7 +7,7 @@
   // border: 2px solid var(--material-color-deep-orange);
   border: 2px solid shared.$borderColor;
   border-right-width: 1em;
-  background-image: var(--dark-blue-grad);
+  background-image: #{shared.$dark-blue-grad};
   border-radius: 0.5em 0.5em;
   padding-left: 0.1em;
 }
@@ -20,7 +20,7 @@
   .block-language-dataview {
     border: 2px solid var(--material-color-deep-orange);
     border-radius: 1em 1em;
-    background: var(--shade);
+    background: shared.$shade;
   }
 }
 
@@ -153,7 +153,7 @@ span[alt*="nlk"] {
     /* level 2 */
     // margin: 0 2em;
     border-radius: 1.5em 1.5em;
-    background: var(--shade);
+    background: shared.$shade;
   }
 }
 

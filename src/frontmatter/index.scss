@@ -18,7 +18,7 @@ body:not(.metadata-heading-on) .metadata-properties-heading {
     @extend %frontmatter_backdrop;
     // if below 800px then 75% if above 50% width
     // TODO container query or media query this
-    width: clamp(800px, 75%, 50%);
+    width: clamp(40em, 75%, 50%);
     border-radius: 15px 15px 0 0;
 
     //background: var(--shade);

@@ -1,12 +1,20 @@
+@use "./shared/index.scss" as shared;
+
 // Make bullet points more readable using color
 .HyperMD-list-line.cm-line:nth-child(even) {
-  color: var(--material-color-deep-purple-200);
+  color: shared.$material-color-deep-purple-200;
   
-  span.cm-hmd-internal-link {
-    color: $material-color-orange-300;
+  // span.cm-hmd-internal-link {
+  //   color: shared.$material-color-orange-300;
+  // }
+
+}
+.cm-contentContainer {
+  .HyperMD-list-line-1:has(.cm-hmd-internal-link) + .HyperMD-list-line-1:has(.cm-hmd-internal-link) {
+    //  filter: hue-rotate(180deg) saturate(0%) brightness(100%);
+    // causes lag;
   }
 }
-
 // indentation on all list items in source
 .cm-hmd-list-indent {
   font-family: var(--font-monospace) !important;
