@@ -14,7 +14,7 @@ const webpack = require("webpack");
 const middleware = require("webpack-dev-middleware");
 
 // # webpack deps
-// const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlBundlerPlugin = require("html-bundler-webpack-plugin");
