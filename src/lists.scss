@@ -9,12 +9,14 @@
   // }
 
 }
-.cm-contentContainer {
-  .HyperMD-list-line-1:has(.cm-hmd-internal-link) + .HyperMD-list-line-1:has(.cm-hmd-internal-link) {
-    //  filter: hue-rotate(180deg) saturate(0%) brightness(100%);
-    // causes lag;
+.cm-contentContainer div:nth-child(even):is(.HyperMD-list-line):has(span.cm-hmd-internal-link) {
+  // causes lag;
+  span.cm-hmd-internal-link a.cm-underline{
+    filter: hue-rotate(300deg) saturate(88%) brightness(100%) !important;
   }
+  color: shared.$material-color-orange-100 !important;
 }
+ 
 // indentation on all list items in source
 .cm-hmd-list-indent {
   font-family: var(--font-monospace) !important;
