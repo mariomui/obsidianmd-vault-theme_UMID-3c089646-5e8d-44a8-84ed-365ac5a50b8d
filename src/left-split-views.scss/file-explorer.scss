@@ -1,8 +1,8 @@
 @use "../shared/index.scss" as shared;
 
 .nav-files-container {
-  border-left: 1px solid var(--material-color-orange-500);
-  background-image: shared.$midnight-grad, shared.$mm-image, shared.$anu-image;
+  border-left: 1px solid shared.$material-color-orange-500;
+  background-image: #{shared.$midnight-grad, shared.$mm-image, shared.$anu-image};
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 100%;
