@@ -1,15 +1,21 @@
 require("dotenv").config();
 
-// toolboxes
+// # toolboxes
 const path = require("path");
-const webpack = require("webpack");
-const middleware = require("webpack-dev-middleware");
-// const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { access, constants, readdir } = require("fs/promises");
 const util = require("util");
-const HtmlBundlerPlugin = require("html-bundler-webpack-plugin");
 const http = require("node:http");
+
+// # webpack core deps
+const webpack = require("webpack");
+const middleware = require("webpack-dev-middleware");
+
+// # webpack deps
+// const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const HtmlBundlerPlugin = require("html-bundler-webpack-plugin");
+
 // derived toolboxes
 const logg = createLogg();
 
