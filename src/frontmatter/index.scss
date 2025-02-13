@@ -21,7 +21,7 @@ body:not(.metadata-heading-on) .metadata-properties-heading {
     width: clamp(40em, 75%, 50%);
     border-radius: 15px 15px 0 0;
 
-    //background: var(--shade);
+    // background: #{shared.$shade};
     .metadata-properties-heading {
       .collapse-indicator.collapse-icon {
         @extend %frontmatter_backdrop;

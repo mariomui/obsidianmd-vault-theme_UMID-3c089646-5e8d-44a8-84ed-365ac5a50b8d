@@ -21,12 +21,13 @@
 @import "./lists.scss";
 
 @import "./plugin-stylings/index.scss";
-// @import "./experiments/index";
+@import "./experiments/index"; // this may say experiments but i think i use this a ton
 
 @import "./frontmatter/index.scss";
 @import "./sliding-window/index.scss";
 
 
+@import "./migration/index.scss"; // here's where all the basic uses are;
 // # backrounds
-// @import "./migration/index.scss"; // migration of old scss
-@import "./index.scss"; // here's where all the basic uses are;
+// @import "./migration/index.scss"; // migration of old scss be careful of using index
+

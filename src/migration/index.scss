@@ -1,4 +1,6 @@
-@forward "./marionic.scss";
+// @forward "./marionic.scss";
+@use "../shared/index.scss" as shared;
+@forward "./other.scss";
 
 // for preview 
 .markdown-preview-view blockquote {
@@ -40,13 +42,13 @@
 }
 
 /* level 2 */
-/* 
+
 .markdown-source-view .cm-contentContainer {
   border-radius: 1.5em 1.5em;
-  background: var(--shade);
+  background: shared.$shade !important;
   min-height: 50vh;
   margin: 0 1em;
-} */
+}
 
 
  /* # H1 styling Source */

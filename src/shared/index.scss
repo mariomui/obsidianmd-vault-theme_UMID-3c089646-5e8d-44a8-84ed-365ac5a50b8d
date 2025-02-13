@@ -1,3 +1,5 @@
+@use "./wallpapers/wallpapers.scss" as wp;
+
 @forward "./marionic-colors.scss";
 @forward "./extendme.scss";
 @forward "./mixins.scss";
@@ -8,7 +10,33 @@ $button-border-color: #ffffff;
 $topbar-blend: hard-light;
 
 // # Overrides
-// $shade:rgba(0, 0, 0, 0.8);
+
+$shade:rgba(0, 0, 0, 0.8);
+// $shade: unset;   
+
 // in the future an extend would be good that way i can test removing all backgrounds entirely;
-$shade: unset;   
-$bg-image: url(https://cdnb.artstation.com/p/assets/images/images/003/508/149/large/lorenz-hideyoshi-ruwwe-barbarossa-brunhilde-final-s.jpg);
+// $bg-image: url(https://cdnb.artstation.com/p/assets/images/images/003/508/149/large/lorenz-hideyoshi-ruwwe-barbarossa-brunhilde-final-s.jpg);
+$bg-image: unset;
+
+%fixed-bg {
+  // background-image: #{wp.$mm-image};
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-blend-mode: overlay;
+}
+%bg {
+  // background-image: #{wp.$mm-image} !important;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+$ßlocal-wfb--active-vtabheader-bg-image: wp.$dark-blue-grad, wp.$mm-image, wp.$anu-image;
+$local-bg-image: #{$bg-image};
+%bgfixednorepeat {
+  // background-image: #{$local-bg-image};
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}

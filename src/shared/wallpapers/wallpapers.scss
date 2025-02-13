@@ -46,8 +46,11 @@ $ßwfb--bg-image: $mm-image, $anu-image;
 $bg-image: #{$ßwfb--bg-image}; // for legacy;
 
 :root {
-  --midnight-grad: #{$midnight-grad};
-  --dark-blue-grad: #{$dark-blue-grad};
+  // --midnight-grad: #{$midnight-grad};
+  --midnight-grad: url("https://i.ibb.co/wBf6t09/Win-Blur-3qhd.png");
+  // --dark-blue-grad: #{$dark-blue-grad};
+  --dark-blue-grad: url("http://i.imgur.com/RBTON.jpg");
+  // $white-grad: url("https://i.imgur.com/5loivLV.jpg");
   --white-grad: url(https://i.imgur.com/5loivLV.jpg);
 
   /* IMAGES:ANIMATED  */

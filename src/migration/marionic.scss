@@ -1,21 +1,17 @@
 @use "../shared/index.scss" as shared;
 
-// KNOBS
-$ßlocal-wfb--active-vtabheader-bg-image: shared.$dark-blue-grad, shared.$mm-image, shared.$anu-image;
-$local-bg-image: shared.$bg-image;
 
 // domain driven knobs;
-$local-wfb--active-vtabheader-bg-image: $ßlocal-wfb--active-vtabheader-bg-image;
+$local-wfb--active-vtabheader-bg-image: #{shared.$ßlocal-wfb--active-vtabheader-bg-image};
 $local-wfb--prevalent-bg: shared.$midnight-grad, shared.$mm-image, shared.$anu-image;
+
+// $local-wfb--inner-tab: white;
+$local-wfb--inner-tab: shared.$white-grad, shared.$anu-image, shared.$mm-image;
 
 
 
 /* minimal theme overrides */
-%bgfixednorepeat {
-  background-image: #{$local-bg-image};
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
+
 
 /* NAV FILE EXPLORER BACKDROP */
 .nav-files-container .tree-item.nav-folder {
@@ -66,7 +62,7 @@ body.is-hidden-frameless .workspace.should-maximize:not(.workspace.is-right-side
 
 .workspace-leaf .view-header {
   border-bottom: 0.1em solid shared.$material-color-brown-500;
-  border-top: 0.1em solid var shared.$material-color-brown-400;
+  border-top: 0.1em solid shared.$material-color-brown-400;
 }
 
 .workspace
@@ -180,9 +176,8 @@ body.minimal-theme {
 /* ## TOP BAR FOR LEAF */
 .workspace .workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-container .workspace-leaf .workspace-leaf-content .view-header {
   @extend %bgfixednorepeat;
-
   background-size: 100% 100%;
-  background-blend-mode: shared.$topbar-blend;
+  // background-blend-mode: #{shared.$topbar-blend};
 }
 
 .workspace-tabs.mod-top-left-space .workspace-tab-container .workspace-leaf-content[data-type="markdown"] .view-content  {
@@ -345,7 +340,6 @@ body.minimal-theme {
 }
 
 /* INNER TAB FOR FILE */
-$local-wfb--inner-tab: shared.$white-grad, shared.$anu-image, shared.$mm-image;
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.mod-active.is-active .workspace-tab-header-inner,
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header .workspace-tab-header-inner {
   transition-duration:  100ms;
@@ -378,7 +372,7 @@ jesus the psuedo trick has limitations;
 
  .workspace-split .workspace-tab-container .workspace-leaf-content .markdown-source-view .search-results-children {
 
-  background-image: #{$local-bg-image};
+  background-image: #{shared.$local-bg-image};
   background-attachment: fixed;
   background-blend-mode: multiply, difference;
 }
@@ -387,7 +381,7 @@ jesus the psuedo trick has limitations;
 }
 
 .workspace-split .workspace-tab-container .workspace-leaf-content .markdown-reading-view .search-results-children {
-  background-image: #{$local-bg-image};
+  background-image: #{shared.$local-bg-image};
   background-attachment: fixed;
   background-blend-mode: multiply, difference;
 }
@@ -579,7 +573,7 @@ body:not(.full-file-names) .tree-item-self {
 .is-focused .workspace-tab-header.is-active {
   background-color: unset;
   box-shadow: unset;
-  color: shared.$nbc;
+  color: #{shared.$nbc};
 }
 .workspace-tabs:not(.mod-stacked) {
   --minimal-tab-text-color-active: shared.$nbc;
@@ -590,7 +584,7 @@ body:not(.full-file-names) .tree-item-self {
 
 $local-wfb--workspace-tab-header: shared.$anu-image, shared.$white-grad;
 .workspace .mod-root .workspace-tab-header {
-  background-image: $local-wfb--workspace-tab-header; 
+  background-image: #{$local-wfb--workspace-tab-header}; 
   background-attachment: fixed;
   background-blend-mode: screen;
   /* Set the background size and repeat properties if needed */

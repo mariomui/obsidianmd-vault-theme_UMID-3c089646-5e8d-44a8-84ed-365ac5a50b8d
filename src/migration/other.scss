@@ -19,17 +19,12 @@
 %backdrop {
   color: white;
   text-shadow: 1px 4px 3px rgb(233 117 71 / 153%);
-  background: rgba(0, 0, 0, 0.6);
+  // background: rgba(0, 0, 0, 0.6);
   padding: 1em 0.5em;
   border-radius: 15px 15px 0 0;
   margin-bottom: 0;
 }
-%bg {
-  // background-image: #{shared.$mm-image} !important;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
+
 
 .markdown-source-view.mod-cm6.is-readable-line-width {
   @extend %bg;

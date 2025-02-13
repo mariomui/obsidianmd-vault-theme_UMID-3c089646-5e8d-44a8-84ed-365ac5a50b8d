@@ -4,7 +4,7 @@
 // .mod-top.mod-top-right-space 
 .workspace-leaf-content 
 .view-content .empty-state{
-  background-image: shared.$bg-image;
+  background-image: #{shared.$bg-image};
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -14,7 +14,7 @@
 // .mod-top.mod-top-right-space 
 .workspace-leaf-content 
 .view-content .empty-state .empty-state-container{
-  background: shared.$shade;
+  background: #{shared.$shade};
   border-radius: 1em 1em;
   padding: 1em .5em;
 }

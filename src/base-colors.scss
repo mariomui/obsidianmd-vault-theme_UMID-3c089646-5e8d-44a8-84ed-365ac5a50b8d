@@ -3,7 +3,7 @@
 
 $accent: hsl(174, 60%, 51%);
 $topbar-blend: hard-light;
-$shade: shared.$shade;
+$shade: #{shared.$shade};
 
 :root {
   --accent: #37cdbe;
