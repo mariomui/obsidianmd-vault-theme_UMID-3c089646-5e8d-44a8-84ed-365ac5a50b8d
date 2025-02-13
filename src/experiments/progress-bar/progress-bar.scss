@@ -6,7 +6,7 @@
   appearance: none;
   height: 2em;
   width: 100%;
-  color: --var(--primary);
+  color: var(--primary);
 }
 
 .markdown-preview-view progress.mario-progress::-webkit-progress-bar,
