@@ -7,30 +7,27 @@
 .HyperMD-list-line.cm-line:nth-child(even) {
   color: shared.$material-color-deep-purple-200;
 
-  // span.cm-hmd-internal-link {
-  //   color: shared.$material-color-orange-300;
-  // }
+  span.cm-hmd-internal-link {
+    color: shared.$material-color-orange-300;
+    // color: shared.$secondaryAlt;
+  }
 }
 $mapEvenOdd: (
   // https://github.com/sass/sass/issues/2327
   "true": "n + 2",
   "false": "2n+1"
 );
-// @each $i in (1, 2, 3, 4) {
 .view-content .cm-contentContainer {
   // even links are pinkish
   // $modulo: $i % 2;
   // $evenOrOdd: map-get($mapEvenOdd, "#{$modulo == 0}");
   > div:first-child {
     div.HyperMD-list-line:has(span.cm-hmd-internal-link):nth-child(even) {
-      span.cm-hmd-internal-link a.cm-underline {
-        // filter: hue-rotate(300deg) saturate(88%) brightness(100%) !important;
-        color: shared.$embedBorderColor;
+      span.cm-hmd-internal-link > a.cm-underline {
+        // unresolved links are not direct children of internal link
+        color: shared.$borderColor;
       }
-      //   color: shared.$material-color-orange-100 !important;
     }
-    // .cm-line:not(:has(.cm-hmd-internal-link)) + .HyperMD-list-line-2 {
-    // }
   }
 }
 // }
@@ -41,7 +38,7 @@ $mapEvenOdd: (
 }
 
 input.task-list-item-checkbox[type="checkbox"] {
-  border-color: var(--material-color-deep-purple-200);
+  border-color: shared.$material-color-deep-purple-200;
 }
 
 /* provides a borderless tcg card like experience to the checked box making the checkedbox seem fuller and brighter. */
