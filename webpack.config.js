@@ -36,6 +36,7 @@ const port = 9100;
  * @type { import('webpack').Configuration }
  */
 const config = {
+  // configureHtmlBundlerPlugin set up plugins at a later date
   plugins: [],
   mode: "development",
   stats: {
@@ -49,6 +50,8 @@ const config = {
         exclude: /node_modules/,
         use: [
           // RTL
+          // https://github.com/webdiscus/html-bundler-webpack-plugin?tab=readme-ov-file#features
+          // MiniCssExtractPlugin.loader, (don't need this)
           {
             loader: "css-loader",
           },
