@@ -11,17 +11,17 @@
 $anu-image: url("https://i.redd.it/m23bwh4n0x151.png");
 
 $midnight-grad: url("https://i.ibb.co/wBf6t09/Win-Blur-3qhd.png");
-$white-grad: url("https://i.imgur.com/5loivLV.jpg");
+$white-grad: url("https://i.imgur.com/5loivLV.jpeg");
 $dark-blue-grad: url("http://i.imgur.com/RBTON.jpg");
 
 // # Scapes
 
-// ## Purplescape 
+// ## Purplescape
 // $mm-image: url(https://i.redd.it/jpuwznzf2wcb1.jpg);
 
 // ## Purple Edgescape
 // $mm-image: url(https://external-preview.redd.it/qiS6FTlK2fPyKIjCtQnDPlMWaRRc6t8ynBTGES-wK5c.jpg?auto=webp&s=665fac054a914ad24cf877d5e6201384c5f60274);
-// ## Bluescape 
+// ## Bluescape
 // --mm-image: url(https://images4.alphacoders.com/106/1067926.jpg);
 // $mm-image: url(https://images4.alphacoders.com/106/1067926.jpg);
 
@@ -29,19 +29,19 @@ $dark-blue-grad: url("http://i.imgur.com/RBTON.jpg");
 // --wallpaper-doorscape: url(https://images7.alphacoders.com/110/1103663.jpg);
 
 // ## Misc
-  // $mm-image: url("https://wallpapers.com/images/hd/digital-tera-online-anime-scenery-60my5y6lkon2gg3k.webp"); 
-  // $mm-image: url(https://i.redd.it/e00k5xmw80db1.jpg); // bad
+// $mm-image: url("https://wallpapers.com/images/hd/digital-tera-online-anime-scenery-60my5y6lkon2gg3k.webp");
+// $mm-image: url(https://i.redd.it/e00k5xmw80db1.jpg); // bad
 
 // # Trains
 
 // $mm-image: url("https://i.redd.it/ew1f1ae4g83c1.png");
 
-  // ## Spaceships LOGH
-  $mm-image: url(https://cdnb.artstation.com/p/assets/images/images/003/508/149/large/lorenz-hideyoshi-ruwwe-barbarossa-brunhilde-final-s.jpg);
+// ## Spaceships LOGH
+$mm-image: url(https://cdnb.artstation.com/p/assets/images/images/003/508/149/large/lorenz-hideyoshi-ruwwe-barbarossa-brunhilde-final-s.jpg);
 
 // # DERIVED COMPOSITE
 
-$ßwfb--bg-image: $mm-image, $anu-image; 
+$ßwfb--bg-image: $mm-image, $anu-image;
 // $bg-image: black;
 $bg-image: #{$ßwfb--bg-image}; // for legacy;
 
@@ -103,7 +103,7 @@ $bg-image: #{$ßwfb--bg-image}; // for legacy;
 
   // ## R.Purple Edgescape
   // --mm-image: url(https://external-preview.redd.it/qiS6FTlK2fPyKIjCtQnDPlMWaRRc6t8ynBTGES-wK5c.jpg?auto=webp&s=665fac054a914ad24cf877d5e6201384c5f60274);
-  
+
   // ##  R.Bluescape
   // --mm-image: url(https://images4.alphacoders.com/106/1067926.jpg);
   // ugly
@@ -119,13 +119,12 @@ $bg-image: #{$ßwfb--bg-image}; // for legacy;
   // ## R.Spaceships LOGH
   --mm-image: url(https://cdnb.artstation.com/p/assets/images/images/003/508/149/large/lorenz-hideyoshi-ruwwe-barbarossa-brunhilde-final-s.jpg);
 
-
   /* --mm-image: url("https://wallpapers.com/images/hd/digital-tera-online-anime-scenery-60my5y6lkon2gg3k.webp"); */
   // --mm-image: url(https://i.redd.it/e00k5xmw80db1.jpg); //bad
 
   // # R.Trains
-// --mm-image: url("https://i.redd.it/ew1f1ae4g83c1.png");
-  
+  // --mm-image: url("https://i.redd.it/ew1f1ae4g83c1.png");
+
   --anu-image: url("https://i.redd.it/m23bwh4n0x151.png");
 
   /* </IMAGES> */
@@ -134,7 +133,6 @@ $bg-image: #{$ßwfb--bg-image}; // for legacy;
   /* MAIN */
 
   --bg-image: #{$ßwfb--bg-image}; // be careful to interpolate
-
 }
 
 // # Failures
