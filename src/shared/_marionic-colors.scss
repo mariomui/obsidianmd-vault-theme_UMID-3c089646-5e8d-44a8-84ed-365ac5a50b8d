@@ -4,7 +4,7 @@ $secondaryAlt: raw-colors.$material-color-orange-700;
 $secondary: raw-colors.$material-color-orange-800;
 $primary: raw-colors.$tertiary-blue;
 
-$embedBorderColor: $secondary;
+$embedBorderColor: #{$secondary};
 
 $embedPrimaryLinkColor: raw-colors.$material-color-orange-700;
 $accentAlt: raw-colors.$material-color-brown-900;
@@ -20,10 +20,10 @@ $bookSource: raw-colors.$material-color-indigo-900;
 $borderColor: raw-colors.$material-color-deep-orange;
 
 // #C6BAAD
-$unresolvedLinkColor: #C6BAAD;
+$unresolvedLinkColor: #c6baad;
 
 $tertiary-blue-700: #111;
 $tertiary-blue-800: #112;
 $tertiary-blue-900: #114;
 $nbc: $tertiary-blue-800;
-$shade: rgba(0,0,0,.8);
+$shade: rgba(0, 0, 0, 0.8);
