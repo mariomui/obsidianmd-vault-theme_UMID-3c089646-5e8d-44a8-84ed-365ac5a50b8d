@@ -1,15 +1,16 @@
 @use "./raw-colors.scss" as raw-colors;
+@use "./material-ui-colors" as MAT_COLORS;
 
-$secondaryAlt: raw-colors.$material-color-orange-700;
 $secondary: raw-colors.$material-color-orange-800;
+$secondaryAlt: raw-colors.$material-color-orange-700;
 $primary: raw-colors.$tertiary-blue;
+$primaryAlt: raw-colors.$material-color-purple-900;
 
 $embedBorderColor: #{$secondary};
 
 $embedPrimaryLinkColor: raw-colors.$material-color-orange-700;
 $accentAlt: raw-colors.$material-color-brown-900;
 
-$primaryAlt: raw-colors.$material-color-purple-900;
 // :skull: --secondary: var(--material-color-purple-a100);
 
 $callout: raw-colors.$material-color-green-900;
@@ -27,3 +28,6 @@ $tertiary-blue-800: #112;
 $tertiary-blue-900: #114;
 $nbc: $tertiary-blue-800;
 $shade: rgba(0, 0, 0, 0.8);
+
+$bar-outline-color: MAT_COLORS.$material-color-blue-800;
+$bar-color: MAT_COLORS.$material-color-blue-900;
