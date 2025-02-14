@@ -1,11 +1,33 @@
 // @forward "./marionic.scss";
 @use "../shared/index.scss" as shared;
 @forward "./other.scss";
+// @import "./marionic.scss";
+$local-wfb--active-vtabheader-bg-image: #{shared.$ßlocal-wfb--active-vtabheader-bg-image};
+$local-wfb--prevalent-bg: shared.$midnight-grad, shared.$mm-image, shared.$anu-image;
 
-// for preview 
+// $local-wfb--inner-tab: white;
+$local-wfb--inner-tab: shared.$white-grad, shared.$anu-image, shared.$mm-image;
+
+// # center view stylings
+.markdown-source-view .cm-contentContainer {
+  // @extend %fixed-bg;
+  background-color: shared.$shade;
+  border-radius: 1.5em 1.5em;
+  min-height: 50vh;
+  margin: 0 1em;
+  position: relative;
+  z-index: 1;
+
+  .lc-list-callout .lc-list-bg::after {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// for preview
 .markdown-preview-view blockquote {
   border: 2px solid;
-  border-color: var(--book-source) !important;
+  border-color: shared.$bookSource !important;
   border-left-width: 2px !important;
   border-radius: 8px 8px 8px 8px;
   font-size: 15px;
@@ -14,7 +36,6 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
-
 
 .markdown-preview-view blockquote.paraphrase:after {
   display: none;
@@ -27,12 +48,9 @@
   padding-left: 0.1em;
 } */
 
-
 /*** preview mode end****/
 
 /** : Transclusion/Embed sections */
-
-
 
 /* # UI Alias Helpers For Transcluded Content */
 /* ## Centering */
@@ -43,18 +61,10 @@
 
 /* level 2 */
 
-.markdown-source-view .cm-contentContainer {
-  border-radius: 1.5em 1.5em;
-  background: shared.$shade !important;
-  min-height: 50vh;
-  margin: 0 1em;
-}
+/* # H1 styling Source */
 
-
- /* # H1 styling Source */
-
- /* ## H1 source view */
- .markdown-source-view .cm-contentContainer .HyperMD-header.HyperMD-header-1.cm-line {
+/* ## H1 source view */
+.markdown-source-view .cm-contentContainer .HyperMD-header.HyperMD-header-1.cm-line {
   background: var(--material-color-deep-orange-800);
   border: 2px solid var(--material-color-brown-900);
   color: var(--material-color-brown-50);
@@ -68,13 +78,16 @@
   outline: 2px solid --material-color-deep-orange-300;
 }
 .markdown-source-view .cm-contentContainer .HyperMD-header.HyperMD-header-1.cm-line:has(> span.cm-hashtag) > span {
-  background-color: unset;;
+  background-color: unset;
   color: var(--material-color-deep-orange-300);
   /* font: small-caption; */
 }
 /* on hover blinks */
-.markdown-source-view .cm-contentContainer .HyperMD-header.HyperMD-header-1.cm-line:has(> span.cm-hashtag):hover > span {
-  background-color: unset;;
+.markdown-source-view
+  .cm-contentContainer
+  .HyperMD-header.HyperMD-header-1.cm-line:has(> span.cm-hashtag):hover
+  > span {
+  background-color: unset;
   color: var(--material-color-deep-orange-200);
   /* font: small-caption */
 }
@@ -94,9 +107,6 @@
   border-radius: 0.5em 1.8em 0.3em 0.5em;
 }
 
-
-
-
 /* # H1 styling */
 /* .markdown-preview-sizer.markdown-preview-section h1[data-heading="-"] {
   background: var(--material-color-deep-orange-900) !important;
@@ -106,7 +116,7 @@
   padding: 0.1em 2em;
   color: var(--tertiary-blue-800);
   border-radius: 0 0 50px 50px;
-} 
+}
 
 /* note background blue glass color */
 .markdown-preview-sizer.markdown-preview-section h1[data-heading^="---"] {
@@ -114,7 +124,6 @@
   padding: 0.2em 3em;
   border-radius: 0.5em 1.8em 0.3em 0.5em;
 }
-
 
 .is-flashing {
   color: var(--warning);
@@ -131,4 +140,3 @@
 .theme-light {
   --bold-color: #010f59;
 } */
-
