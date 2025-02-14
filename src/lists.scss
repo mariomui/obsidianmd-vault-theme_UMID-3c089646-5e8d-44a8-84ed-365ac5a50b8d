@@ -1,22 +1,40 @@
 @use "./shared/index.scss" as shared;
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
 
 // Make bullet points more readable using color
 .HyperMD-list-line.cm-line:nth-child(even) {
   color: shared.$material-color-deep-purple-200;
-  
+
   // span.cm-hmd-internal-link {
   //   color: shared.$material-color-orange-300;
   // }
-
 }
-.cm-contentContainer div:nth-child(even):is(.HyperMD-list-line):has(span.cm-hmd-internal-link) {
-  // causes lag;
-  span.cm-hmd-internal-link a.cm-underline{
-    filter: hue-rotate(300deg) saturate(88%) brightness(100%) !important;
+$mapEvenOdd: (
+  // https://github.com/sass/sass/issues/2327
+  "true": "n + 2",
+  "false": "2n+1"
+);
+// @each $i in (1, 2, 3, 4) {
+.view-content .cm-contentContainer {
+  // even links are pinkish
+  // $modulo: $i % 2;
+  // $evenOrOdd: map-get($mapEvenOdd, "#{$modulo == 0}");
+  > div:first-child {
+    div.HyperMD-list-line:has(span.cm-hmd-internal-link):nth-child(even) {
+      span.cm-hmd-internal-link a.cm-underline {
+        // filter: hue-rotate(300deg) saturate(88%) brightness(100%) !important;
+        color: shared.$embedBorderColor;
+      }
+      //   color: shared.$material-color-orange-100 !important;
+    }
+    // .cm-line:not(:has(.cm-hmd-internal-link)) + .HyperMD-list-line-2 {
+    // }
   }
-  color: shared.$material-color-orange-100 !important;
 }
- 
+// }
+
 // indentation on all list items in source
 .cm-hmd-list-indent {
   font-family: var(--font-monospace) !important;
