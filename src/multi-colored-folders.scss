@@ -25,7 +25,6 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
     .nav-folder-title {
       .nav-folder-title-content {
         @extend %line-wrap-for-nav-title;
-
       }
     }
   }
@@ -51,7 +50,7 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
           // add a line
           &:after {
             width: 80%;
-            border-bottom: 1px solid $material-color-red-900;
+            border-bottom: 1px solid shared.$material-color-red-900;
             position: absolute;
             content: "";
             bottom: 1px;
@@ -82,37 +81,30 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
 @mixin renderFoldColorsMixin() {
   $foldA-datum: (
     prefix: "A_",
-    color: "--FoldA",
+    color: "--FoldA"
   );
   $foldB-datum: (
     prefix: "B_",
-    color: "--FoldB",
+    color: "--FoldB"
   );
   $foldC-datum: (
     prefix: "C_",
-    color: "--FoldC",
+    color: "--FoldC"
   );
   $foldD-datum: (
     prefix: "D_",
-    color: "--FoldD",
+    color: "--FoldD"
   );
   $foldZ-datum: (
     prefix: "Y_",
-    color: "--FoldY",
+    color: "--FoldY"
   );
   $foldY-datum: (
     prefix: "Z_",
-    color: "--FoldZ",
+    color: "--FoldZ"
   );
 
-  $file-fold-colors-map: (
-    $foldA-datum,
-    $foldB-datum,
-    $foldC-datum,
-    $foldD-datum,
-    $foldY-datum,
-    $foldZ-datum
-  );
+  $file-fold-colors-map: ($foldA-datum, $foldB-datum, $foldC-datum, $foldD-datum, $foldY-datum, $foldZ-datum);
   @each $foldmip in $file-fold-colors-map {
     $dp: map-get($foldmip, "prefix");
     $fold-color: map-get($foldmip, "color");
