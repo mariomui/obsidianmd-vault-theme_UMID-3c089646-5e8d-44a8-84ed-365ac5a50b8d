@@ -25,7 +25,8 @@ $mapEvenOdd: (
     div.HyperMD-list-line:has(span.cm-hmd-internal-link):nth-child(even) {
       span.cm-hmd-internal-link > a.cm-underline {
         // unresolved links are not direct children of internal link
-        color: shared.$borderColor;
+
+        color: shared.$material-color-light-blue-a400;
       }
     }
   }
