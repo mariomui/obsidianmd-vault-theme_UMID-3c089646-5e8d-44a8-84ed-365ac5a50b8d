@@ -3,15 +3,19 @@
 .nav-files-container {
   border-left: 1px solid shared.$material-color-orange-500;
   @extend %fixed-bg;
+  background-blend-mode: unset;
+
   background-image: #{shared.$midnight-grad};
   background-size: 100% 100%;
+
   // background-blend-mode: color;
-  // contain: paint;
+  contain: paint;
 }
 
 /* NAV FILE EXPLORER BACKDROP */
 .nav-files-container .tree-item.nav-folder {
   background: rgba(0, 0, 0, 0.6);
+  color: shared.$embedBorderColor;
 }
 
 // .workspace-split.mod-horizontal.mod-right-split .workspace-tabs > .workspace-tab-header-container >
@@ -19,29 +23,42 @@
 
 //   stroke-width: 3px;
 //   color: var(--material-color-orange-900);
-// } 
+// }
 /* fix for missing nw icons when app refocuses on icon clicks */
-.workspace-tabs.mod-top.mod-top-left-space .workspace-tab-header-container-inner .workspace-tab-header .workspace-tab-header-inner .workspace-tab-header-inner-icon > svg.svg-icon {
+.workspace-tabs.mod-top.mod-top-left-space
+  .workspace-tab-header-container-inner
+  .workspace-tab-header
+  .workspace-tab-header-inner
+  .workspace-tab-header-inner-icon
+  > svg.svg-icon {
   stroke-width: 3px;
   color: shared.$material-color-orange-500;
-} 
+}
 
 // .workspace-tabs.mod-top.mod-top-left-space .workspace-tab-header-container-inner .workspace-tab-header .workspace-tab-header-inner .workspace-tab-header-inner-icon:hover > svg.svg-icon {
 //   stroke-width: 3px;
 //   color: shared.$material-color-red-a200;
-// } 
+// }
 
-.workspace-split.mod-horizontal.mod-right-split .workspace-tabs > .workspace-tab-header-container >
-.workspace-tab-header-container-inner .workspace-tab-header-inner-icon:hover > svg.svg-icon {
-
+.workspace-split.mod-horizontal.mod-right-split
+  .workspace-tabs
+  > .workspace-tab-header-container
+  > .workspace-tab-header-container-inner
+  .workspace-tab-header-inner-icon:hover
+  > svg.svg-icon {
   stroke-width: 3px;
   color: shared.$material-color-red-a200;
-} 
-.workspace-tabs.mod-top.mod-top-left-space .workspace-tab-header-container-inner .workspace-tab-header.is-active .workspace-tab-header-inner .workspace-tab-header-inner-icon > svg.svg-icon {
+}
+.workspace-tabs.mod-top.mod-top-left-space
+  .workspace-tab-header-container-inner
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner
+  .workspace-tab-header-inner-icon
+  > svg.svg-icon {
   stroke-width: 3px;
   color: shared.$material-color-red-a200;
-} 
+}
 
-.workspace .nav-files-container .nav-folder:has(.nav-folder-title[data-path^=_]) {
+.workspace .nav-files-container .nav-folder:has(.nav-folder-title[data-path^="_"]) {
   display: none !important;
 }
