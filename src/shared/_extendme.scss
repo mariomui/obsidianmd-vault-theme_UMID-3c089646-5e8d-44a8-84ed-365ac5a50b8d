@@ -1,4 +1,5 @@
 @use "./wallpapers/wallpapers.scss" as wp;
+
 %fixed-bg {
   background-image: #{wp.$mm-image};
   background-attachment: fixed;

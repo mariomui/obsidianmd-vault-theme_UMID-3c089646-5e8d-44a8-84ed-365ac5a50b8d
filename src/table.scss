@@ -22,12 +22,12 @@
     .cm-embed-block.cm-table-widget {
       div.markdown-rendered:has(table) {
         padding: 0.4em 0.4em;
-        border: 1px solid $material-color-purple-700;
+        border: 1px solid shared.$material-color-purple-700;
       }
     }
     > .cm-content {
       table {
-        // outline: 4px solid $material-color-purple-700;
+        // outline: 4px solid shared.$material-color-purple-700;
         background: transparent;
       }
     }
