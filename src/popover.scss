@@ -7,19 +7,22 @@
 .popover.hover-popover {
   .markdown-embed {
     .markdown-embed-content {
-      .markdown-preview-view, .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller {
-        padding-left: .4em !important;
-      } 
-    } 
+      .markdown-preview-view,
+      .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller {
+        padding-left: 0.4em !important;
+      }
+    }
   }
 }
 
 .popover.hover-popover {
-
   // dataview padding
   .dataview {
     .markdown-preview-view.markdown-rendered.show-indentation-guide {
       padding: 0;
+    }
+    &.dataview-inline-query:nth-child(even) {
+      color: shared.$material-color-red-200;
     }
   }
 
@@ -72,9 +75,7 @@
 }
 
 // # margin spacing on popover
-.popover.hover-popover
-  .markdown-embed-content
-  .markdown-preview-view.markdown-rendered {
+.popover.hover-popover .markdown-embed-content .markdown-preview-view.markdown-rendered {
   .markdown-preview-sizer.markdown-preview-section {
     padding: 0;
   }

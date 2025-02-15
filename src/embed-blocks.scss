@@ -141,8 +141,7 @@ span[alt*="nlk"] {
 
 // # Reading View
 .markdown-reading-view {
-  .internal-embed[alt*="nlk"].markdown-embed
-    .markdown-preview-sizer.markdown-preview-section {
+  .internal-embed[alt*="nlk"].markdown-embed .markdown-preview-sizer.markdown-preview-section {
     padding: 0 0 0 0 !important;
     padding-left: 0px !important;
     margin: 0;
@@ -161,28 +160,22 @@ span[alt*="nlk"] {
 .internal-embed[alt*="nlk"].markdown-embed .embed-title.markdown-embed-title {
   display: none;
 }
-.internal-embed[alt*="nlk"].markdown-embed
-  .markdown-preview-sizer.markdown-preview-section {
+.internal-embed[alt*="nlk"].markdown-embed .markdown-preview-sizer.markdown-preview-section {
   padding: 0.1em 0 0 0 !important;
   padding-left: 5px !important;
 }
-.internal-embed[alt*="nlk"].markdown-embed
-  .markdown-preview-sizer
-  > div:nth-of-type(3) {
+.internal-embed[alt*="nlk"].markdown-embed .markdown-preview-sizer > div:nth-of-type(3) {
   display: none;
 }
 
 span[alt*="nlk"].internal-embed.markdown-embed {
   padding: 0;
 }
-span[alt*="nlk"].internal-embed.markdown-embed
-  .markdown-preview-sizer.markdown-preview-section {
+span[alt*="nlk"].internal-embed.markdown-embed .markdown-preview-sizer.markdown-preview-section {
   padding-left: 0 !important;
 }
 
-.markdown-reading-view
-  .internal-embed[alt*="nlk"].markdown-embed
-  .markdown-preview-sizer.markdown-preview-section {
+.markdown-reading-view .internal-embed[alt*="nlk"].markdown-embed .markdown-preview-sizer.markdown-preview-section {
   padding: 0 0 0 0 !important;
   padding-left: 0px !important;
   margin: 0;
