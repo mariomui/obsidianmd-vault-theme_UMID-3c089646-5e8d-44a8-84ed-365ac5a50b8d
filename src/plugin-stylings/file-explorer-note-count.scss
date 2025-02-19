@@ -1,4 +1,6 @@
 @use "sass:color";
+@use "sass:list";
+
 @use "../shared/index.scss" as shared;
 
 // https://github.com/ozntel/file-explorer-note-count
@@ -8,17 +10,40 @@ $note_color: shared.$secondaryAlt;
 $num-colors: 100;
 
 @mixin random-bgr() {
-  color: poof();
+  color: getRandomColor();
   font-weight: bold; /* Make text bolder */
 }
-@function poof() {
+
+$colorsMap: (
+  red: shared.$material-color-amber-a400,
+  green: shared.$material-color-light-green-a400,
+  blue: shared.$material-color-light-blue-a400,
+  purple: shared.$material-color-deep-purple-200,
+  orange: shared.$material-color-orange-a400,
+  yellow: shared.$material-color-amber-50,
+  pink: shared.$material-color-pink-a100,
+  teal: shared.$material-color-teal-a400,
+  cyan: shared.$material-color-cyan-a400,
+  lime: shared.$material-color-lime-a400,
+  brown: shared.$material-color-brown-a400,
+);
+@function getRandomColor() {
   // $note_color: color.adjust($note_color, $lightness: 10%, $saturation: 30%);
-  $note_color: rgb(random(255),random(255), random(105));
-  @return color.adjust($note_color, $lightness: 50%, $saturation: 30%);
+  $random_color_index: random(length($colorsMap));
+
+  @each $key, $value in $colorsMap {
+    $index: index($colorsMap, $key $value);
+    @if $index == $random_color_index {
+      $note_color: map-get($colorsMap, $key);
+      @debug $note_color;
+      @return $note_color;
+    }
+  }
+  @return black;
+  // color.adjust($note_color, $lightness: 50%, $saturation: 30%);
 }
 
 // media queries dont work here in obsidianland
-
 @for $i from 0 to $num-colors {
   // because of scope and pre-read-process behavior, anything dynamic inside of the curly braces can't be acted upon. Some exceptions like the computed value given by the widht of the containing element, but generally no.
   .nav-files-container .tree-item.nav-folder:nth-child(#{$i}) {
@@ -47,4 +72,3 @@ $num-colors: 100;
     }
   }
 }
-

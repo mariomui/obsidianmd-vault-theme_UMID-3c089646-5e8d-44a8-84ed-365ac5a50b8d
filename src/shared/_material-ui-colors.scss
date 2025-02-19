@@ -19,6 +19,7 @@ $material-color-brown-500: $material-color-brown;
 $material-color-brown-700: #5d4037;
 $material-color-brown-800: #4e342e;
 $material-color-brown-900: #3e2723;
+$material-color-brown-a400: #8d6e63;
 
 $material-color-deep-orange: #ff5722;
 $material-color-deep-orange-100: #ffccbc;
@@ -30,6 +31,8 @@ $material-color-deep-orange-900: #bf360c;
 
 $material-color-deep-orange-a100: #ff9e80;
 $material-color-deep-orange-a200: #ff6e40;
+$material-color-orange-a400: #ff9100;
+
 $material-color-deep-orange-a900: #c02400;
 $hsl-material-color-deep-orange-a900: hsl(11, 100%, 38%);
 
@@ -39,6 +42,7 @@ $material-color-green-300: #81c784;
 $material-color-green-700: #388e3c;
 $material-color-green-800: #2e7d32;
 $material-color-green-900: #1b5e20;
+$material-color-light-green-a400: #76ff03;
 
 $material-color-orange: #ff9800;
 $material-color-orange-100: #ffe0b2;
@@ -57,11 +61,14 @@ $material-color-pink-700: #c2185b;
 $material-color-pink-800: #ad1457;
 $material-color-pink-900: #880e4f;
 $material-color-pink: #e91e63;
+$material-color-pink-a100: #ff80ab;
 
-$material-color-deep-purple-200: #b39ddb;
 $material-color-purple-700: #7b1fa2;
 $material-color-purple-800: #6a1b9a;
 $material-color-purple-900: #4a148c;
+
+$material-color-deep-purple-200: #b39ddb;
+// $material-color-deep-purple-a400: #651fff;  // terrible color on dark mode
 
 $material-color-red-100: #ffcdd2;
 $material-color-red-200: #ef9a9a;
@@ -80,3 +87,13 @@ $material-color-yellow-900: #f57f17;
 $material-color-yellow-a200: #ff0;
 
 $material-color-amber-a400: #ffc400;
+$material-color-amber-50: #fff8e1;
+
+// # LESS USED COLORS
+$material-color-teal-a400: #1de9b6;
+$material-color-cyan-a400: #00e5ff;
+$material-color-lime-a400: #c6ff00;
+// $material-color-indigo-a400: #3d5afe; // bad color on dark mode
+// rogybiv was a christian thing. there's only five base colors
+// red orange yellow green blue (ignore indigo and violet when thinking about colors)
+// Primary colors are more within the range of the human eye.
