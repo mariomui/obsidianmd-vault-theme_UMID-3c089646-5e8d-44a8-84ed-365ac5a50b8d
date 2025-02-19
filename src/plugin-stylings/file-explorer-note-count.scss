@@ -35,10 +35,10 @@ $colorsMap: (
     $index: index($colorsMap, $key $value);
     @if $index == $random_color_index {
       $note_color: map-get($colorsMap, $key);
-      @debug $note_color;
       @return $note_color;
     }
   }
+  @debug "Please check the colorsMap";
   @return black;
   // color.adjust($note_color, $lightness: 50%, $saturation: 30%);
 }
