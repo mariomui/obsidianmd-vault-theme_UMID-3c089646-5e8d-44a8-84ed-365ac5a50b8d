@@ -2,14 +2,14 @@
 
 .nav-files-container {
   border-left: 1px solid shared.$material-color-orange-500;
-  @extend %fixed-bg;
-  background-blend-mode: unset;
+  // @extend %fixed-bg;
+  // background-blend-mode: unset;
 
   background-image: #{shared.$midnight-grad};
   background-size: 100% 100%;
 
   // background-blend-mode: color;
-  contain: paint;
+  // contain: paint;
 }
 
 /* NAV FILE EXPLORER BACKDROP */

@@ -8,6 +8,18 @@
 
 $button-border-color: #ffffff;
 $topbar-blend: hard-light;
+@mixin mx--topbar-blend() {
+  // background-blend-mode: hard-light;
+}
+@mixin mx--leftbar-ribbon-blend {
+  // background-blend-mode: normal;
+}
+@mixin mx--file-explorer-blend {
+  // background-blend-mode: screen;
+}
+@mixin mx--workspace-inner-tab {
+  // background-blend-mode: screen;
+}
 
 // # Overrides
 
@@ -24,7 +36,7 @@ $bg-image: unset;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-blend-mode: overlay;
+  // background-blend-mode: overlay;
 }
 %bg {
   // background-image: #{wp.$mm-image} !important;

@@ -13,7 +13,7 @@ $local-wfb--inner-tab: shared.$white-grad, shared.$anu-image, shared.$mm-image;
 
 /* NAV FILE EXPLORER BACKDROP */
 .nav-files-container .tree-item.nav-folder {
-  background: rgba(0, 0, 0, 0.2);
+  // background: rgba(0, 0, 0, 0.2);
   /* come  */
 }
 
@@ -29,7 +29,8 @@ body.is-hidden-frameless .workspace.should-maximize:not(.workspace.is-right-side
   @extend %bgfixednorepeat;
 
   background-size: 100% 100%;
-  background-blend-mode: hard-light;
+  // background-blend-mode: hard-light;
+  @include mx--topbar-blend();
 }
 .workspace-tabs.mod-top.mod-top-left-space
   .workspace-tab-container
@@ -66,7 +67,8 @@ body.is-hidden-frameless .workspace.should-maximize:not(.workspace.is-right-side
   @extend %bgfixednorepeat;
 
   background-size: 100% 100%;
-  background-blend-mode: hard-light;
+  // background-blend-mode: hard-light;
+  @include mx--topbar-blend();
 }
 
 .workspace
@@ -166,6 +168,7 @@ body.minimal-theme {
   @extend %bgfixednorepeat;
   background-size: 100% 100%;
   // background-blend-mode: #{shared.$topbar-blend};
+  @include shared.mx--topbar-blend();
 }
 
 .workspace-tabs.mod-top-left-space
@@ -214,7 +217,8 @@ body.minimal-theme {
   @extend %bgfixednorepeat;
 
   background-size: 100% 100%;
-  background-blend-mode: shared.$topbar-blend;
+  // background-blend-mode: shared.$topbar-blend;
+  @include shared.mx--topbar-blend();
 }
 .workspace-tab-header-tab-list {
   background-image: unset;
@@ -232,7 +236,8 @@ body.minimal-theme {
 .workspace-ribbon.side-dock-ribbon.mod-left {
   @extend %bgfixednorepeat; // this is the most obvious element on the farthest left side. use to debug if ui changes work
 
-  background-blend-mode: normal; //difference or lighten works here too
+  // background-blend-mode: normal; //difference or lighten works here too
+  @include shared.mx--leftbar-ribbon-blend();
   background-size: 100% 100%;
 }
 
@@ -251,7 +256,7 @@ body.minimal-theme {
 /* # File Explorer Styling */
 .workspace-tab-container .workspace-leaf-content[data-type="file-explorer"] {
   @extend %bgfixednorepeat;
-  background-blend-mode: screen;
+  @include shared.mx--file-explorer-blend();
   /* var(--dark-blue-grad), */
 }
 
@@ -260,7 +265,7 @@ body.minimal-theme {
   @extend %bgfixednorepeat;
 
   background-size: 100% 100%;
-  background-blend-mode: shared.$topbar-blend;
+  @include mx--topbar-blend();
 }
 
 /* # Vertical note title bar (per pane) */
@@ -343,7 +348,7 @@ body.minimal-theme {
   height: auto;
   background-image: #{$local-wfb--inner-tab};
 
-  background-blend-mode: screen;
+  @include shared.mx--workspace-inner-tab();
   /* Set the background size and repeat properties if needed */
   background-attachment: fixed;
   border-bottom-left-radius: 40px;
