@@ -5,6 +5,7 @@
 @forward "./mixins.scss";
 @forward "./wallpapers/wallpapers.scss";
 @forward "./material-ui-colors.scss";
+@use "./material-ui-colors.scss" as MAT_COLORS;
 
 $button-border-color: #ffffff;
 $topbar-blend: hard-light;
@@ -45,10 +46,25 @@ $bg-image: unset;
   background-size: 100% 100%;
 }
 
-$ßlocal-wfb--active-vtabheader-bg-image: wp.$dark-blue-grad, wp.$mm-image, wp.$anu-image;
+$ßlocal-wfb--active-vtabheader-bg-image: wp.$dark-blue-grad, wp.$mm-image,
+  wp.$anu-image;
 $local-bg-image: #{$bg-image};
 %bgfixednorepeat {
   // background-image: #{$local-bg-image};
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
+
+$colorsMap: (
+  red: MAT_COLORS.$material-color-amber-a400,
+  green: MAT_COLORS.$material-color-light-green-a400,
+  blue: MAT_COLORS.$material-color-light-blue-a400,
+  purple: MAT_COLORS.$material-color-deep-purple-200,
+  orange: MAT_COLORS.$material-color-orange-a400,
+  yellow: MAT_COLORS.$material-color-amber-50,
+  pink: MAT_COLORS.$material-color-pink-a100,
+  teal: MAT_COLORS.$material-color-teal-a400,
+  cyan: MAT_COLORS.$material-color-cyan-a400,
+  lime: MAT_COLORS.$material-color-lime-a400,
+  brown: MAT_COLORS.$material-color-brown-a400,
+);

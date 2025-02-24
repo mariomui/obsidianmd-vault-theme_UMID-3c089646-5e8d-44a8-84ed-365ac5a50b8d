@@ -31,3 +31,21 @@ $shade: rgba(0, 0, 0, 0.8);
 
 $bar-outline-color: MAT_COLORS.$material-color-blue-800;
 $bar-color: MAT_COLORS.$material-color-blue-900;
+
+// # Functions
+
+@function getRandomColor($colorsMap) {
+  // $note_color: color.adjust($note_color, $lightness: 10%, $saturation: 30%);
+  $random_color_index: random(length($colorsMap));
+
+  @each $key, $value in $colorsMap {
+    $index: index($colorsMap, $key $value);
+    @if $index == $random_color_index {
+      $note_color: map-get($colorsMap, $key);
+      @return $note_color;
+    }
+  }
+  @debug "Please check the colorsMap";
+  @return black;
+  // color.adjust($note_color, $lightness: 50%, $saturation: 30%);
+}
