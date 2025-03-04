@@ -75,9 +75,48 @@
 }
 
 // # margin spacing on popover
-.popover.hover-popover .markdown-embed-content .markdown-preview-view.markdown-rendered {
+.popover.hover-popover
+  .markdown-embed-content
+  .markdown-preview-view.markdown-rendered {
   .markdown-preview-sizer.markdown-preview-section {
     padding: 0;
+  }
+}
+
+.popover.hover-popover > .markdown-embed .markdown-source-view {
+  .cm-editor {
+    div.HyperMD-list-line:has(span.cm-hmd-internal-link):nth-child(even) {
+      span.cm-hmd-internal-link > a.cm-underline {
+        // unresolved links are not direct children of internal link
+
+        color: shared.$material-color-light-blue-a400;
+      }
+    }
+  }
+}
+
+.popover.hover-popover
+  .markdown-embed
+  .markdown-embed-content
+  .markdown-preview-view {
+  & > .markdown-preview-sizer {
+    .el-ul li:nth-of-type(even):has(.internal-link) {
+      a.internal-link {
+        color: shared.$material-color-light-blue-a400 !important;
+      }
+    }
+    @each $i in (1 5) {
+      @debug $i;
+      .el-ul {
+        ul.has-list-bullet {
+          li[data-line="#{$i}"] {
+            a.internal-link {
+              color: shared.$material-color-light-blue-a400 !important;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -85,25 +124,12 @@
 //   > .markdown-embed
 //   > .markdown-embed-content
 //   > .markdown-preview-view
-.popover.hover-popover {
-  & > .markdown-embed {
-    & > .markdown-emebed-content {
-      & > .markdown-preview-view {
-        & > .markdown-preview-section {
-          background: blue;
-        }
-      }
-    }
-  }
-}
-//   @for $i from 2 through shared.$header-levels {
-//     .markdown-embed-content {
-//       .markdown-preview-sizer.markdown-preview-section {
-//         .markdown-rendered h#{i} {
-//           &:before {
-//             content: shared.repeat(":", $i - 1) + " ";
-//             @include shared.header-indent-position();
-//           }
+// .popover.hover-popover {
+//   & > .markdown-embed {
+//     & > .markdown-emebed-content {
+//       & > .markdown-preview-view {
+//         & > .markdown-preview-section {
+//           background: blue;
 //         }
 //       }
 //     }
