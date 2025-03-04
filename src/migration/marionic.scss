@@ -4,7 +4,8 @@
 @use "../shared/index.scss" as shared;
 // domain driven knobs;
 $local-wfb--active-vtabheader-bg-image: #{shared.$ßlocal-wfb--active-vtabheader-bg-image};
-$local-wfb--prevalent-bg: shared.$midnight-grad, shared.$mm-image, shared.$anu-image;
+$local-wfb--prevalent-bg: shared.$midnight-grad, shared.$mm-image,
+  shared.$anu-image;
 
 // $local-wfb--inner-tab: white;
 $local-wfb--inner-tab: shared.$white-grad, shared.$anu-image, shared.$mm-image;
@@ -18,19 +19,26 @@ $local-wfb--inner-tab: shared.$white-grad, shared.$anu-image, shared.$mm-image;
 }
 
 /* # toggle right split */
-body.is-hidden-frameless .workspace.should-maximize.is-right-sidedock-open ~ #pr-maximize-sb-toggle {
+body.is-hidden-frameless
+  .workspace.should-maximize.is-right-sidedock-open
+  ~ #pr-maximize-sb-toggle {
   background-color: transparent;
 }
-body.is-hidden-frameless .workspace.should-maximize:not(.workspace.is-right-sidedock-open) ~ #pr-maximize-sb-toggle {
+body.is-hidden-frameless
+  .workspace.should-maximize:not(.workspace.is-right-sidedock-open)
+  ~ #pr-maximize-sb-toggle {
   background-color: transparent;
 }
 
-.workspace .workspace-split.mod-horizontal.mod-left-split .workspace-leaf-content .nav-header {
+.workspace
+  .workspace-split.mod-horizontal.mod-left-split
+  .workspace-leaf-content
+  .nav-header {
   @extend %bgfixednorepeat;
 
   background-size: 100% 100%;
   // background-blend-mode: hard-light;
-  @include mx--topbar-blend();
+  @include shared.mx--topbar-blend();
 }
 .workspace-tabs.mod-top.mod-top-left-space
   .workspace-tab-container
@@ -41,13 +49,16 @@ body.is-hidden-frameless .workspace.should-maximize:not(.workspace.is-right-side
   background: #{shared.$shade};
   border-radius: 0.5em 1em 0 0;
 }
-.workspace-tabs.mod-top.mod-top-left-space .workspace-tab-header-container-inner {
+.workspace-tabs.mod-top.mod-top-left-space
+  .workspace-tab-header-container-inner {
   background: #{shared.$shade};
   border-radius: 0.5em 1em 0 0;
   padding: 0 1em 0 0.5em;
 }
 
-.workspace .workspace-split.mod-horizontal.mod-left-split .workspace-leaf-content[data-type="search"] {
+.workspace
+  .workspace-split.mod-horizontal.mod-left-split
+  .workspace-leaf-content[data-type="search"] {
   @extend %bgfixednorepeat;
   background-size: 100% 100%;
 }
@@ -68,7 +79,7 @@ body.is-hidden-frameless .workspace.should-maximize:not(.workspace.is-right-side
 
   background-size: 100% 100%;
   // background-blend-mode: hard-light;
-  @include mx--topbar-blend();
+  @include shared.mx--topbar-blend();
 }
 
 .workspace
@@ -83,11 +94,15 @@ body.is-hidden-frameless .workspace.should-maximize:not(.workspace.is-right-side
   --icon-stroke: 0.23em;
   --icon-size: 1.2rem;
 }
-.workspace-tabs.mod-stacked.mod-active.mod-top.mod-top-right-space .view-header .view-header-icon.clickable-icon {
+.workspace-tabs.mod-stacked.mod-active.mod-top.mod-top-right-space
+  .view-header
+  .view-header-icon.clickable-icon {
   cursor: none;
   display: inherit;
 }
-.workspace-tabs.mod-stacked.mod-active.mod-top.mod-top-right-space .view-header .view-header-icon.clickable-icon:hover {
+.workspace-tabs.mod-stacked.mod-active.mod-top.mod-top-right-space
+  .view-header
+  .view-header-icon.clickable-icon:hover {
   box-shadow: unset;
   cursor: unset;
   opacity: 1;
@@ -180,10 +195,14 @@ body.minimal-theme {
   background-size: 100% 100%;
 }
 
-.workspace-tabs.mod-top.mod-top-right-space .workspace-leaf-content .view-header {
+.workspace-tabs.mod-top.mod-top-right-space
+  .workspace-leaf-content
+  .view-header {
   background: rgba(0, 0, 0, 0.35);
 }
-.workspace-tabs.mod-top.mod-top-right-space .workspace-leaf-content .view-content {
+.workspace-tabs.mod-top.mod-top-right-space
+  .workspace-leaf-content
+  .view-content {
   background: rgba(0, 0, 0, 0.35);
   padding: 0 0.1em 0 0.3em;
 }
@@ -197,7 +216,9 @@ body.minimal-theme {
   background: rgba(0, 0, 0, 0.65);
   padding: 0 0.1em 0 0.3em;
 }
-.workspace-tabs.mod-top.mod-top-right-space .workspace-leaf-content .view-content {
+.workspace-tabs.mod-top.mod-top-right-space
+  .workspace-leaf-content
+  .view-content {
   padding: initial;
 }
 
@@ -245,11 +266,13 @@ body.minimal-theme {
   @extend %bgfixednorepeat;
 }
 
-.workspace-ribbon.side-dock-ribbon.mod-left .clickable-icon.side-dock-ribbon-action {
+.workspace-ribbon.side-dock-ribbon.mod-left
+  .clickable-icon.side-dock-ribbon-action {
   border: 1px solid shared.$material-color-deep-orange-a200;
   background-color: shared.$tertiary-blue-800;
 }
-.workspace-ribbon.side-dock-ribbon.mod-left .clickable-icon.side-dock-ribbon-action:hover {
+.workspace-ribbon.side-dock-ribbon.mod-left
+  .clickable-icon.side-dock-ribbon-action:hover {
   border: 1px solid shared.$material-color-deep-orange-a100;
 }
 
@@ -265,18 +288,26 @@ body.minimal-theme {
   @extend %bgfixednorepeat;
 
   background-size: 100% 100%;
-  @include mx--topbar-blend();
+  @include shared.mx--topbar-blend();
 }
 
 /* # Vertical note title bar (per pane) */
-.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner {
+.workspace
+  .mod-root
+  .workspace-tabs.mod-stacked
+  .workspace-tab-container
+  .workspace-tab-header-inner {
   border-left: none;
   border-right: 0.2em solid shared.$material-color-brown-500;
 
   border-top-left-radius: 5%;
 }
 
-.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner-icon {
+.workspace
+  .mod-root
+  .workspace-tabs.mod-stacked
+  .workspace-tab-container
+  .workspace-tab-header-inner-icon {
   color: shared.$material-color-deep-orange-800;
   border-radius: 20% 20% 20% 50%;
   outline: 1px solid shared.$tertiary-blue-900;
@@ -306,13 +337,25 @@ body.minimal-theme {
 }
 
 /* ## Vertical Note Title (NON-ACTIVE) Text */
-.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner-title {
+.workspace
+  .mod-root
+  .workspace-tabs.mod-stacked
+  .workspace-tab-container
+  .workspace-tab-header-inner-title {
   color: shared.$nbc;
 }
 
 /* ### Active Vertical Note Title Text */
-.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.mod-active.is-active,
-.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header {
+.workspace
+  .mod-root
+  .workspace-tabs.mod-stacked
+  .workspace-tab-container
+  .workspace-tab-header.mod-active.is-active,
+.workspace
+  .mod-root
+  .workspace-tabs.mod-stacked
+  .workspace-tab-container
+  .workspace-tab-header {
   background-image: #{$local-wfb--active-vtabheader-bg-image};
 
   background-size: 100% 100%;
@@ -371,26 +414,43 @@ There's just more code involved plus the need to specify the height (psuedo's re
 jesus the psuedo trick has limitations;
 */
 
-.workspace-split .workspace-tab-container .workspace-leaf-content .markdown-source-view .search-results-children {
+.workspace-split
+  .workspace-tab-container
+  .workspace-leaf-content
+  .markdown-source-view
+  .search-results-children {
   background-image: #{shared.$local-bg-image};
   background-attachment: fixed;
   background-blend-mode: multiply, difference;
 }
-.workspace-split .workspace-tab-container .workspace-leaf-content .markdown-source-view .search-results-children {
+.workspace-split
+  .workspace-tab-container
+  .workspace-leaf-content
+  .markdown-source-view
+  .search-results-children {
   background: rgba(0, 0, 0, 0.7);
 }
 
-.workspace-split .workspace-tab-container .workspace-leaf-content .markdown-reading-view .search-results-children {
+.workspace-split
+  .workspace-tab-container
+  .workspace-leaf-content
+  .markdown-reading-view
+  .search-results-children {
   background-image: #{shared.$local-bg-image};
   background-attachment: fixed;
   background-blend-mode: multiply, difference;
 }
-.workspace-split .workspace-tab-container .workspace-leaf-content .markdown-reading-view .search-results-children {
+.workspace-split
+  .workspace-tab-container
+  .workspace-leaf-content
+  .markdown-reading-view
+  .search-results-children {
   background: rgba(0, 0, 0, 0.7);
 }
 
 /* only global search */
-.workspace-leaf-content[data-type="search"] .search-result-container.mod-global-search {
+.workspace-leaf-content[data-type="search"]
+  .search-result-container.mod-global-search {
   background-image: #{$local-wfb--prevalent-bg};
   background-blend-mode: screen, darken;
   background-attachment: fixed;
@@ -399,8 +459,18 @@ jesus the psuedo trick has limitations;
 }
 
 /* #Outliner Plugin Integration */
-.workspace-tabs .workspace-tab-container .workspace-leaf .workspace-leaf-content .view-content .backlink-pane::before,
-.workspace-tabs .workspace-tab-container .workspace-leaf .workspace-leaf-content .view-content .outline::before,
+.workspace-tabs
+  .workspace-tab-container
+  .workspace-leaf
+  .workspace-leaf-content
+  .view-content
+  .backlink-pane::before,
+.workspace-tabs
+  .workspace-tab-container
+  .workspace-leaf
+  .workspace-leaf-content
+  .view-content
+  .outline::before,
 .workspace-tabs
   .workspace-tab-container
   .workspace-leaf
@@ -513,13 +583,22 @@ body:not(.full-file-names) .tree-item-self {
   display: block;
 }
 
-.workspace-tabs .workspace-tab-container .workspace-leaf-content .view-content .nav-header .nav-buttons-container {
+.workspace-tabs
+  .workspace-tab-container
+  .workspace-leaf-content
+  .view-content
+  .nav-header
+  .nav-buttons-container {
   background: #{shared.$shade};
   padding: 0 0.2em;
   border-radius: 0px 40px 0 0;
 }
 
-.workspace-tabs .workspace-tab-container .workspace-leaf-content .view-content .nav-header {
+.workspace-tabs
+  .workspace-tab-container
+  .workspace-leaf-content
+  .view-content
+  .nav-header {
   background: rgba(0, 0, 0, 0.9);
 }
 
