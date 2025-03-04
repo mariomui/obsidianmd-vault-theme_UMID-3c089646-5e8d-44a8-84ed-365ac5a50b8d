@@ -18,6 +18,15 @@
   }
 }
 
+.nav-file-title.is-active > .tree-item-inner.nav-file-title-content::after {
+  /* background: var(--theme-color-translucent-2); */
+  content: "⛩️";
+  position: absolute;
+  transform: rotate(-30deg) translateY(-50%);
+
+  left: 0;
+}
+
 /* fix for missing nw icons when app refocuses on icon clicks */
 .workspace-tabs.mod-top.mod-top-left-space {
   .workspace-tab-header-container-inner {
