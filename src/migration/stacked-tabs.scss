@@ -88,14 +88,6 @@ $local-wfb--inner-tab: var(--material-color-blue-grey-700);
     background: #{$local-wfb--inner-tab} !important;
   }
 }
-.workspace
-  .mod-root
-  .workspace-tabs.mod-stacked
-  .workspace-tab-container
-  .workspace-tab-header.mod-active.is-active
-  .workspace-tab-header-inner-title {
-  color: blue;
-}
 
 // /* Active text title */
 .workspace
