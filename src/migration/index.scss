@@ -1,9 +1,10 @@
-// @forward "./marionic.scss";
+@forward "./stacked-tabs.scss";
 @use "../shared/index.scss" as shared;
 @forward "./other.scss";
 // @import "./marionic.scss";
 $local-wfb--active-vtabheader-bg-image: #{shared.$ßlocal-wfb--active-vtabheader-bg-image};
-$local-wfb--prevalent-bg: shared.$midnight-grad, shared.$mm-image, shared.$anu-image;
+$local-wfb--prevalent-bg: shared.$midnight-grad, shared.$mm-image,
+  shared.$anu-image;
 
 // $local-wfb--inner-tab: white;
 $local-wfb--inner-tab: shared.$white-grad, shared.$anu-image, shared.$mm-image;
@@ -64,7 +65,9 @@ $local-wfb--inner-tab: shared.$white-grad, shared.$anu-image, shared.$mm-image;
 /* # H1 styling Source */
 
 /* ## H1 source view */
-.markdown-source-view .cm-contentContainer .HyperMD-header.HyperMD-header-1.cm-line {
+.markdown-source-view
+  .cm-contentContainer
+  .HyperMD-header.HyperMD-header-1.cm-line {
   background: var(--material-color-deep-orange-800);
   border: 2px solid var(--material-color-brown-900);
   color: var(--material-color-brown-50);
@@ -73,11 +76,16 @@ $local-wfb--inner-tab: shared.$white-grad, shared.$anu-image, shared.$mm-image;
 }
 
 /* ## H1 when there is a tag inside it.  */
-.markdown-source-view .cm-contentContainer .HyperMD-header.HyperMD-header-1.cm-line:has(> span.cm-hashtag) {
+.markdown-source-view
+  .cm-contentContainer
+  .HyperMD-header.HyperMD-header-1.cm-line:has(> span.cm-hashtag) {
   background: var(--material-color-indigo-900);
   outline: 2px solid --material-color-deep-orange-300;
 }
-.markdown-source-view .cm-contentContainer .HyperMD-header.HyperMD-header-1.cm-line:has(> span.cm-hashtag) > span {
+.markdown-source-view
+  .cm-contentContainer
+  .HyperMD-header.HyperMD-header-1.cm-line:has(> span.cm-hashtag)
+  > span {
   background-color: unset;
   color: var(--material-color-deep-orange-300);
   /* font: small-caption; */
@@ -92,13 +100,19 @@ $local-wfb--inner-tab: shared.$white-grad, shared.$anu-image, shared.$mm-image;
   /* font: small-caption */
 }
 
-.markdown-reading-view .markdown-preview-sizer.markdown-preview-section h1[data-heading] > a.tag,
+.markdown-reading-view
+  .markdown-preview-sizer.markdown-preview-section
+  h1[data-heading]
+  > a.tag,
 .cm-contentContainer .HyperMD-header.HyperMD-header-1.cm-line > span ~ span {
   border: unset;
   padding: 0.05em 0.05em;
   /* color: var(--tertiary-blue-900); */
 }
-.cm-contentContainer .HyperMD-header HyperMD-header-1.cm-line + .HyperMD-header.HyperMD-header-1.cm-line {
+.cm-contentContainer
+  .HyperMD-header
+  HyperMD-header-1.cm-line
+  + .HyperMD-header.HyperMD-header-1.cm-line {
   background: var(--material-color-deep-orange-800);
   outline: 2px solid var(--material-color-brown-900);
   /* color: var(--material-color-brown-50); */
@@ -111,7 +125,10 @@ $local-wfb--inner-tab: shared.$white-grad, shared.$anu-image, shared.$mm-image;
 /* .markdown-preview-sizer.markdown-preview-section h1[data-heading="-"] {
   background: var(--material-color-deep-orange-900) !important;
 }*/
-.markdown-source-view .markdown-embed-content .markdown-preview-sizer.markdown-preview-section h1[data-heading="="] {
+.markdown-source-view
+  .markdown-embed-content
+  .markdown-preview-sizer.markdown-preview-section
+  h1[data-heading="="] {
   outline: 2px solid var(--material-color-brown-700);
   padding: 0.1em 2em;
   color: var(--tertiary-blue-800);
