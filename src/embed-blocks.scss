@@ -4,7 +4,6 @@
 //  make some extended thing so that both views are reusing styles
 
 %dataview-container {
-  // border: 2px solid var(--material-color-deep-orange);
   border: 2px solid shared.$borderColor;
   border-right-width: 1em;
   background-image: #{shared.$dark-blue-grad};
@@ -18,7 +17,7 @@
 .markdown-source-view,
 .markdown-reading-view {
   .block-language-dataview {
-    border: 2px solid var(--material-color-deep-orange);
+    border: 2px solid #{shared.$borderColor};
     border-radius: 1em 1em;
     background: #{shared.$shade};
   }
@@ -111,22 +110,39 @@
     padding-top: 1.4em;
   }
 }
+
 /** : Tranclusion/Embed sections */
-
-.internal-embed[alt*="nlk"].markdown-embed {
-  /* hide file name on transcludes */
-  .embed-title.markdown-embed-title {
+// # NLK
+.internal-embed[alt*="nlk"] {
+  .markdown-embed-content:has(.markdown-embed-link) ~ .markdown-embed-link {
     display: none;
   }
-  // padding: 0 !important;
-  // padding-left: 5px !important;
-  .markdown-preview-sizer.markdown-preview-section {
-    padding: 2em 0 0 0 !important;
-    padding-left: 5px !important;
+  &.markdown-embed.inline-embed.is-loaded .markdown-preview-view.markdown-rendered {
+    padding-top: 0;
   }
+  &.markdown-embed {
+    /* hide file name on transcludes */
+    .markdown-embed.inline-embed.is-loaded .markdown-preview-view.markdown-rendered {
+      // background-color: blue;
+      padding: 0 !important;
+      padding-top: 0;
+    }
+    .embed-title.markdown-embed-title {
+      display: none;
+    }
+    .el-p p[dir="auto"] {
+      margin: 0;
+    }
+    // padding: 0 !important;
+    // padding-left: 5px !important;
+    .markdown-preview-sizer.markdown-preview-section {
+      // padding: 2em 0 0 0 !important;
+      padding-left: 5px !important;
+    }
 
-  .markdown-preview-sizer > div:nth-of-type(3) {
-    display: none;
+    .markdown-preview-sizer > div:nth-of-type(3) {
+      display: none;
+    }
   }
 }
 
@@ -154,14 +170,20 @@ span[alt*="nlk"] {
     border-radius: 1.5em 1.5em;
     background: #{shared.$shade};
   }
+  .internal-embed[alt*="nlk"].markdown-embed .markdown-preview-sizer.markdown-preview-section {
+    padding: 0 0 0 0 !important;
+    padding-left: 0px !important;
+    margin: 0;
+  }
 }
 
-/** : Tranclusion/Embed sections */
+/** ## Tranclusion/Embed sections */
+
 .internal-embed[alt*="nlk"].markdown-embed .embed-title.markdown-embed-title {
   display: none;
 }
 .internal-embed[alt*="nlk"].markdown-embed .markdown-preview-sizer.markdown-preview-section {
-  padding: 0.1em 0 0 0 !important;
+  // padding: 0.1em 0 0 0 !important;
   padding-left: 5px !important;
 }
 .internal-embed[alt*="nlk"].markdown-embed .markdown-preview-sizer > div:nth-of-type(3) {
@@ -173,10 +195,4 @@ span[alt*="nlk"].internal-embed.markdown-embed {
 }
 span[alt*="nlk"].internal-embed.markdown-embed .markdown-preview-sizer.markdown-preview-section {
   padding-left: 0 !important;
-}
-
-.markdown-reading-view .internal-embed[alt*="nlk"].markdown-embed .markdown-preview-sizer.markdown-preview-section {
-  padding: 0 0 0 0 !important;
-  padding-left: 0px !important;
-  margin: 0;
 }
