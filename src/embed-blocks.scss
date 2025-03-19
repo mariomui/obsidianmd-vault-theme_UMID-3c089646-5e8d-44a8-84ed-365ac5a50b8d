@@ -62,9 +62,9 @@
     }
   }
 
-  .embedded-backlinks {
-    .backlink-pane {
-      max-height: 30vmin;
+  .markdown-source-view {
+    .cm-sizer > .embedded-backlinks {
+      display: none !important;
     }
   }
 
