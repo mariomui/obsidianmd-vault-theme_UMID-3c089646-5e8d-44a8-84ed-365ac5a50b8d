@@ -26,5 +26,9 @@
 @import "./sliding-window/index.scss";
 
 @import "./migration/index.scss"; // here's where all the basic uses are;
+
+// start to put core plugins into core.
+@import "./core";
+
 // # backrounds
 // @import "./migration/index.scss"; // migration of old scss be careful of using index

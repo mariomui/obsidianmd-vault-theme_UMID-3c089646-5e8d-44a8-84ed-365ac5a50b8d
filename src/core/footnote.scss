@@ -1,0 +1,14 @@
+@use "../shared/index.scss" as SHARED;
+
+// # Colorize footnote ref link
+.markdown-source-view {
+  .cm-contentContainer {
+    .HyperMD-quote.HyperMD-quote-1.cm-line {
+      // ## QUOTE background color
+      background-color: #{SHARED.$tertiary-blue-700};
+      .cm-footref.cm-hmd-barelink.cm-quote.cm-quote-1 {
+        color: SHARED.$embedPrimaryLinkColor;
+      }
+    }
+  }
+}
