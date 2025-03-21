@@ -1,7 +1,7 @@
 @use "./right-split.scss";
+@use "../shared/index" as shared;
 
-// i think the .65 number should be some kindah mathematical heuristic depending on some ui center.
-.workspace.is-right-sidedock-open {
+.workspace {
   .workspace-split.mod-right-split {
     .workspace-tabs {
       .workspace-tab-container {
@@ -12,8 +12,14 @@
           }
 
           .workspace-leaf-content {
-            li {
-              // background: transparent;
+            .tag-container {
+              @extend %fixed-bg;
+
+              height: 100vh;
+              > div {
+                background: #{shared.$shade};
+                height: 90%;
+              }
             }
           }
         }
