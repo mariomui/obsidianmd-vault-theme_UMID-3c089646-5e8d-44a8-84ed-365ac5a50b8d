@@ -1,0 +1,10 @@
+.dvjs-no-overflow {
+  .cm-contentContainer {
+    .cm-embed-block {
+      .block-language-dataviewjs {
+        overflow-x: unset;
+        overflow: hidden !important;
+      }
+    }
+  }
+}

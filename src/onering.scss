@@ -4,7 +4,7 @@
 
 @import "./material-ui-colors.scss";
 
-// @import "./multi-colored-folders.scss";
+// see src/index.html for other entrypoints
 @import "./statusbar.scss";
 @import "./tab-bar";
 @import "./embed-blocks";
@@ -32,3 +32,6 @@
 
 // # backrounds
 // @import "./migration/index.scss"; // migration of old scss be careful of using index
+
+// customs on demand snippets
+@import "./cssclasses.scss";
