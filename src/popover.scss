@@ -190,3 +190,19 @@
     }
   }
 }
+
+// ## Failed attempts at making the ul be colored better
+.popover.hover-popover {
+  .markdown-embed.is-loaded {
+    .markdown-embed-content {
+      .markdown-preview-view.markdown-rendered {
+        .markdown-preview-section {
+          ol ol > li:first-child,
+          ul ul > li:first-child {
+            color: shared.$offListItemColor;
+          }
+        }
+      }
+    }
+  }
+}

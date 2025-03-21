@@ -5,7 +5,7 @@
 
 // Make bullet points more readable using color
 .HyperMD-list-line.cm-line:nth-child(even) {
-  color: shared.$material-color-deep-purple-200;
+  color: #{shared.$altListItemColor};
 
   span.cm-hmd-internal-link {
     color: shared.$material-color-orange-300;
@@ -26,7 +26,7 @@ $mapEvenOdd: (
       span.cm-hmd-internal-link > a.cm-underline {
         // unresolved links are not direct children of internal link
 
-        color: shared.$material-color-light-blue-a400;
+        color: shared.$altLinkColor;
       }
     }
   }
