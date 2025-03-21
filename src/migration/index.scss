@@ -1,7 +1,8 @@
 @forward "./stacked-tabs.scss";
 @use "../shared/index.scss" as shared;
 @forward "./other.scss";
-// @import "./marionic.scss";
+//inactive.scss is not forwarded
+
 $local-wfb--active-vtabheader-bg-image: #{shared.$ßlocal-wfb--active-vtabheader-bg-image};
 $local-wfb--prevalent-bg: shared.$midnight-grad, shared.$mm-image,
   shared.$anu-image;
