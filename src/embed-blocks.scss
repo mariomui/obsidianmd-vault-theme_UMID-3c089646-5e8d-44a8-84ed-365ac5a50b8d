@@ -39,6 +39,18 @@
   }
 }
 
+// # Source view remove embedded backlinks
+.workspace-leaf-content {
+  .view-content {
+    .markdown-source-view {
+      .cm-editor {
+        .cm-sizer .embedded-backlinks {
+          display: none !important;
+        }
+      }
+    }
+  }
+}
 // # Source view
 .markdown-source-view {
   /* Remove scroll on embeds. */
@@ -59,12 +71,6 @@
       border: 2px solid shared.$embedBorderColor;
       max-height: 35vmin;
       overflow-y: scroll;
-    }
-  }
-
-  .markdown-source-view {
-    .cm-sizer > .embedded-backlinks {
-      display: none !important;
     }
   }
 
@@ -117,12 +123,14 @@
   .markdown-embed-content:has(.markdown-embed-link) ~ .markdown-embed-link {
     display: none;
   }
-  &.markdown-embed.inline-embed.is-loaded .markdown-preview-view.markdown-rendered {
+  &.markdown-embed.inline-embed.is-loaded
+    .markdown-preview-view.markdown-rendered {
     padding-top: 0;
   }
   &.markdown-embed {
     /* hide file name on transcludes */
-    .markdown-embed.inline-embed.is-loaded .markdown-preview-view.markdown-rendered {
+    .markdown-embed.inline-embed.is-loaded
+      .markdown-preview-view.markdown-rendered {
       // background-color: blue;
       padding: 0 !important;
       padding-top: 0;
@@ -157,7 +165,8 @@ span[alt*="nlk"] {
 
 // # Reading View
 .markdown-reading-view {
-  .internal-embed[alt*="nlk"].markdown-embed .markdown-preview-sizer.markdown-preview-section {
+  .internal-embed[alt*="nlk"].markdown-embed
+    .markdown-preview-sizer.markdown-preview-section {
     padding: 0 0 0 0 !important;
     padding-left: 0px !important;
     margin: 0;
@@ -170,7 +179,8 @@ span[alt*="nlk"] {
     border-radius: 1.5em 1.5em;
     background: #{shared.$shade};
   }
-  .internal-embed[alt*="nlk"].markdown-embed .markdown-preview-sizer.markdown-preview-section {
+  .internal-embed[alt*="nlk"].markdown-embed
+    .markdown-preview-sizer.markdown-preview-section {
     padding: 0 0 0 0 !important;
     padding-left: 0px !important;
     margin: 0;
@@ -182,17 +192,21 @@ span[alt*="nlk"] {
 .internal-embed[alt*="nlk"].markdown-embed .embed-title.markdown-embed-title {
   display: none;
 }
-.internal-embed[alt*="nlk"].markdown-embed .markdown-preview-sizer.markdown-preview-section {
+.internal-embed[alt*="nlk"].markdown-embed
+  .markdown-preview-sizer.markdown-preview-section {
   // padding: 0.1em 0 0 0 !important;
   padding-left: 5px !important;
 }
-.internal-embed[alt*="nlk"].markdown-embed .markdown-preview-sizer > div:nth-of-type(3) {
+.internal-embed[alt*="nlk"].markdown-embed
+  .markdown-preview-sizer
+  > div:nth-of-type(3) {
   display: none;
 }
 
 span[alt*="nlk"].internal-embed.markdown-embed {
   padding: 0;
 }
-span[alt*="nlk"].internal-embed.markdown-embed .markdown-preview-sizer.markdown-preview-section {
+span[alt*="nlk"].internal-embed.markdown-embed
+  .markdown-preview-sizer.markdown-preview-section {
   padding-left: 0 !important;
 }
