@@ -80,7 +80,8 @@ const config = {
   resolve: {
     extensions: [".js", ".scss"],
     alias: {
-      "shared/*": path.resolve(__dirname, "shared"),
+      "@shared": path.resolve(__dirname, "src/shared"),
+      // TODO document that you don't need the asterisks
     },
   },
   devServer: {
