@@ -8,3 +8,12 @@
 // @forward "./file-explorer-note-count.scss";
 
 @forward "./slides.scss";
+@use "@shared" as shared;
+
+$local-write-good-color: #{shared.$borderColor};
+.write-good-mark {
+  text-decoration: underline wavy #{$local-write-good-color};
+}
+.write-good-suggestion {
+  color: #{$local-write-good-color};
+}
