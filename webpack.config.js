@@ -6,8 +6,8 @@ const { access, constants, readdir } = require("fs/promises");
 const util = require("util");
 const http = require("node:http");
 
-const lightningcss = require('lightningcss');
-const browserslist = require('browserslist');
+const lightningcss = require("lightningcss");
+const browserslist = require("browserslist");
 
 // # webpack core deps
 const webpack = require("webpack");
@@ -72,13 +72,16 @@ const config = {
       new CssMinimizerPlugin({
         minify: CssMinimizerPlugin.lightningCssMinify,
         minimizerOptions: {
-          targets: lightningcss.browserslistToTargets(browserslist('>= 0.25%'))
+          targets: lightningcss.browserslistToTargets(browserslist(">= 0.25%")),
         },
       }),
     ],
   },
   resolve: {
     extensions: [".js", ".scss"],
+    alias: {
+      "shared/*": path.resolve(__dirname, "shared"),
+    },
   },
   devServer: {
     devMiddleware: {
