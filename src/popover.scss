@@ -15,6 +15,7 @@
   }
 }
 
+.slides-container,
 .popover.hover-popover {
   // dataview padding
   .dataview {
@@ -40,21 +41,14 @@
         div:has(> h1[data-heading="="]) ~ * {
           display: initial;
         }
-        // Disspaear the - heading
+
         > div:has(> h1[data-heading="-"]) {
           display: none;
         }
 
-        // †You'd think that the following works but it doesnt because not everything is a div.
         div:has(> h1[data-heading^="---"]) ~ div {
           display: none;
         }
-        // Remove the --- H1 †You'd think that this would work but removing the --- forces refresh.
-        // div:has(> h1[data-heading^="---"]) {
-        //   display: none;
-        // }
-
-        // Rather than removing the element from dom, just toggle the visibility.
         div:has(> h1[data-heading^="---"]) {
           visibility: hidden;
         }
@@ -213,3 +207,53 @@
     display: none;
   }
 }
+
+// Affect slides the same way as popover.
+// .slides-container,
+// .popover.hover-popover {
+//   .dataview {
+//     .markdown-preview-view.markdown-rendered.show-indentation-guide {
+//       padding: 0;
+//     }
+//     &.dataview-inline-query:nth-child(even) {
+//       /* //color: shared.$material-color-red-200; */
+//     }
+//   }
+
+//   .markdown-embed {
+//     .markdown-preview-view.markdown-rendered {
+//       .markdown-preview-sizer.markdown-preview-section {
+//         div:has(> h1[data-heading="-"]) ~ * {
+//           display: none;
+//         }
+
+//         div:has(> h1[data-heading="="]) ~ * {
+//           display: initial;
+//         }
+
+//         > div:has(> h1[data-heading="-"]) {
+//           display: none;
+//         }
+
+//         div:has(> h1[data-heading^="---"]) ~ div {
+//           display: none;
+//         }
+
+//         div:has(> h1[data-heading^="---"]) {
+//           visibility: hidden;
+//         }
+
+//         ul.has-list-bullet {
+//           li:nth-child(even) {
+//             color: var(--material-color-deep-purple-200);
+//           }
+//           li:nth-child(even) {
+//             > a {
+//               /* color: shared.$embedPrimaryLinkColor; */
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
