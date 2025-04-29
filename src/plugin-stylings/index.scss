@@ -17,3 +17,13 @@ $local-write-good-color: #{shared.$borderColor};
 .write-good-suggestion {
   color: #{$local-write-good-color};
 }
+
+// # PIXEL BANNER
+
+.popover {
+  .markdown-embed {
+    .pixel-banner-image + .markdown-preview-sizer.markdown-preview-section {
+      margin-top: 0 !important;
+    }
+  }
+}
