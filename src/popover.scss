@@ -206,3 +206,10 @@
     }
   }
 }
+
+// # Obidian Kludge. They removed sensing things from things
+.hover-popover .markdown-embed[data-type="heading"] .inline-title {
+  h1[data-heading="="] {
+    display: none;
+  }
+}

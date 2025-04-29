@@ -138,6 +138,9 @@
     .embed-title.markdown-embed-title {
       display: none;
     }
+    .inline-title {
+      display: none;
+    }
     .el-p p[dir="auto"] {
       margin: 0;
     }
@@ -209,4 +212,27 @@ span[alt*="nlk"].internal-embed.markdown-embed {
 span[alt*="nlk"].internal-embed.markdown-embed
   .markdown-preview-sizer.markdown-preview-section {
   padding-left: 0 !important;
+}
+
+// # Shorten the link for maximum embed room.
+
+:is(.canvas-wrapper, .markdown-source-view)
+  .markdown-embed
+  .markdown-embed-link[aria-label="Open\ link"] {
+  width: 20%;
+  background: #d0ab9f24;
+  border-radius: 0 1em 0 1em;
+  margin: 0 auto;
+  justify-content: center;
+  height: 3em;
+  &:hover {
+    cursor: pointer;
+  }
+  svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2em;
+    height: 2em;
+  }
 }
