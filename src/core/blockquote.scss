@@ -1,0 +1,11 @@
+@use "@shared" as shared;
+
+.markdown-source-view {
+  .cm-contentContainer {
+    .HyperMD-quote {
+      .cm-hmd-internal-link .cm-underline {
+        color: shared.$altLinkColor;
+      }
+    }
+  }
+}
