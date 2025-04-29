@@ -1,18 +1,17 @@
 @use "./shared/index.scss" as shared;
 
 .markdown-source-view {
-
-  .cm-contentContainer{
+  .cm-contentContainer {
     .internal-embed[alt*="nlk"] {
-        .markdown-embed-content {
-          .markdown-preview-view {
-            .markdown-preview-sizer.markdown-preview-section {
-              h1[data-heading="="] {
-                display: none
-              }
+      .markdown-embed-content {
+        .markdown-preview-view {
+          .markdown-preview-sizer.markdown-preview-section {
+            h1[data-heading="="] {
+              display: none;
             }
           }
         }
+      }
     }
   }
 }
@@ -20,16 +19,14 @@
 /*  Code-block in Reading view embeds  */
 .markdown-reading-view {
   .internal-embed.markdown-embed.inline-embed.is-loaded {
-
     .markdown-embed-content {
       .markdown-preview-view.markdown-rendered {
         background: shared.$tertiary-blue-700;
-        border-radius: 0 .2em 0 0;
+        border-radius: 0 0.2em 0 0;
       }
     }
-  } 
+  }
 }
-
 
 .markdown-source-view.mod-cm6 {
   .cm-contentContainer {
@@ -40,7 +37,9 @@
             h#{$i} {
               &:before {
                 content: repeat(":", $i - 1) + " ";
-                @include shared.header-indent-position($color: shared.$accentSecondary);
+                @include shared.header-indent-position(
+                  $color: shared.$accentSecondary
+                );
               }
             }
           }
