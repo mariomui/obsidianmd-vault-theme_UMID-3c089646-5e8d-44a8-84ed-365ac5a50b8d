@@ -35,3 +35,14 @@
 
 // customs on demand snippets
 @import "./cssclasses.scss";
+
+// remove --- on every preview, regardless of popover or embed.
+.markdown-preview-sizer.markdown-preview-section {
+  min-height: fit-content !important;
+  h1[data-heading^="---"] {
+    > * {
+      display: none;
+    }
+    display: none;
+  }
+}
