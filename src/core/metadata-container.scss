@@ -1,0 +1,40 @@
+.metadata-container {
+  .metadata-property[data-property-type="text"] {
+    .metadata-property-key {
+      background-color: darkred;
+    }
+    .metadata-property-value {
+      background-color: brown;
+      .metadata-link {
+        .metadata-link-inner.external-link {
+          color: var(--link-color);
+        }
+      }
+    }
+  }
+  .metadata-link-flair {
+    background-color: blue;
+  }
+  .metadata-property[data-property-key="PROJECT_PARENT"] {
+    .metadata-link {
+      display: flex;
+
+      background-color: brown;
+      .metadata-link-inner.internal-link {
+        background-color: darkred;
+        width: fit-content;
+        white-space: pre-wrap;
+        border-radius: 0 0 5px 5px;
+        padding-left: 0.5em;
+      }
+      .metadata-link-flair {
+        width: 2em;
+      }
+    }
+  }
+
+  /* .metadata-property[data-property-key="PROJECT_PARENT"]:has(.metadata-property-value .metadata-input-longtext.mod-truncate[placeholder="Empty"]) {
+      display: flex;
+      grid-template-columns: unset;
+  } */
+}
