@@ -285,3 +285,11 @@ B-source: https://raw.githubusercontent.com/obsidian-community/obsidian-hub/main
     background: var(--theme-color-translucent-2);
   }
 }
+
+// # highlight every nav folder that has a output in it.
+
+.app-container {
+  .nav-folder-title[data-path*="output"] {
+    border: 1px solid shared.$callout;
+  }
+}
