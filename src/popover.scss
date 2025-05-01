@@ -208,6 +208,44 @@
   }
 }
 
+// By default never display the -
+.popover.hover-popover {
+  > .markdown-embed {
+    .markdown-embed-content {
+      .markdown-preview-view {
+        .inline-title {
+          h1[data-heading="-"] {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// # OLK
+
+// ## respect olk when inside a callout.
+.popover.hover-popover {
+  > .markdown-embed {
+    .markdown-embed-content {
+      .markdown-preview-view {
+        [data-callout-metadata=""] {
+          .callout-content {
+            blockquote {
+              span[alt="olk"].internal-embed {
+                .el-h1:has(h1[data-heading]) {
+                  display: none !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // Affect slides the same way as popover.
 // .slides-container,
 // .popover.hover-popover {
