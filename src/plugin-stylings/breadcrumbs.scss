@@ -10,20 +10,27 @@
 
 // truncate rhs matrix view lines
 .BC-Matrix {
-  li {
-    // https://phabricator.services.mozilla.com/D20115
-    max-width: unset;
-    .internal-link.BC-Link {
-      max-height: 3.2em !important; // 3.2 em
-      line-height: 1.2; // each line * 2 = 3 + .1em top adn bottom = ...
-      white-space: pre-wrap;
-      max-width: 92%;
-      // display: block; // https://caniuse.com/?search=webkit-box all browsersuse webkit-box
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      overflow: hidden;
-      -webkit-box-orient: vertical;
-      text-overflow: ellipsis;
+  .BC-matrix-hier {
+    .BC-Matrix-square {
+      ol {
+        list-style-type: disc !important;
+        li {
+          // https://phabricator.services.mozilla.com/D20115
+          max-width: unset;
+          .internal-link.BC-Link {
+            max-height: 3.2em !important; // 3.2 em
+            line-height: 1.2; // each line * 2 = 3 + .1em top adn bottom = ...
+            white-space: pre-wrap;
+            max-width: 92%;
+            // display: block; // https://caniuse.com/?search=webkit-box all browsersuse webkit-box
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+          }
+        }
+      }
     }
   }
 }
