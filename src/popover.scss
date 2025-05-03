@@ -245,7 +245,8 @@
     }
   }
 }
-.popover.hover-popover.is-editing {
+.popover.hover-popover.is-editing,
+.popover.hover-popover {
   .markdown-embed-content {
     .markdown-source-view {
       .cm-editor {
@@ -258,6 +259,19 @@
                 }
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+.popover.hover-popover {
+  .markdown-embed-content {
+    .internal-embed.markdown-embed[alt*="olk"] {
+      .markdown-embed-content {
+        .mod-header {
+          .inline-title[data-level="1"] {
+            display: none;
           }
         }
       }
