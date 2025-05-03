@@ -233,9 +233,28 @@
         [data-callout-metadata=""] {
           .callout-content {
             blockquote {
-              span[alt="olk"].internal-embed {
+              span[alt*="olk"].internal-embed {
                 .el-h1:has(h1[data-heading]) {
                   display: none !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.popover.hover-popover.is-editing {
+  .markdown-embed-content {
+    .markdown-source-view {
+      .cm-editor {
+        .cm-contentContainer {
+          .internal-embed.markdown-embed[alt*="olk"] {
+            .markdown-embed-content {
+              .mod-header {
+                .inline-title[data-level="1"] {
+                  display: none;
                 }
               }
             }
