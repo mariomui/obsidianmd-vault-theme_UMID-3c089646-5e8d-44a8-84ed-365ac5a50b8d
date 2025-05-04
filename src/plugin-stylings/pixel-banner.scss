@@ -1,0 +1,13 @@
+// # PIXEL BANNER
+
+.hover-popover,
+.popover {
+  .markdown-embed {
+    .pixel-banner-image + .markdown-preview-sizer.markdown-preview-section {
+      margin-top: 0 !important;
+    }
+    .pixel-banner-image {
+      display: none !important;
+    }
+  }
+}
