@@ -194,7 +194,7 @@ span[alt*="nlk"] {
 /** ## Tranclusion/Embed sections */
 
 .internal-embed[alt*="nlk"].markdown-embed .embed-title.markdown-embed-title {
-  display: none;
+  // display: none;
 }
 .internal-embed[alt*="nlk"].markdown-embed
   .markdown-preview-sizer.markdown-preview-section {
@@ -204,7 +204,14 @@ span[alt*="nlk"] {
 .internal-embed[alt*="nlk"].markdown-embed
   .markdown-preview-sizer
   > div:nth-of-type(3) {
-  display: none;
+  // display: block !important;
+  // display: none;
+  // Bug there second order transclusions are blank
+}
+.internal-embed[alt*="nlk"].markdown-embed {
+  h2[data-heading] {
+    display: none;
+  }
 }
 
 span[alt*="nlk"].internal-embed.markdown-embed {
