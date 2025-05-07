@@ -7,5 +7,21 @@
         color: shared.$altLinkColor;
       }
     }
+    // ## DATAVIEW INLINE QUERY (designed for MUID-150 Meta Endpoint)
+    .markdown-rendered {
+      .callout[data-callout="abstract"],
+      .callout[data-callout="summary"],
+      .callout[data-callout="tldr"] {
+        blockquote {
+          p {
+            .dataview.dataview-inline-query {
+              a.internal-link:nth-of-type(2n + 1) {
+                color: shared.$altLinkColor !important;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
