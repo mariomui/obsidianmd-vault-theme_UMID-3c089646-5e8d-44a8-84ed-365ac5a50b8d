@@ -1,3 +1,4 @@
+@use "./shared/index.scss" as shared;
 .dvjs-no-overflow {
   .cm-contentContainer {
     .cm-embed-block {
@@ -8,3 +9,36 @@
     }
   }
 }
+
+.dvjs-contrast-odd-li {
+  .cm-contentContainer {
+    .markdown-embed-content {
+      .markdown-preview-view.markdown-rendered {
+        .block-language-dataviewjs > div:first-of-type {
+          & > ul > li:nth-child(even):not(:first-child) {
+            background-color: #{shared.$primaryAlt};
+          }
+          & > ul > li:nth-child(odd):not(:first-child) {
+            background-color: #{shared.$primary};
+          }
+        }
+      }
+    }
+  }
+}
+// .remove-marker {
+//   .markdown-source-view {
+//     .markdown-embed-content {
+//       .markdown-preview-view.markdown-rendered {
+//         .block-language-dataviewjs {
+//           li:has(ul) {
+//             list-style-type: none;
+//             p {
+//               background-color: #{shared.$primaryAlt} !important;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
