@@ -1,28 +1,30 @@
 @use "./raw-colors.scss" as raw-colors;
 @use "./material-ui-colors" as MAT_COLORS;
 
+// # good for single objects
 $secondary: raw-colors.$material-color-orange-800;
 $secondaryAlt: raw-colors.$material-color-orange-700;
+
+$embedBorderColor: #{$secondary};
+$borderColor: raw-colors.$material-color-deep-orange;
+// ## links
+$embedPrimaryLinkColor: raw-colors.$material-color-orange-700;
+
+// # List items with light font
 $primary: raw-colors.$tertiary-blue;
 $primaryAlt: raw-colors.$material-color-purple-900;
 
-$embedBorderColor: #{$secondary};
+// ## List items with dark font
+$altListItemColor: MAT_COLORS.$material-color-deep-purple-200;
+$offListItemColor: MAT_COLORS.$material-color-purple-100;
 
-$embedPrimaryLinkColor: raw-colors.$material-color-orange-700;
 $accentAlt: raw-colors.$material-color-brown-900;
-
-// :skull: --secondary: var(--material-color-purple-a100);
+$accentSecondary: raw-colors.$material-color-indigo-200;
 
 $callout: raw-colors.$material-color-green-900;
 $calloutAlt: raw-colors.$material-color-blue-900;
 
-$accentSecondary: raw-colors.$material-color-indigo-200;
 $bookSource: raw-colors.$material-color-indigo-900;
-$borderColor: raw-colors.$material-color-deep-orange;
-
-// # List items
-$altListItemColor: MAT_COLORS.$material-color-deep-purple-200;
-$offListItemColor: MAT_COLORS.$material-color-purple-100;
 
 // # LINKS
 $altLinkColor: MAT_COLORS.$material-color-light-blue-a400;
