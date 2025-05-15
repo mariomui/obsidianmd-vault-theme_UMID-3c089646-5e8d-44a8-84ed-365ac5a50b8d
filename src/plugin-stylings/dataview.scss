@@ -23,11 +23,18 @@
       .block-language-dataviewjs {
         p {
           width: 100% !important;
-          background-color: shared.$callout;
+          background-color: #{shared.$primaryAlt} !important;
           ul {
             margin: 0 !important;
           }
         }
+        li:has(ul) {
+          list-style-type: none;
+          p {
+            background-color: #{shared.$primary} !important;
+          }
+        }
+
         > div:first-of-type {
           background-color: shared.$accentAlt;
           ul {
