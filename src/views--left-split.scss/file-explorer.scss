@@ -1,5 +1,6 @@
 @use "../shared/index.scss" as shared;
 
+$activeFileTitleColor: shared.$material-color-orange-600;
 .nav-files-container {
   border-left: 1px solid shared.$material-color-orange-500;
   // @extend %fixed-bg;
@@ -16,15 +17,64 @@
     background: rgba(0, 0, 0, 0.6);
     color: shared.$embedBorderColor;
   }
+  .tree-item-self.nav-file-title.tappable.is-clickable.has-focus.is-active[style="margin-inline-start: -35px !important;padding-inline-start: 40px !important;"] {
+    padding-inline-start: 0px !important;
+    margin-inline-start: 0px !important;
+  }
 }
 
-.nav-file-title.is-active > .tree-item-inner.nav-file-title-content::after {
-  /* background: var(--theme-color-translucent-2); */
+@mixin fileMarker {
   content: "⛩️";
   position: absolute;
+  width: auto;
+  height: auto;
+  margin-top: 2.5%;
+  margin-left: -1.6%;
+  background: yellow;
+  border: 1px solid gray;
+  font-size: 65%;
+  border-radius: 0.5rem 0.5rem;
   transform: rotate(-30deg) translateY(-50%);
+}
+.tree-item.nav-file:has(.nav-file-title.is-active) {
+  &::before {
+    @include fileMarker();
+  }
+  .tree-item-inner.nav-file-title-content {
+    color: $activeFileTitleColor;
+  }
+}
 
-  left: 0;
+.nav-folder-title.tree-item-self.has-folder-note.fn-is-active {
+  .tree-item-inner.nav-folder-title-content {
+    color: $activeFileTitleColor;
+  }
+  &::before {
+    @include fileMarker();
+    right: 0;
+    bottom: 0;
+    content: "📁";
+    font-size: 100%;
+    transform: unset;
+    background: shared.getRandomColor(shared.$colorsMap);
+  }
+
+  & ~ .tree-item-children.nav-folder-children {
+    .tree-item.nav-file:has(.nav-file-title.is-active) {
+      &::before {
+        content: "";
+        // turn off the marker for folder notes;
+      }
+    }
+  }
+}
+.nav-file-title.is-active > .tree-item-inner.nav-file-title-content::after {
+  /* background: var(--theme-color-translucent-2); */
+  // content: "⛩️";
+  // position: absolute;
+  // transform: rotate(-30deg) translateY(-50%);
+  // width: 1rem;
+  // left: 0;
 }
 
 /* fix for missing nw icons when app refocuses on icon clicks */
