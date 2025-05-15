@@ -10,10 +10,19 @@
 @forward "./slides.scss";
 @use "@shared" as shared;
 
-$local-write-good-color: #{shared.$borderColor};
-.write-good-mark {
-  text-decoration: underline wavy #{$local-write-good-color};
-}
-.write-good-suggestion {
-  color: #{$local-write-good-color};
+// $local-write-good-color: #{shared.$borderColor};
+// .write-good-mark {
+//   text-decoration: underline wavy #{$local-write-good-color};
+// }
+// .write-good-suggestion {
+//   color: #{$local-write-good-color};
+// }
+
+.smiles.chem-cell-inline {
+  display: inline-block;
+  svg {
+    // padding: 0.5em 0.3em;
+    border: 1px solid #{shared.$embedBorderColor};
+    // background-color: #{shared.$material-color-ambecr-a400};
+  }
 }
