@@ -173,8 +173,19 @@
 
 // # Remove inline headings from nlk-style embeds from popover
 // // Organize a section that is both a hover and an EMBED.
-// .hover-popover .markdown-embed[data-type="heading"] .inline-title
-// .hover-popover .inline-title, .inline-embed .inline-title
+.hover-popover {
+  .markdown-embed-content {
+    // .markdown-source-view {
+    .internal-embed.markdown-embed[data-type="heading"] {
+      .mod-header {
+        .inline-title[data-level="2"] {
+          display: none !important;
+        }
+      }
+    }
+    // }
+  }
+}
 .hover-popover {
   .markdown-embed {
     &:is([data-type="heading"], [alt*="nlk"]) {

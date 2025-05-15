@@ -85,7 +85,14 @@
   // # OLK
 
   // hide transcluded headers for olk (omit linkage)
-  .internal-embed[alt*="olk"].markdown-embed,
+  .callout-content {
+    .internal-embed[alt*="olk"].markdown-embed {
+      // OLK Temporary
+      .inline-title {
+        display: none;
+      }
+    }
+  }
   .internal-embed[alt*="olk"].markdown-embed {
     .markdown-preview-sizer > div:nth-of-type(3) {
       display: none;
@@ -122,7 +129,7 @@
 // # NLK
 .internal-embed[alt*="nlk"] {
   .markdown-embed-content:has(.markdown-embed-link) ~ .markdown-embed-link {
-    display: none;
+    // display: none;
   }
   &.markdown-embed.inline-embed.is-loaded
     .markdown-preview-view.markdown-rendered {
@@ -204,7 +211,9 @@ span[alt*="nlk"] {
 .internal-embed[alt*="nlk"].markdown-embed
   .markdown-preview-sizer
   > div:nth-of-type(3) {
-  // display: block !important;
+  // TODO until i know what this is don't save it.
+  border: 1px solid blue;
+  display: block !important;
   // display: none;
   // Bug there second order transclusions are blank
 }
