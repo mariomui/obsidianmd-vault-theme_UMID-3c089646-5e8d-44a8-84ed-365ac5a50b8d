@@ -1,3 +1,16 @@
+@use "@shared" as shared;
 @forward "footnote.scss";
 @forward "blockquote.scss";
 @forward "metadata-container.scss";
+
+.cm-contentContainer {
+  .HyperMD-list-line.cm-line:has(img[alt$="svg"]) {
+    img[alt$="svg"] {
+      display: block;
+      border: 1px solid #{shared.$embedBorderColor};
+      // filter: invert(1);
+      background-color: darkseagreen;
+      // when inverted the color is dimetapp
+    }
+  }
+}
