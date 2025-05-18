@@ -1,0 +1,39 @@
+@use "@shared" as shared;
+@mixin evenListColorAndBackground {
+  background: shared.$material-color-purple-200;
+
+  .cm-comment.cm-templater-command {
+    color: shared.$material-color-purple-900;
+  }
+}
+@mixin oddListColorAndBackground {
+  background: shared.$material-color-purple-100;
+
+  .cm-comment.cm-templater-command {
+    color: shared.$material-color-purple-700;
+  }
+}
+.cm-contentContainer {
+  .templater-command-bg.cm-line[style*="padding-inline-start: 16px;"]:nth-child(
+      odd
+    ) {
+    @include oddListColorAndBackground();
+  }
+}
+.templater-command-bg.cm-line[style*="padding-inline-start: 16px;"]:nth-child(
+    even
+  ) {
+  @include evenListColorAndBackground();
+}
+
+// 2nd level
+.templater-command-bg.cm-line[style*="padding-inline-start: 36px;"]:nth-child(
+    even
+  ) {
+  @include evenListColorAndBackground();
+}
+.templater-command-bg.cm-line[style*="padding-inline-start: 36px;"]:nth-child(
+    odd
+  ) {
+  @include oddListColorAndBackground();
+}
