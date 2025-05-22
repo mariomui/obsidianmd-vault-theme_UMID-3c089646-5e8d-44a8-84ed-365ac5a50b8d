@@ -2,6 +2,7 @@
 @forward "footnote.scss";
 @forward "blockquote.scss";
 @forward "metadata-container.scss";
+@forward "frontmatter/index.scss";
 
 .cm-contentContainer {
   .HyperMD-list-line.cm-line:has(img[alt$="svg"]) {
