@@ -1,0 +1,53 @@
+@use "@shared" as shared;
+
+%frontmatter_backdrop {
+  color: white;
+  text-shadow: 1px 4px 3px rgb(233 117 71 / 153%);
+  background: rgba(0, 0, 0, 0.75);
+  padding: 1em 0.5em;
+  margin-bottom: 0;
+}
+
+body:not(.metadata-heading-on) .metadata-properties-heading {
+  display: unset;
+  display: initial;
+}
+
+.markdown-source-view.mod-cm6.is-readable-line-width {
+  .cm-sizer > .metadata-container {
+    @extend %frontmatter_backdrop;
+    // if below 800px then 75% if above 50% width
+    // TODO container query or media query this
+    width: clamp(40em, 75%, 50%);
+    border-radius: 15px 15px 0 0;
+
+    .metadata-properties-heading {
+      .collapse-indicator.collapse-icon {
+        @extend %frontmatter_backdrop;
+        border-radius: 15px 0 0 15px;
+        border: 1px solid #{shared.$borderColor};
+        border-right: transparent;
+        left: -2.2em;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .metadata-properties {
+          display: flex;
+          flex-wrap: wrap;
+          max-height: 11vh;
+        }
+      }
+    }
+
+    .metadata-content {
+      .metadata-properties {
+        .metadata-property {
+          .metadata-property-key {
+            flex-basis: fit-content;
+            max-width: 45%;
+          }
+        }
+      }
+    }
+  }
+}
