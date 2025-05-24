@@ -93,7 +93,9 @@
       }
     }
   }
-  .internal-embed[alt*="olk"].markdown-embed {
+  .internal-embed[alt="olk"].markdown-embed,
+  .internal-embed[alt*="ui=olk"].markdown-embed,
+  .internal-embed[alt*="t=olk"].markdown-embed {
     .markdown-preview-sizer > div:nth-of-type(3) {
       display: none;
     }
@@ -108,7 +110,7 @@
       pointer-events: none;
     }
     .markdown-embed-link[aria-label="Open link"] {
-      display: none;
+      // display: none;
     }
   }
 }
@@ -208,18 +210,21 @@ span[alt*="nlk"] {
   // padding: 0.1em 0 0 0 !important;
   padding-left: 5px !important;
 }
-.internal-embed[alt*="nlk"].markdown-embed
-  .markdown-preview-sizer
-  > div:nth-of-type(3) {
-  // TODO until i know what this is don't save it.
-  border: 1px solid blue;
-  display: block !important;
-  // display: none;
-  // Bug there second order transclusions are blank
-}
+
+// counter bug is that if i have this title is shown
+// .internal-embed[alt*="nlk"].markdown-embed
+//   .markdown-preview-sizer
+//   > div:nth-of-type(3) {
+//   // TODO until i know what this is don't save it.
+//   border: 1px solid blue;
+//   display: block !important;
+//   // display: none;
+//   // Bug there second order transclusions are blank
+// }
+// If i leave this on, then embedded library notes vanish
 .internal-embed[alt*="nlk"].markdown-embed {
   h2[data-heading] {
-    display: none;
+    // display: none;
   }
 }
 
