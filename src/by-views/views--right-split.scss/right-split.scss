@@ -1,4 +1,4 @@
-@use "../shared/index.scss" as shared;
+@use "@shared" as shared;
 // # SHARED between splits.
 .workspace-split:is(.mod-left-split, .mod-right-split) {
   .view-content {

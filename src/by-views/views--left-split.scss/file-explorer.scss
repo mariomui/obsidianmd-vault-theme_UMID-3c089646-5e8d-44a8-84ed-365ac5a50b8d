@@ -1,4 +1,4 @@
-@use "../shared/index.scss" as shared;
+@use "@shared" as shared;
 
 $activeFileTitleColor: shared.$material-color-orange-600;
 .nav-files-container {

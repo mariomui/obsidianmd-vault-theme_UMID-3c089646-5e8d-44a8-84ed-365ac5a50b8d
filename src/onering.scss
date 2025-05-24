@@ -1,4 +1,4 @@
-@use "./shared/index.scss" as shared;
+@use "@shared" as shared;
 
 @import "./base-colors.scss"; // this needs to be refactore;
 
@@ -11,9 +11,7 @@
 @import "./headers";
 @import "./embedded-headers.scss";
 
-@import "./views--center-split.scss/index.scss";
-@import "./views--left-split.scss/index.scss";
-@import "./views--right-split.scss/index.scss";
+@import "./by-views/index.scss"; // this is the main entrypoint for views, it imports all the views.
 
 @import "./table.scss";
 @import "./popover.scss";

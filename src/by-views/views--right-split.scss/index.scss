@@ -1,5 +1,5 @@
 @use "./right-split.scss";
-@use "../shared/index" as shared;
+@use "@shared" as shared;
 
 .workspace {
   .workspace-split.mod-right-split {

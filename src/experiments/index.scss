@@ -1,15 +1,13 @@
 @forward "./progress-bar/progress-bar.scss";
 
 // # [[inbox-list-of-experiments,ad-finem-Prototyping-ObsidianAPI-via-DataviewJS#Dv Rows With Numbers Using Indexa Custom Class]] */
-// Increment the value of section counter by 1 
+// Increment the value of section counter by 1
 .indexa {
   counter-increment: idx;
-  
+
   &:before {
     font-size: smaller;
-    // Display counter value in default style (decimal) 
+    // Display counter value in default style (decimal)
     content: counter(idx, upper-roman);
   }
-  
 }
-
