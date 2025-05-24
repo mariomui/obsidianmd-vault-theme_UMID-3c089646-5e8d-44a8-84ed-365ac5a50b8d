@@ -1,0 +1,33 @@
+@use "@shared" as shared;
+// # LIST CALL-OUTS
+.cm-contentContainer {
+  .lc-list-callout[data-callout="&"] {
+    span.cm-list-1 {
+      color: shared.$material-color-blue-100;
+    }
+    .cm-hmd-internal-link a {
+      // color: #f8cece;
+
+      color: shared.$offListItemColor;
+    }
+  }
+}
+.popover.hover-popover {
+  .markdown-embed {
+    .markdown-embed-content {
+      .markdown-preview-view {
+        .markdown-preview-sizer {
+          .lc-list-callout[data-callout="&"] {
+            .lc-li-wrapper {
+              color: shared.$material-color-blue-100;
+              a.internal-link {
+                // color: #f8cece;
+                color: shared.$offListItemColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
