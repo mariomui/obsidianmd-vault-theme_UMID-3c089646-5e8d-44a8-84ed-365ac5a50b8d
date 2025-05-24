@@ -1,13 +1,14 @@
-@forward "./floating-toc.scss";
-@forward "./long-form-leaf.scss";
+@forward "./atoc.scss";
 @forward "./breadcrumbs.scss";
-
 @forward "./dataview.scss";
+@forward "./floating-toc.scss";
+@forward "./list-callouts.scss";
+@forward "./long-form-leaf.scss";
+@forward "./slides.scss";
+@forward "./templater.scss";
+// @forward "./file-explorer-note-count.scss";
 // @forward "./fountain.scss";
 // @forward "./novel-word-count.scss";
-// @forward "./file-explorer-note-count.scss";
-
-@forward "./slides.scss";
 @use "@shared" as shared;
 
 // $local-write-good-color: #{shared.$borderColor};
@@ -22,7 +23,38 @@
   display: inline-block;
   svg {
     // padding: 0.5em 0.3em;
-    border: 1px solid #{shared.$embedBorderColor};
+    border: 1px solid #{shared.$primaryAlt};
     // background-color: #{shared.$material-color-ambecr-a400};
   }
 }
+
+// # TASK GENIUS
+.task-status-widget {
+  position: relative;
+  display: unset;
+  .task-state {
+    box-sizing: border-box;
+    border-radius: 25% 25%;
+    // border: 1px solid grey;
+    outline: 1px solid bisque;
+    background-color: shared.$tertiary-blue-700;
+    padding-inline-start: 1px;
+    padding-inline-end: 1px;
+    margin-left: 3px;
+    font-size: 70%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+// # OUTLINER PLUGIN
+// body.outliner-plugin-dnd:not(.outliner-plugin-dragging) .cm-formatting-list {
+//   margin-left: 0.5em;
+//   margin-right: 0.2em;
+// }
+.collapse-icon svg.svg-icon {
+  width: 0.9em;
+  height: 0.9em;
+  stroke-width: 0.5em;
+}
+// body.outliner-plugin-dnd:not(.outliner-plugin-dragging) .cm-fold-indicator .collapse-indicator
