@@ -1,4 +1,4 @@
-@use "../shared/index.scss" as shared;
+@use "@shared" as shared;
 
 // #TODO i need to share this dataview container
 %dataview-container {
@@ -29,7 +29,7 @@
           }
         }
         li:has(ul) {
-          list-style-type: none;
+          // list-style-type: none;
           p {
             background-color: #{shared.$primary} !important;
           }
@@ -43,14 +43,12 @@
         }
         li:has(span.internal-embed[alt*="=$"]) {
           & ~ li:nth-child(2n + 2) {
-            border-top: 0.1em solid shared.$borderColor;
             background-color: shared.$callout;
           }
           & ~ li:nth-child(2n + 1) {
             background-color: shared.$calloutAlt;
-
-            border-top: 0.1em solid shared.$borderColor;
           }
+          border-top: 0.1em solid shared.$borderColor;
         }
       }
     }
@@ -66,6 +64,99 @@
                 color: shared.$embedPrimaryLinkColor;
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin border-left {
+  border-left: 0.1em solid #{shared.$embedPrimaryLinkColor};
+}
+.internal-embed.markdown-embed {
+  .markdown-embed-content {
+    .block-language-dataviewjs {
+      .deleteme {
+        ul:first-child {
+          li {
+            &::marker {
+              content: " ⊙ ";
+              color: #{shared.$secondaryAlt};
+            }
+          }
+
+          > li {
+            & > a:has(~ ul) {
+              display: block;
+              // border: 0.2em solid #{shared.$embedPrimaryLinkColor};
+              border-top: 0.2em solid #{shared.$embedPrimaryLinkColor};
+              @include border-left;
+              border-bottom: 0px;
+              // border-radius: 5px 10px 0 0;
+              border-top-left-radius: 5px;
+              border-top-right-radius: 10px;
+              border-right: 0px;
+              padding-left: 0.3em;
+            }
+          }
+
+          > li {
+            li:nth-child(2n + 1) {
+              //odd
+              background-color: #{shared.$calloutAlt};
+              border: 1px solid #{shared.$material-color-blue-600};
+            }
+          }
+
+          > li {
+            li:nth-child(2n) {
+              background-color: #311b92;
+              border: 1px solid #651fff;
+            }
+          }
+        }
+        & > span > ul {
+          & > li:has(ul) {
+            border-right: 0.2em solid #{shared.$embedPrimaryLinkColor};
+            border-bottom: 0px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 8px;
+
+            // & > a:first-child {
+            //   display: block;
+            //   border-top: 0.2em solid #{shared.$embedPrimaryLinkColor};
+            //   border-top-right-radius: 10px;
+            //   border-right: 0px;
+            // }
+          }
+
+          & > li > span.internal-link:has(~ ul) {
+            display: block;
+            border-top: 0.2em solid #{shared.$embedPrimaryLinkColor};
+            border-top-right-radius: 10px;
+            border-right: 0px;
+            @include border-left;
+            border-top-left-radius: 5px;
+
+            a {
+              margin-left: 0.5em;
+            }
+          }
+
+          // ## Root : no nested elements
+          & > li:has(> a:only-child) {
+            border-top: 0.3em solid #{shared.$altLinkColor};
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 3px;
+
+            border-top-right-radius: 10px;
+            // border-right: 0px;
+            border-right: 0.3em solid #{shared.$altLinkColor};
+            // border-bottom: 0.1em solid #{shared.$altLinkColor};
+            border-bottom-right-radius: 10px;
+            text-indent: 0.5em;
+            // display: inline-block;
           }
         }
       }
