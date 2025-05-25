@@ -1,0 +1,86 @@
+@use "@shared" as shared;
+
+.view-content.pixel-banner {
+  .markdown-reading-view {
+    .markdown-preview-view {
+      background: #{shared.$shade} !important;
+      .BC-trail.markdown-preview-sizer.markdown-preview-section {
+        padding-top: 0 !important;
+        .pin-icon {
+          display: none !important;
+        }
+      }
+      .markdown-preview-sizer.markdown-preview-section {
+        padding-top: 0 !important;
+        .mod-header.mod-ui {
+          .inline-title {
+            padding: 1em;
+            background-color: shared.$shade;
+            border: 1px solid shared.$borderColor;
+            border-radius: 0.5em;
+            margin-bottom: 1em;
+            margin-top: 0.5em;
+          }
+          // background-color: transparent !important;
+        }
+        div:has(> h1[data-heading="="]) {
+          position: relative;
+          display: block;
+          &::after {
+            // content: "";
+            // position: absolute;
+            // margin-block-start: var(--p-spacing);
+            // margin-block-end: var(--p-spacing);
+
+            // height: 90vh;
+            // display: block;
+            // width: 100%;
+            // top: 0;
+            // margin-top: 3em;
+            // border-radius: 1.5em 1.5em;
+          }
+        }
+      }
+    }
+  }
+}
+.markdown-reading-view {
+  h1[data-heading="-"] {
+    display: none;
+  }
+  div:has(> h1[data-heading="-"]) ~ * {
+    display: none;
+  }
+
+  // Reappear all the divs that follow the = mark but does not contain the --- mark.
+  // Effectively reappears the = content as as well as the content under ---
+
+  div:has(> h1[data-heading="="]) ~ * {
+    display: block;
+  }
+
+  // & > div:has(> h1[data-heading="-"]) {
+  //   display: none;
+  // }
+  div:has(> h1[data-heading="="]) {
+    display: block;
+  }
+
+  div:has(> h1[data-heading^="---"]) ~ div {
+    display: none;
+  }
+  // div:has(> h1[data-heading^="---"]) {
+  //   visibility: hidden;
+  // }
+
+  // ul.has-list-bullet {
+  //   li:nth-child(even) {
+  //     color: shared.$material-color-deep-purple-200;
+  //   }
+  //   li:nth-child(even) {
+  //     > a {
+  //       color: shared.$embedPrimaryLinkColor;
+  //     }
+  //   }
+  // }
+}
