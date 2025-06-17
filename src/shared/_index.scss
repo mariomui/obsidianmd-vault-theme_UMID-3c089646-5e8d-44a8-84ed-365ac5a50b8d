@@ -1,11 +1,12 @@
-@use "./wallpapers/wallpapers.scss" as wp;
+@use "@shared/wallpapers/wallpapers.scss" as wp;
 
-@forward "./marionic-colors.scss";
-@forward "./extendme.scss";
-@forward "./mixins.scss";
-@forward "./wallpapers/wallpapers.scss";
-@forward "./material-ui-colors.scss";
-@use "./material-ui-colors.scss" as MAT_COLORS;
+@forward "@shared/marionic-colors.scss";
+@forward "@shared/extendme.scss";
+@forward "@shared/mixins.scss";
+@forward "@shared/wallpapers/wallpapers.scss";
+@forward "@shared/material-ui-colors.scss";
+@use "@shared/material-ui-colors.scss" as MAT_COLORS;
+// raw colors isn't used anymore, but i keep it for reference.
 
 $button-border-color: #ffffff;
 $topbar-blend: hard-light;
@@ -23,7 +24,7 @@ $topbar-blend: hard-light;
 }
 
 // # Overrides
-
+$TOGGLE_IMAGE: false;
 $shade: rgba(0, 0, 0, 0.8);
 // $shade: unset;
 
@@ -32,7 +33,9 @@ $shade: rgba(0, 0, 0, 0.8);
 $bg-image: unset;
 
 %fixed-bg {
-  // background-image: #{wp.$mm-image};
+  @if ($TOGGLE_IMAGE == true) {
+    background-image: #{wp.$mm-image};
+  }
 
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -40,7 +43,9 @@ $bg-image: unset;
   // background-blend-mode: overlay;
 }
 %bg {
-  // background-image: #{wp.$mm-image} !important;
+  @if ($TOGGLE_IMAGE == true) {
+    background-image: #{wp.$mm-image} !important;
+  }
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 100%;
