@@ -80,6 +80,7 @@ const config = {
   resolve: {
     extensions: [".js", ".scss"],
     alias: {
+      "@psp": path.resolve(__dirname, "postcss/index.js"),
       "@shared": path.resolve(__dirname, "src/shared"),
       // TODO document that you don't need the asterisks
     },
