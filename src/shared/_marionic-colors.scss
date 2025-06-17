@@ -1,5 +1,10 @@
-@use "./raw-colors.scss" as raw-colors;
-@use "./material-ui-colors" as MAT_COLORS;
+// double underscore is used to avoid conflicts with other files
+@use "@shared/__shared/raw-colors.scss" as raw-colors;
+@use "@shared/material-ui-colors" as MAT_COLORS;
+
+// # Overwrite of Obsidian Default Colors
+
+$italicColor: raw-colors.$material-color-deep-purple-200;
 
 // # good for single objects
 $secondary: raw-colors.$material-color-orange-800;
