@@ -1,16 +1,16 @@
 /* Font for the markdown source (edit) view */
+.daily-note-editor,
 .longform-leaf {
-
   .cm-s-obsidian {
     /* font-family: Atkinson Hyperlegible; */
     /* font-size: 1.1em; */
     line-height: 2em;
   }
   .cm-hmd-frontmatter {
-   font-family: monospace;
-   font-size: 0.8em;
-   line-height: 1em;
-   color: firebrick;
+    font-family: monospace;
+    font-size: 0.8em;
+    line-height: 1em;
+    color: firebrick;
   }
 
   .cm-comment {
@@ -45,121 +45,89 @@
     text-indent: 1em;
     text-align: justify;
   }
+  ul {
+    list-style-position: outside;
+  }
+  ol {
+    list-style-position: outside;
+  }
+  li {
+    padding-left: 0em;
+    padding-bottom: 2 em;
+  }
+  h1 {
+    font-family: Garamond;
+    font-size: 2em;
+    text-indent: 0em;
+    margin-top: 1em;
+  }
+
+  p {
+    margin-bottom: -15px;
+    line-height: 1.3em;
+  }
+  .admonition-content p {
+    margin-bottom: 0px;
+    line-height: 1.3em;
+    text-indent: 0em;
+  }
+  div.callout p {
+    margin-bottom: 0px;
+    line-height: 1.3em;
+    text-indent: 0em;
+  }
+  .markdown-preview-sizer .markdown-preview-section {
+    font-family: Garamond;
+    font-size: 0.8em;
+    text-indent: 0em;
+    text-align: justify;
+  }
+
+  .suggestion-item.is-selected {
+    background-color: var(--text-accent);
+  }
+  .markdown-preview-view blockquote {
+    border-color: darkgrey;
+    font-size: 95%;
+    text-align: left;
+    hyphens: auto;
+    word-break: keep-all;
+    /* color: black; # you need to define */
+    line-height: 1.3;
+    padding: 10px 2% 10px 2%;
+    margin-top: 15pt;
+    margin-bottom: 15pt;
+  }
+
+  .markdown-preview-sizer.markdown-preview-section {
+    background: antiquewhite;
+    color: black;
+  }
+  .markdown-source-view {
+    &.mod-cm6.is-readable-line-width .inline-title {
+      text-shadow: 1px 4px 3px rgb(10 30 71);
+    }
+    .cm-contentContainer {
+      background: rgba(0, 0, 0, 0.9);
+      margin: 0 0.5em;
+    }
+    .cm-em {
+      color: unset;
+    }
+  }
+  .markdown-reading-view {
+    .metadata-container {
+      display: none;
+    }
+    .markdown-preview-sizer.markdown-preview-section {
+      min-height: auto !important;
+      padding-bottom: 0 !important;
+    }
+  }
 }
 
-
-
-
-
-
-
-.longform-leaf ul {
-  list-style-position: outside;
-}
-
-.longform-leaf ol {
-  list-style-position: outside;
-}
-
-.longform-leaf li {
-  padding-left: 0em;
-  padding-bottom: 2 em;
-}
-
-.longform-leaf h1 {
-  font-family: Garamond;
-  font-size: 2em;
-  text-indent: 0em;
-  margin-top: 1em;
-}
-
-.longform-leaf p {
-  margin-bottom: -15px;
-  line-height: 1.3em;
-}
-
-.longform-leaf .admonition-content p {
-  margin-bottom: 0px;
-  line-height: 1.3em;
-  text-indent: 0em;
-}
-
-.longform-leaf div.callout p {
-  margin-bottom: 0px;
-  line-height: 1.3em;
-  text-indent: 0em;
-}
-
-.longform-leaf .markdown-preview-sizer .markdown-preview-section {
-  font-family: Garamond;
-  font-size: 0.8em;
-  text-indent: 0em;
-  text-align: justify;
-}
-
-.longform-leaf {
-  //--background-primary: antiquewhite;
-  background: antiquewhite;
-  --background-primary-alt: white;
-  /* --background-secondary: white; */
-  /* --background-secondary-alt: white; */
-  /* --text-selection: #aaa; */
-  /* --text-normal: black; */
-  /* --text-faint: blue; */
-  /* color: black; */
-}
-
-.longform-leaf .suggestion-item.is-selected {
-  background-color: var(--text-accent);
-}
-
-.longform-leaf .markdown-preview-view blockquote {
-  border-color: darkgrey;
-  font-size: 95%;
-  text-align: left;
-  hyphens: auto;
-  word-break: keep-all;
-  /* color: black; # you need to define */
-  line-height: 1.3;
-  padding: 10px 2% 10px 2%;
-  margin-top: 15pt;
-  margin-bottom: 15pt;
-}
-
-/* Remove bullets from dataview table */
-/* testing2 */
-.dataview-result-list-li {
-  list-style-type: none;
-  padding: 0 !important;
-  indent: 0em;
-}
-
-.list-view-ul {
-  list-style-type: none;
-  padding: 0 !important;
-  indent: 0em;
-}
-
-.callout[data-callout-metadata="x"] .callout-title {
-  display: none;
-}
-
-.longform-leaf
-  .markdown-source-view.mod-cm6.is-readable-line-width
-  .inline-title {
-  text-shadow: 1px 4px 3px rgb(10 30 71);
-}
-
-.longform-leaf .markdown-preview-sizer.markdown-preview-section {
-  background: antiquewhite;
-  color: black;
-}
-
-.longform-leaf .markdown-source-view .cm-contentContainer {
-  background: rgba(0, 0, 0, 0.9);
-  margin: 0 0.5em;
-}
-
-.longform-leaf .markdown-source-view .cm-contentContainer .cm-em {
-  color: unset;
+// Undo daily note container's ungodly padding.
+.daily-note-container {
+  min-height: unset !important;
+  height: auto;
 }
