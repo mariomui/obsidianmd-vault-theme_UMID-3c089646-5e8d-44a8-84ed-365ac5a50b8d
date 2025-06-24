@@ -1,7 +1,9 @@
 @forward "./stacked-tabs.scss";
-@use "../shared/index.scss" as shared;
+@use "@shared" as shared;
 @forward "./other.scss";
 //inactive.scss is not forwarded
+
+// ! MIGRATION folder is still migrating. The goal is to migrate the current code to other files, however.
 
 $local-wfb--active-vtabheader-bg-image: #{shared.$ßlocal-wfb--active-vtabheader-bg-image};
 $local-wfb--prevalent-bg: shared.$midnight-grad, shared.$mm-image,
@@ -11,18 +13,36 @@ $local-wfb--prevalent-bg: shared.$midnight-grad, shared.$mm-image,
 $local-wfb--inner-tab: shared.$white-grad, shared.$anu-image, shared.$mm-image;
 
 // # center view stylings
-.markdown-source-view .cm-contentContainer {
-  // @extend %fixed-bg;
-  background-color: shared.$shade;
-  border-radius: 1.5em 1.5em;
-  min-height: 50vh;
-  margin: 0 1em;
-  position: relative;
-  z-index: 1;
+// This ensures that the list callout colors don't clash with opacity of the background color
 
-  .lc-list-callout .lc-list-bg::after {
-    position: relative;
-    z-index: 1;
+.workspace-tabs .workspace-leaf .view-content {
+  // background-color: shared.$shade;
+  // &::before {
+  // content: "";
+  // left: 50%;
+  // top: 0;
+  // height: 100%;
+  // position: absolute;
+  width: 95%;
+  // transform: translateX(-50%);
+  background-color: shared.$shade !important;
+  // }
+}
+.markdown-source-view {
+  .cm-contentContainer {
+    // ! If you put the background here, there's a zindex issue;
+    // @extend %fixed-bg;
+    // background-color: shared.$shade;
+    border-radius: 1.5em 1.5em;
+    // min-height: 50vh;
+    margin: 0 1em;
+    // position: relative;
+    // z-index: 1;
+
+    .lc-list-callout .lc-list-bg::after {
+      // position: relative;
+      // z-index: 1;
+    }
   }
 }
 

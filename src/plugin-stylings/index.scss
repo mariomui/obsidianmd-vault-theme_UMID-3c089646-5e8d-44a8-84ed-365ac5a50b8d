@@ -30,20 +30,24 @@
 
 // # TASK GENIUS
 .task-status-widget {
-  position: relative;
-  display: unset;
-  .task-state {
+  // position: relative;
+  // display: unset;
+  .task-state,
+  input.checkbox {
     box-sizing: border-box;
     border-radius: 25% 25%;
     // border: 1px solid grey;
     outline: 1px solid bisque;
     background-color: shared.$tertiary-blue-700;
-    padding-inline-start: 1px;
-    padding-inline-end: 1px;
-    margin-left: 3px;
-    font-size: 70%;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-inline-start: 2%;
+    padding-inline-end: 2%;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+    font-size: 75%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
   }
 }
 

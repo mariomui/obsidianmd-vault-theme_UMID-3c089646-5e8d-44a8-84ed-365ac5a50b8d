@@ -6,7 +6,11 @@
       .cm-hmd-internal-link .cm-underline {
         color: shared.$altLinkColor;
       }
+      .cm-em.cm-quote {
+        color: shared.$italicColor;
+      }
     }
+
     // ## DATAVIEW INLINE QUERY (designed for MUID-150 Meta Endpoint)
     .markdown-rendered {
       .callout[data-callout="abstract"],

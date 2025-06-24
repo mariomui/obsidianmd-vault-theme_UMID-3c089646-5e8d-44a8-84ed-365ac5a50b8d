@@ -15,7 +15,7 @@
             .tag-container {
               @extend %fixed-bg;
 
-              height: 100vh;
+              // height: 100vh;
               > div {
                 background: #{shared.$shade};
                 height: 90%;
